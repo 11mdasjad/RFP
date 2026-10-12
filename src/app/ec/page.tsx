@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import {
   ArrowLeft,
+  ArrowRight,
   Megaphone,
   Tv,
   Music,
@@ -23,28 +24,36 @@ export default function ElectionCampaignPortalPage() {
       icon: Tv,
       title: "Mobile LED Display Fleet",
       desc: "High-brightness P3.91 outdoor daylight LED display vans mobilized across assembly constituencies with GPS route tracking and live rally feeds.",
-      bgImage: "/medien/landing/mobile-led-van.jpg"
+      bgImage: "/medien/landing/mobile-led-van.jpg",
+      href: "/ec/mobile-led-fleet",
+      tagline: "Daylight LED Vans • GPS Route Fleet"
     },
     {
       step: "02",
       icon: Music,
       title: "Original Prachar Songs & Anthems",
       desc: "Studio-recorded political songs, catchy lyrical anthems, and campaign jingles written to electrify public rallies and dominate social media reels.",
-      bgImage: "/medien/landing/chunav-prachar-song.png"
+      bgImage: "/medien/landing/chunav-prachar-song.png",
+      href: "/ec/prachar-songs",
+      tagline: "Custom Audio Masters • In-Page Player"
     },
     {
       step: "03",
       icon: Users,
       title: "Nukkad Natak & Street Theatre",
       desc: "Experienced theatrical troupes performing high-impact grassroots street plays in rural haats, village squares, and urban mohallas to connect with voters.",
-      bgImage: "/medien/landing/nukkad-natak-street-theatre.jpg"
+      bgImage: "/medien/landing/nukkad-natak-street-theatre.jpg",
+      href: "/ec/nukkad-natak",
+      tagline: "Grassroots Street Plays • Live Village Chaupals"
     },
     {
       step: "04",
       icon: MessageSquare,
       title: "Digital War Room & WhatsApp Outreach",
       desc: "24/7 political media command center, real-time counter-narrative creation, micro-targeted voter pin-code messaging, and rapid response networks.",
-      bgImage: "/medien/landing/whatsapp-marketing-campaigns.png"
+      bgImage: "/medien/landing/whatsapp-marketing-campaigns.png",
+      href: "/ec/digital-war-room",
+      tagline: "Missed-Call Video Engine • 24/7 War Room Desk"
     }
   ];
 
@@ -167,9 +176,10 @@ export default function ElectionCampaignPortalPage() {
             {pillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
-                <div
+                <Link
                   key={idx}
-                  className="relative rounded-2xl overflow-hidden border border-white/[0.12] hover:border-[#D4AF37]/80 transition-all duration-300 min-h-[260px] flex flex-col justify-between p-6 sm:p-8 group shadow-xl"
+                  href={pillar.href}
+                  className="relative rounded-2xl overflow-hidden border border-white/[0.12] hover:border-[#D4AF37] transition-all duration-300 min-h-[290px] flex flex-col justify-between p-6 sm:p-8 group shadow-xl hover:shadow-2xl hover:shadow-[#D4AF37]/10"
                 >
                   {/* Background Image & Gradient Scrim */}
                   <div
@@ -184,21 +194,38 @@ export default function ElectionCampaignPortalPage() {
                     <div className="w-12 h-12 rounded-xl bg-black/60 backdrop-blur-md text-[#F3E5AB] border border-[#D4AF37]/40 flex items-center justify-center group-hover:bg-[#D4AF37] group-hover:text-black transition-colors">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-mono font-bold text-[#E6C665] px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10">
-                      PILLAR {pillar.step}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono font-bold text-[#E6C665] px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10">
+                        PILLAR {pillar.step}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Card Content */}
-                  <div className="relative z-10 space-y-2 pt-8">
-                    <h3 className="text-xl sm:text-2xl font-serif text-white group-hover:text-[#F3E5AB] transition-colors font-medium drop-shadow-md">
-                      {pillar.title}
-                    </h3>
+                  {/* Card Content & Action Button */}
+                  <div className="relative z-10 space-y-3 pt-8">
+                    <div>
+                      <span className="text-[11px] font-mono text-[#E6C665] uppercase tracking-wider block mb-1">
+                        {pillar.tagline}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-serif text-white group-hover:text-[#F3E5AB] transition-colors font-medium drop-shadow-md">
+                        {pillar.title}
+                      </h3>
+                    </div>
                     <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-sans drop-shadow-sm">
                       {pillar.desc}
                     </p>
+
+                    <div className="pt-3 flex items-center justify-between text-xs font-mono text-[#E6C665] group-hover:text-white transition-colors">
+                      <span className="flex items-center gap-1.5 font-semibold">
+                        <span>Explore Dedicated Page</span>
+                        <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
+                      </span>
+                      <span className="text-white/40 group-hover:text-white/70 transition-colors">
+                        Click to Open →
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
