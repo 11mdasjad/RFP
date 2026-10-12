@@ -1,713 +1,2409 @@
-import { GalleryItem } from "@/types/gallery";
+import { GalleryItem } from '@/types/gallery';
 
 export const INITIAL_GALLERY_ITEMS: GalleryItem[] = [
-  // 1. Google Drive Curated Highlight 1: Acharya Narendra Dev College Cinema
   {
-    id: "andc-institutional-documentary",
-    title: "Acharya Narendra Dev College (ANDC) - Institutional Film",
-    category: "Cinema & Film",
-    client: "University of Delhi / ANDC",
-    year: "2024",
-    image: "/medien/galerie/_MG_0109.jpg",
-    aspect: "landscape",
-    summary: "Comprehensive academic and campus documentary capturing scientific labs, student innovations, and institutional milestones.",
-    description: "Produced for Acharya Narendra Dev College (ANDC), University of Delhi. Our team directed on-location cinema shoots covering research centers, botanical gardens, administrative excellence, and high-achieving alumni testimonials.",
-    tools: ["Sony Cinema Line", "DJI Ronin Gimbal Rigs", "Sennheiser Audio Systems", "DaVinci Resolve Studio"],
-    deliverables: [
-      "Official Institutional Master (4K Full HD)",
-      "Admissions & Orientation Highlight Video",
-      "Keynote Archival Reel",
-      "High-Resolution Event Stills"
-    ],
-    featured: true,
-    stills: [
-      "/medien/galerie/_MG_0109.jpg",
-      "/medien/galerie/_MG_8046.jpg",
-      "/medien/galerie/36-cinematic.jpg"
-    ],
-    directorNotes: "Capturing authentic student research and laboratory optics required meticulous lighting and respectful documentary camera movement.",
-    btsNotes: "Filmed over 4 days on the ANDC campus with multi-camera setups and aerial drone sequences.",
-    createdAt: "2024-05-12"
+    "id": "drive-img-1",
+    "title": "Gallery Image 1",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/04-1.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/04-1.jpg"
+    ]
   },
-
-  // 2. Google Drive Curated Highlight 2: Election Mobile LED Vans
   {
-    id: "election-campaign-led-vans",
-    title: "Election Campaign Management - High-Impact Mobile LED Vans",
-    category: "Commercials",
-    client: "Election Steering Committees",
-    year: "2024",
-    image: "/medien/galerie/311-campaign-led.jpg",
-    aspect: "landscape",
-    summary: "Constituency-wide campaign operations featuring mobile high-brightness LED display vans, rally coverage, and grassroots voter outreach.",
-    description: "RFP Digital Productions deployed custom-engineered mobile LED display vehicles across key voting districts. Broadcast-quality video rallies, candidate speeches, and constituency development showcases were delivered directly to public squares and rural communities.",
-    tools: ["Outdoor High-Nits P4 LED Displays", "Hydraulic Mast Vans", "Live Switcher Studio", "Wireless PA Audio"],
-    deliverables: [
-      "Daily Constituency Broadcast Loops",
-      "Rally Live Feeds & Speeches",
-      "Mobile Van Route Operations",
-      "Public Sentiment Highlights"
-    ],
-    featured: true,
-    stills: [
-      "/medien/galerie/311-campaign-led.jpg",
-      "/medien/galerie/310-election-rally.jpg",
-      "/medien/galerie/298-mobile-broadcast.jpg"
-    ],
-    directorNotes: "Field conditions across rural assembly segments require extreme equipment durability, independent power generator backups, and rapid mobile redeployment.",
-    btsNotes: "Coordinated synchronized mobile van fleet reaching hundreds of villages daily.",
-    createdAt: "2024-04-18"
+    "id": "drive-img-2",
+    "title": "Gallery Image 2",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/10321080_10152111542682939_6259542657425926740_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/10321080_10152111542682939_6259542657425926740_o.jpg"
+    ]
   },
-
-  // 3. Google Drive Curated Highlight 3: On-Location Rigging & Cinematographer
   {
-    id: "on-location-cinematographer-rig",
-    title: "On-Location Cinematography & Large-Format Rigging",
-    category: "Behind The Scenes",
-    client: "RFP Digital Productions",
-    year: "2024",
-    image: "/medien/galerie/_MG_8046.jpg",
-    aspect: "landscape",
-    summary: "Cinematographer on field set operating an advanced cinema rig with wireless monitor and precision follow-focus.",
-    description: "Capturing behind-the-scenes discipline during a feature documentary. Our camera operators configure modular cinema cages to withstand grueling heat, dust, and continuous motion without sacrificing frame stability.",
-    tools: ["Sony FX9 Cinema Rig", "Teradek Wireless Video", "Matte Box & Polarizers", "Tilta Follow Focus"],
-    deliverables: [
-      "BTS Master Footage",
-      "Camera Operator Production Stills",
-      "Technical Setup Documentation"
-    ],
-    featured: true,
-    stills: [
-      "/medien/galerie/_MG_8046.jpg",
-      "/medien/galerie/77-camera-rig.jpg",
-      "/medien/galerie/194-cinematography.jpg"
-    ],
-    directorNotes: "Rig balance is everything. If the rig strains the operator, dynamic tracking loses its musical rhythm.",
-    btsNotes: "Filmed on location with naturalistic backlighting and lightweight handheld stabilizer supports.",
-    createdAt: "2024-06-15"
+    "id": "drive-img-3",
+    "title": "Gallery Image 3",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/10481093_10153039159102939_1059914722217546259_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/10481093_10153039159102939_1059914722217546259_o.jpg"
+    ]
   },
-
-  // 4. Google Drive Curated Highlight 4: Grassroots Rally Broadcasting
   {
-    id: "grassroots-voter-rally-broadcasting",
-    title: "Grassroots Voter Rally & Multi-Camera Broadcast",
-    category: "Commercials",
-    client: "Assembly Election Steering Committees",
-    year: "2024",
-    image: "/medien/galerie/310-election-rally.jpg",
-    aspect: "landscape",
-    summary: "Live multi-camera transmission of mass voter rallies, candidate addresses, and crowd mobilization.",
-    description: "Covering massive voter gatherings requires coordinated high-angle cameras, jib cranes, and on-ground roving units. RFP Digital transmitted live feeds directly to giant LED towers and social streaming channels.",
-    tools: ["Multi-Camera Broadcast Unit", "Heavy Duty Jib Crane", "Wireless Microwave Uplink", "Live Telecast Suite"],
-    deliverables: [
-      "Rally Master Live Feed",
-      "Same-Evening Highlight Reels",
-      "Social Media Micro-Cuts for WhatsApp Outreach"
-    ],
-    featured: true,
-    stills: [
-      "/medien/galerie/310-election-rally.jpg",
-      "/medien/galerie/314-live-feed.jpg",
-      "/medien/galerie/04-1.jpg"
-    ],
-    directorNotes: "Capturing the energy of a 50,000-person gathering requires cutting seamlessly between wide arena master shots and intimate voter faces.",
-    btsNotes: "Operated under tight security parameters with redundant cellular and satellite transmitters.",
-    createdAt: "2024-04-25"
+    "id": "drive-img-4",
+    "title": "Gallery Image 4",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/10506710_10152377491547939_8145423013473615017_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/10506710_10152377491547939_8145423013473615017_o.jpg"
+    ]
   },
-
-  // 5. Google Drive Curated Highlight 5: Anamorphic Commercial Cinema
   {
-    id: "anamorphic-brand-film-production",
-    title: "Anamorphic Commercial Cinema & Brand Aesthetics",
-    category: "Cinema & Film",
-    client: "Enterprise Industrial Client",
-    year: "2024",
-    image: "/medien/galerie/36-cinematic.jpg",
-    aspect: "landscape",
-    summary: "Precision cinematic lighting and anamorphic camera movement for commercial storytelling.",
-    description: "Crafted for a leading industrial manufacturing consortium. We paired vintage anamorphic lenses with state-of-the-art digital sensors to produce horizontal flares and painterly bokeh.",
-    tools: ["ARRI Alexa Mini", "Cooke Anamorphic Lenses", "Dana Dolly Tracks", "High-CRI LED Diffusers"],
-    deliverables: [
-      "Brand Anthem Master Film (4K)",
-      "Social Video Cutdowns (1:1 & 9:16)",
-      "High-Resolution Print Stills"
-    ],
-    featured: true,
-    stills: [
-      "/medien/galerie/36-cinematic.jpg",
-      "/medien/galerie/38-set-light.jpg",
-      "/medien/galerie/370-studio-lighting.jpg"
-    ],
-    directorNotes: "Commercial cinema succeeds when technical precision never overwhelms the emotional core of the message.",
-    btsNotes: "Two days of continuous studio and factory floor setups with complex crane moves.",
-    createdAt: "2024-07-10"
+    "id": "drive-img-5",
+    "title": "Gallery Image 5",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/10712507_10152407642357939_8198857283348184976_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/10712507_10152407642357939_8198857283348184976_o.jpg"
+    ]
   },
-
-  // 6. Google Drive Curated Highlight 6: Multi-Crew Field Production
   {
-    id: "field-production-crew-coordination",
-    title: "Multi-Crew Field Production & Directing",
-    category: "Behind The Scenes",
-    client: "Documentary Film Foundation",
-    year: "2024",
-    image: "/medien/galerie/37-production.jpg",
-    aspect: "landscape",
-    summary: "On-set collaboration between director, cinematographers, and production managers in remote locations.",
-    description: "Behind-the-scenes view of our documentary field unit planning shots on location. Every technician aligns on sunlight angles, sound reflection, and talent readiness before rolling.",
-    tools: ["Field Production Vans", "Director Monitors", "Two-Way Clear-Com Radio", "Digital Clapperboards"],
-    deliverables: [
-      "Field Production Stills Archive",
-      "Behind the Scenes Featurette",
-      "Call Sheets & Production Logs"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/37-production.jpg",
-      "/medien/galerie/62-direction.jpg",
-      "/medien/galerie/3ef60e56.jpg"
-    ],
-    directorNotes: "Preparation on the call sheet gives the crew the psychological freedom to seize spontaneous moments.",
-    btsNotes: "Shot during a 10-day documentary expedition across Delhi, Haryana, and Rajasthan.",
-    createdAt: "2024-03-22"
+    "id": "drive-img-6",
+    "title": "Gallery Image 6",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/109242241_10157572386197939_3005781850891819815_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/109242241_10157572386197939_3005781850891819815_n.jpg"
+    ]
   },
-
-  // 7. Google Drive Curated Highlight 7: Precision High-Output Set Lighting
   {
-    id: "precision-high-output-set-lighting",
-    title: "Precision High-Output Studio & Set Lighting",
-    category: "Behind The Scenes",
-    client: "Corporate Film Production",
-    year: "2024",
-    image: "/medien/galerie/38-set-light.jpg",
-    aspect: "landscape",
-    summary: "Soft diffused illumination sculpting cinematic contrast and textured environments.",
-    description: "Lighting setup for an executive boardroom interview series. We balanced daylight HMIs through grid cloths with rim backlights to create dimensionality against dark corporate backdrops.",
-    tools: ["Aputure 1200d Pro", "Chimera Lantern Softboxes", "C-Stands & Sandbags", "Color Temperature Meters"],
-    deliverables: [
-      "Lighting Plot Diagrams",
-      "Grip & Gaffer Tech Specs",
-      "Executive Interview Video Cuts"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/38-set-light.jpg",
-      "/medien/galerie/370-studio-lighting.jpg"
-    ],
-    directorNotes: "If an audience notices the lighting fixture, the magic is broken. Light must feel born from the architecture.",
-    btsNotes: "Rigged in 45 minutes using compact LED fixtures designed for rapid corporate turnarounds.",
-    createdAt: "2024-06-02"
+    "id": "drive-img-7",
+    "title": "Gallery Image 7",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/116334975_10157609440367939_3819764563825737485_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/116334975_10157609440367939_3819764563825737485_n.jpg"
+    ]
   },
-
-  // 8. Google Drive Curated Highlight 8: Mobile Live Broadcast Switcher
   {
-    id: "mobile-broadcast-switcher-station",
-    title: "Mobile Live Broadcast & Switcher Engineering",
-    category: "Commercials",
-    client: "Public Media & Rally Broadcast",
-    year: "2024",
-    image: "/medien/galerie/39-broadcast.jpg",
-    aspect: "landscape",
-    summary: "Low-latency multi-camera switching, graphics overlays, and live output to LED screens and social networks.",
-    description: "Our mobile broadcast station manages up to 8 live SDI cameras, dynamic graphic titles, audio compression, and satellite uplinks for instantaneous event streaming.",
-    tools: ["Blackmagic ATEM Television Studio Pro 4K", "Multi-View Field Monitors", "Behringer X32 Producer", "SDI Distribution Amps"],
-    deliverables: [
-      "Full Rally Live Telecast",
-      "Multi-Track Master Audio Recording",
-      "Same-Hour Social Media Cuts"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/39-broadcast.jpg",
-      "/medien/galerie/314-live-feed.jpg"
-    ],
-    directorNotes: "Live switching is a sport of pure intuition. Anticipating when a speaker reaches a crescendo demands complete focus.",
-    btsNotes: "Housed inside a sound-dampened mobile broadcast van with independent battery UPS backup.",
-    createdAt: "2024-05-28"
+    "id": "drive-img-8",
+    "title": "Gallery Image 8",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/118626301_10157657300492939_9117143104445195292_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/118626301_10157657300492939_9117143104445195292_n.jpg"
+    ]
   },
-
-  // 9. Google Drive Curated Highlight 9: Director Monitoring Real-Time Take
   {
-    id: "director-monitoring-take",
-    title: "Real-Time Director Monitoring & Performance Guidance",
-    category: "Behind The Scenes",
-    client: "Institutional Media Campaign",
-    year: "2024",
-    image: "/medien/galerie/62-direction.jpg",
-    aspect: "landscape",
-    summary: "Directing actors and real stakeholders on location with wireless video assists for meticulous frame composition.",
-    description: "Our founding filmmakers work shoulder-to-shoulder with interviewees, creating an empathetic, distraction-free environment that allows non-professional subjects to deliver unscripted authenticity.",
-    tools: ["SmallHD Wireless Director Cage", "Teradek Bolt 4K Receiver", "Wireless Headsets"],
-    deliverables: [
-      "Performance Master Cuts",
-      "Authentic Testimonial Interviews",
-      "Director Review Logs"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/62-direction.jpg",
-      "/medien/galerie/3ef60e56.jpg"
-    ],
-    directorNotes: "When interviewing doctors or teachers, put down the script. Ask what keeps them awake at night.",
-    btsNotes: "Captured on location during the Acharya Narendra Dev College documentary shoot.",
-    createdAt: "2024-05-14"
+    "id": "drive-img-9",
+    "title": "Gallery Image 9",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/11882391_10153137034982939_6242982068071302044_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/11882391_10153137034982939_6242982068071302044_o.jpg"
+    ]
   },
-
-  // 10. Google Drive Curated Highlight 10: Heavy-Duty Cinema Gimbal
   {
-    id: "heavy-duty-cinema-gimbal-rig",
-    title: "Heavy-Duty Cinema Gimbal & Camera Stabilization",
-    category: "Behind The Scenes",
-    client: "Automotive & Action Commercial",
-    year: "2024",
-    image: "/medien/galerie/77-camera-rig.jpg",
-    aspect: "landscape",
-    summary: "3-axis electronic stabilizer balancing heavy cinema camera rigs for fluid motion tracking.",
-    description: "Built for high-velocity tracking shots, this gimbal setup supports heavy cinema prime lenses while eliminating footsteps and engine vibration across uneven terrains.",
-    tools: ["DJI Ronin 2 Professional Combo", "Sony Cinema Body", "Nucleus-M Wireless Motors", "EasyRig Vario 5 Support"],
-    deliverables: [
-      "Dynamic 4K Tracking Sequences",
-      "Smooth Vehicle Run-By Shots",
-      "BTS Technical Stills"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/77-camera-rig.jpg",
-      "/medien/galerie/389-gimbal-motion.jpg"
-    ],
-    directorNotes: "Mechanical stabilization gives scenes the visual authority of big-budget feature cinema.",
-    btsNotes: "Calibrated for rapid lens changes without requiring full re-balancing.",
-    createdAt: "2024-06-20"
+    "id": "drive-img-10",
+    "title": "Gallery Image 10",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/122306321_789291658581911_2921317254141088163_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/122306321_789291658581911_2921317254141088163_n.jpg"
+    ]
   },
-
-  // 11. Google Drive Curated Highlight 11: Acoustic Soundstage Studio
   {
-    id: "acoustic-soundstage-interviews",
-    title: "Acoustic Soundstage & Executive Keynote Set",
-    category: "Cinema & Film",
-    client: "Tech & Corporate Summit",
-    year: "2024",
-    image: "/medien/galerie/83-soundstage.jpg",
-    aspect: "landscape",
-    summary: "Isolated studio environment capturing crisp dialog and corporate thought leadership interviews.",
-    description: "Designed for high-profile executive interviews and corporate films. Acoustic wall absorption and whisper-quiet HVAC ensure studio-quality dialogue capture with zero outdoor street bleed.",
-    tools: ["Sound Dampening Drapes", "Sennheiser MKH 416 Boom", "Bicolor Panel Keys", "4K Teleprompters"],
-    deliverables: [
-      "Executive Thought Leadership Series",
-      "Keynote Video Presentations",
-      "Clean Dialogue Audio Masters"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/83-soundstage.jpg",
-      "/medien/galerie/321-editing-suite.jpg"
-    ],
-    directorNotes: "Pristine audio fidelity is what separates professional broadcast from amateur video.",
-    btsNotes: "Recorded at RFP Digital's New Delhi studio facilities.",
-    createdAt: "2024-07-04"
+    "id": "drive-img-11",
+    "title": "Gallery Image 11",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/122683622_790127581831652_2719989722271788409_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/122683622_790127581831652_2719989722271788409_n.jpg"
+    ]
   },
-
-  // 12. Google Drive Curated Highlight 12: Smooth Dolly Track Movement
   {
-    id: "precision-dolly-track-movement",
-    title: "Smooth Dolly Track & Curved Rail Movement",
-    category: "Behind The Scenes",
-    client: "Architectural & Heritage Film",
-    year: "2024",
-    image: "/medien/galerie/128-dolly-track.jpg",
-    aspect: "landscape",
-    summary: "Precision mechanical camera tracks providing cinematic glide through museum corridors and college campuses.",
-    description: "When documenting historic corridors and scientific laboratories, mechanical track dollys deliver an organic weight and deliberate cadence that motorized gimbals cannot match.",
-    tools: ["Dana Dolly Heavy Track", "Mitchell Mount Base", "Precision Speed Rails", "Fluid Head Tripod"],
-    deliverables: [
-      "Sweeping Architectural Reveals",
-      "Slow-Paced Heritage Corridor Tracking",
-      "Master Documentary Shots"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/128-dolly-track.jpg",
-      "/medien/galerie/194-cinematography.jpg"
-    ],
-    directorNotes: "The slow push-in is cinema's greatest punctuation mark. It draws the audience deeper into the subject's world.",
-    btsNotes: "Levelled with optical bubble levels across heritage tile flooring to prevent any micro-jitter.",
-    createdAt: "2024-02-18"
+    "id": "drive-img-12",
+    "title": "Gallery Image 12",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/122721526_790813731763037_7648345938631365466_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/122721526_790813731763037_7648345938631365466_n.jpg"
+    ]
   },
-
-  // 13. Google Drive Curated Highlight 13: Large Format Sensor & Focus Pulling
   {
-    id: "large-format-focus-pulling",
-    title: "Large-Format Sensor Framing & Focus Pulling",
-    category: "Cinema & Film",
-    client: "Cultural Heritage Chronicle",
-    year: "2024",
-    image: "/medien/galerie/194-cinematography.jpg",
-    aspect: "landscape",
-    summary: "Shallow depth of field focus pulling highlighting authentic expressions and archival treasures.",
-    description: "Filming micro-details on ancient manuscripts and artisan tool handling with razor-thin depth of field. Every focus rack guides the viewer's attention to delicate gold filigree and artisan gestures.",
-    tools: ["Full Frame Cinema Camera", "Zeiss Macro Lenses", "Wireless Lens Controller", "Focus Peaking Monitors"],
-    deliverables: [
-      "Cinematic Heritage Master Cut",
-      "Fine-Art Still Archive",
-      "Macro Visual Sequences"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/194-cinematography.jpg",
-      "/medien/galerie/281-optics-lens.jpg"
-    ],
-    directorNotes: "Focus pulling is an emotional art form. The speed of the rack must breathe in rhythm with the speaker.",
-    btsNotes: "Filmed under museum conservator supervision inside temperature-regulated archives.",
-    createdAt: "2024-03-12"
+    "id": "drive-img-13",
+    "title": "Gallery Image 13",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/122731712_790813428429734_8951732833527110122_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/122731712_790813428429734_8951732833527110122_n.jpg"
+    ]
   },
-
-  // 14. Google Drive Curated Highlight 14: Outdoor Campaign Field Unit
   {
-    id: "field-operations-outdoor-production",
-    title: "Outdoor Production & Field Unit Deployment",
-    category: "Behind The Scenes",
-    client: "Rural Outreach & Election Management",
-    year: "2024",
-    image: "/medien/galerie/241-field-unit.jpg",
-    aspect: "landscape",
-    summary: "High-mobility field teams executing documentary and campaign shoots across rural villages.",
-    description: "Operating off-grid requires robust power stations, dust-sealed camera cases, and agile crews capable of setting up in five minutes when unexpected news or rally movements occur.",
-    tools: ["Weather-Sealed Pelican Cases", "EcoFlow Portable Power Stations", "Compact LED Spotlights", "Carbon Fiber Tripods"],
-    deliverables: [
-      "Field Production Footage",
-      "Daily Ground Dispatch Packages",
-      "Regional Voter Voices"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/241-field-unit.jpg",
-      "/medien/galerie/298-mobile-broadcast.jpg"
-    ],
-    directorNotes: "The best stories happen when you leave the city and listen to people who rarely see a movie camera.",
-    btsNotes: "Covered 18 districts across northern and eastern India during peak election cycles.",
-    createdAt: "2024-04-10"
+    "id": "drive-img-14",
+    "title": "Gallery Image 14",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/122787497_790813348429742_7474385994999473372_n.png",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/122787497_790813348429742_7474385994999473372_n.png"
+    ]
   },
-
-  // 15. Google Drive Curated Highlight 15: Drone Aerial Cinematography
   {
-    id: "drone-aerial-cinematography",
-    title: "Drone Aerial Cinematography & Landscape Mapping",
-    category: "Cinema & Film",
-    client: "National Infrastructure Project",
-    year: "2024",
-    image: "/medien/galerie/252-aerial-setup.jpg",
-    aspect: "landscape",
-    summary: "Certified drone pilots capturing bird's-eye sweeps of university campuses and solar power installations.",
-    description: "Our certified DGCA drone pilots operate dual-operator setups: one pilot navigating flight paths while the second operator controls the 3-axis cinema camera gimbal with calibrated cinema glass.",
-    tools: ["DJI Inspire 2 Drone", "Zenmuse X7 Super 35 Camera", "Dual Remote Controllers", "High-Definition CrystalSky Monitors"],
-    deliverables: [
-      "4K 60fps Aerial Master Footage",
-      "Topographic Architectural Sweeps",
-      "Campus Aerial Portfolio"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/252-aerial-setup.jpg",
-      "/medien/galerie/36-cinematic.jpg"
-    ],
-    directorNotes: "Aerial footage should never be gratuitous. It must establish scale, geographical context, and human ambition.",
-    btsNotes: "Flown under strict DGCA digital sky airspace clearances with GPS fail-safes.",
-    createdAt: "2024-05-19"
+    "id": "drive-img-15",
+    "title": "Gallery Image 15",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/122818073_790813741763036_620649863011706211_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/122818073_790813741763036_620649863011706211_n.jpg"
+    ]
   },
-
-  // 16. Google Drive Curated Highlight 16: Cinema Lens Calibration
   {
-    id: "cinema-lens-calibration",
-    title: "Prime Cinema Lens Calibration & Optical Testing",
-    category: "Behind The Scenes",
-    client: "RFP Digital Camera Department",
-    year: "2024",
-    image: "/medien/galerie/281-optics-lens.jpg",
-    aspect: "landscape",
-    summary: "Pre-shoot lens calibration ensuring crisp edge-to-edge optical clarity and chromatic aberration control.",
-    description: "Before every major institutional documentary, our camera team tests each prime lens on optical collimators and resolution test charts to ensure matched color rendition and focus accuracy.",
-    tools: ["Siemens Star Resolution Targets", "Lens Collimators", "Flange Depth Gauges", "Optical Cleaning Cleanroom"],
-    deliverables: [
-      "Camera & Lens Test Charts",
-      "Focal Match Calibration Cards",
-      "Technical Pre-Flight Checklists"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/281-optics-lens.jpg",
-      "/medien/galerie/194-cinematography.jpg"
-    ],
-    directorNotes: "Flawless optical preparation eliminates surprises on set. When shooting high-contrast scenes, lens coatings matter.",
-    btsNotes: "Standard protocol before deploying multi-camera teams across nationwide assignments.",
-    createdAt: "2024-03-01"
+    "id": "drive-img-16",
+    "title": "Gallery Image 16",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/122842907_790813515096392_8422393389484392790_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/122842907_790813515096392_8422393389484392790_n.jpg"
+    ]
   },
-
-  // 17. Google Drive Curated Highlight 17: Fleet Mobile LED Displays
   {
-    id: "fleet-mobile-led-displays",
-    title: "Fleet Management for Mobile LED Display Vehicles",
-    category: "Commercials",
-    client: "Electoral Steering Committee",
-    year: "2024",
-    image: "/medien/galerie/298-mobile-broadcast.jpg",
-    aspect: "landscape",
-    summary: "Synchronized mobile LED van fleets driving voter education and policy achievements across multi-district routes.",
-    description: "Managing a synchronized fleet of 15+ mobile LED display vehicles. Every van is equipped with high-nits outdoor LED walls, GPS route monitoring, and evening public square broadcasting setups.",
-    tools: ["Outdoor P4 High-Nits LED Displays", "Hydraulic Mast Lifts", "Heavy-Duty On-Board Generators", "GPS Vehicle Trackers"],
-    deliverables: [
-      "Route Coverage Verification Reports",
-      "Public Interaction Footage",
-      "Daily Fleet Video Broadcast Loops"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/298-mobile-broadcast.jpg",
-      "/medien/galerie/311-campaign-led.jpg"
-    ],
-    directorNotes: "The LED van turns every village chowk into an impromptu cinema hall. Screen clarity in direct sunlight is non-negotiable.",
-    btsNotes: "Equipped with vibration-damped suspension mounts to protect electronic LED modules over unpaved rural roads.",
-    createdAt: "2024-04-05"
+    "id": "drive-img-17",
+    "title": "Gallery Image 17",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/123001966_10157802585057939_7175908767437712929_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/123001966_10157802585057939_7175908767437712929_n.jpg"
+    ]
   },
-
-  // 18. Google Drive Curated Highlight 18: Grand Auditorium Stage Rigging
   {
-    id: "grand-event-stage-rigging",
-    title: "Grand Event & Auditorium Stage Rigging",
-    category: "Commercials",
-    client: "National Convocation Summit",
-    year: "2024",
-    image: "/medien/galerie/308-stage-rigging.jpg",
-    aspect: "landscape",
-    summary: "Structural aluminum trussing, overhead robotic lighting, and giant LED wall integration for university convocations.",
-    description: "Designing the stage architecture for prestigious university convocations. We engineered overhead aluminum trusses supporting 40 moving-head lights and backdrop LED walls visible from every seat.",
-    tools: ["Aluminum Box Trusses", "DMX Lighting Consoles", "Ultra-Wide LED Processors", "Electric Chain Hoists"],
-    deliverables: [
-      "Stage Architecture CAD Plots",
-      "Live Arena Lighting Master",
-      "VIP Convocation Webcast Cut"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/308-stage-rigging.jpg",
-      "/medien/galerie/21.jpg"
-    ],
-    directorNotes: "Auditorium rigging must be structurally immaculate and completely silent during Chancellor addresses.",
-    btsNotes: "Engineered and safety-tested 24 hours prior to dignitary arrival.",
-    createdAt: "2024-08-25"
+    "id": "drive-img-18",
+    "title": "Gallery Image 18",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/12309573_10153289568222939_7994378870378692761_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/12309573_10153289568222939_7994378870378692761_o.jpg"
+    ]
   },
-
-  // 19. Google Drive Curated Highlight 19: Multi-Angle Live Feed Transmission
   {
-    id: "multi-angle-live-feed-transmission",
-    title: "Multi-Angle Live Feed & Real-Time Broadcast Control",
-    category: "Commercials",
-    client: "Statewide Election Outreach",
-    year: "2024",
-    image: "/medien/galerie/314-live-feed.jpg",
-    aspect: "landscape",
-    summary: "Directing multi-camera feeds with instantaneous replay, speaker lower-thirds, and broadcast-grade color fidelity.",
-    description: "Live broadcast engineers mixing multi-camera feeds in real time during a crucial campaign debate. Our team ensures seamless transitions between stage keynotes, sign-language interpreters, and crowd reactions.",
-    tools: ["ATEM 2 M/E Production Studio 4K", "HyperDeck Studio Recorders", "NDI IP Video Network", "Character Generator Rigs"],
-    deliverables: [
-      "Low-Latency Broadcast Feed (1080p60)",
-      "Multi-Track Isolated Camera Recordings",
-      "Press Release News Snippets"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/314-live-feed.jpg",
-      "/medien/galerie/39-broadcast.jpg"
-    ],
-    directorNotes: "The technical crew's heartbeat must sync with the live event. There is no second take in live broadcasting.",
-    btsNotes: "Deployed redundant fiber lines to eliminate single points of failure.",
-    createdAt: "2024-05-02"
+    "id": "drive-img-19",
+    "title": "Gallery Image 19",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/123348578_10157805038852939_6130304337847284513_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/123348578_10157805038852939_6130304337847284513_n.jpg"
+    ]
   },
-
-  // 20. Google Drive Curated Highlight 20: DaVinci Resolve Editing Suite
   {
-    id: "davinci-resolve-color-suite",
-    title: "4K HDR DaVinci Resolve Editing & Mastering Suite",
-    category: "Behind The Scenes",
-    client: "RFP Digital Post-Production Facility",
-    year: "2024",
-    image: "/medien/galerie/321-editing-suite.jpg",
-    aspect: "landscape",
-    summary: "Dedicated post-production bay equipped with calibrated reference displays and high-speed NVMe storage arrays.",
-    description: "Inside our New Delhi editing and grading facility. Colorists and offline editors craft narrative cuts with precision audio mixing and calibrated color spaces matching international festival standards.",
-    tools: ["DaVinci Resolve Studio 19", "Apple Mac Studio M2 Ultra", "Sony BVM Reference Monitor", "Acoustic Treatment Panels"],
-    deliverables: [
-      "Final Theatrical Color Master (ProRes 4444 XQ)",
-      "High-Dynamic-Range (HDR10 / Dolby Vision) Deliverables",
-      "Stereo & Surround 5.1 Mixes"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/321-editing-suite.jpg",
-      "/medien/galerie/426-color-grading.jpg"
-    ],
-    directorNotes: "The editing room is where the third film is made. Pacing, silence, and micro-cuts create truth.",
-    btsNotes: "Calibrated quarterly with spectrophotometers for strict broadcast broadcast delta-E standards.",
-    createdAt: "2024-07-28"
+    "id": "drive-img-20",
+    "title": "Gallery Image 20",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/12365889_10153328942637939_2673402782517296164_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/12365889_10153328942637939_2673402782517296164_o.jpg"
+    ]
   },
-
-  // 21. Google Drive Curated Highlight 21: High-Key Commercial Studio
   {
-    id: "high-key-commercial-studio",
-    title: "High-Key Commercial Studio Lighting & Product Sets",
-    category: "Cinema & Film",
-    client: "Consumer Product Brand",
-    year: "2024",
-    image: "/medien/galerie/370-studio-lighting.jpg",
-    aspect: "landscape",
-    summary: "Studio tabletop and product cinematography with motorized turntables and clean shadow falloff.",
-    description: "Precision product lighting creates crisp specular highlights and pristine reflections on glossy consumer tech and medical diagnostic equipment.",
-    tools: ["Continuous Bi-Color Softboxes", "Polarizing Light Sheets", "Motorized Heavy Turntable", "Probe Macro Lenses"],
-    deliverables: [
-      "Commercial Product Anthems",
-      "E-Commerce 360 Video Assets",
-      "High-Resolution Print Advertising Stills"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/370-studio-lighting.jpg",
-      "/medien/galerie/38-set-light.jpg"
-    ],
-    directorNotes: "Light reflections tell the story of tactile quality. Every gradient on the product surface is sculpted.",
-    btsNotes: "Shot at our specialized tabletop cinematography bay in Lajpat Nagar 4.",
-    createdAt: "2024-06-18"
+    "id": "drive-img-21",
+    "title": "Gallery Image 21",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/12370904_10153321000977939_9192874439981354008_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/12370904_10153321000977939_9192874439981354008_o.jpg"
+    ]
   },
-
-  // 22. Google Drive Curated Highlight 22: Dynamic Gimbal Tracking
   {
-    id: "motion-tracking-steady-cam",
-    title: "High-Speed Dynamic Gimbal Tracking",
-    category: "Behind The Scenes",
-    client: "Sports & University Athletics",
-    year: "2024",
-    image: "/medien/galerie/389-gimbal-motion.jpg",
-    aspect: "landscape",
-    summary: "Tracking sprinting athletes and fast-paced campus action with silky-smooth electronic gimbal stabilization.",
-    description: "Covering athletic events and outdoor campus sports. Our camera operator runs alongside sprinting competitors while maintaining perfect horizon level and continuous focus.",
-    tools: ["3-Axis Electronic Gimbal", "Nucleus Wireless Motors", "Lollipop Antennas", "Carbon Fiber Support Rig"],
-    deliverables: [
-      "Dynamic Sports Tracking Reels",
-      "High-Speed 120fps Slow-Motion Clips",
-      "Campus Spirit Highlight Video"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/389-gimbal-motion.jpg",
-      "/medien/galerie/77-camera-rig.jpg"
-    ],
-    directorNotes: "Kinetic camera motion injects adrenaline into documentary sports footage.",
-    btsNotes: "Tested at 120fps recording to capture high-speed particle dust and water droplets.",
-    createdAt: "2024-05-18"
+    "id": "drive-img-22",
+    "title": "Gallery Image 22",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/12440324_10153354213222939_5374706358631520184_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/12440324_10153354213222939_5374706358631520184_o.jpg"
+    ]
   },
-
-  // 23. Google Drive Curated Highlight 23: Precision Color Timing & Grading
   {
-    id: "precision-color-timing-grading",
-    title: "Precision Film Emulation & Color Timing",
-    category: "Cinema & Film",
-    client: "Independent Documentary Feature",
-    year: "2024",
-    image: "/medien/galerie/426-color-grading.jpg",
-    aspect: "landscape",
-    summary: "Balancing documentary archival footage with newly captured 4K interviews for seamless tonal cohesion.",
-    description: "Our senior colorists use custom ACES LUTs and analog film print emulation profiles to unify diverse historical archives with crisp modern cinema sensors.",
-    tools: ["DaVinci Resolve Mini Panel", "Calibrated Reference Monitor", "False Color Exposure Scopes"],
-    deliverables: [
-      "Unified Theatrical Color Grade",
-      "Festival Screening Master Cut",
-      "High-Definition Web Streaming Files"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/426-color-grading.jpg",
-      "/medien/galerie/321-editing-suite.jpg"
-    ],
-    directorNotes: "Colors evoke memory. A warm, restrained shadow tone makes historical stories feel immediate and alive.",
-    btsNotes: "Conducted in collaboration with film directors and museum archivists.",
-    createdAt: "2024-07-22"
+    "id": "drive-img-23",
+    "title": "Gallery Image 23",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/124587243_10157827818617939_1052141418580502438_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/124587243_10157827818617939_1052141418580502438_n.jpg"
+    ]
   },
-
-  // 24. Google Drive Curated Highlight 24: Rally Stage Sound Architecture
   {
-    id: "rally-stage-public-address",
-    title: "Rally Stage Sound Architecture & Visual Backdrops",
-    category: "Commercials",
-    client: "Public Governance Rally",
-    year: "2024",
-    image: "/medien/galerie/04-1.jpg",
-    aspect: "landscape",
-    summary: "Large-scale public rally staging, acoustic line array deployment, and coordinated LED stage visuals.",
-    description: "Comprehensive public address and visual production for high-stakes public rallies. We synchronize dynamic backdrop animations with speech cadences to command audience attention.",
-    tools: ["JBL VTX Line Array System", "Outdoor P3.9 LED Screens", "Wireless Microphone Diversity Systems"],
-    deliverables: [
-      "Acoustic Audio Coverage Across 300 Meters",
-      "Synchronized Stage LED Motion Graphics",
-      "Rally Speech Video Highlights"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/04-1.jpg",
-      "/medien/galerie/308-stage-rigging.jpg"
-    ],
-    directorNotes: "Every word spoken by the leader must reach the farthest listener with crystal clarity and no echo distortion.",
-    btsNotes: "Audio acoustic simulation performed prior to rigging to prevent sound slapback from surrounding buildings.",
-    createdAt: "2024-04-12"
+    "id": "drive-img-24",
+    "title": "Gallery Image 24",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/12622565_10153404730212939_6307037508466333559_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/12622565_10153404730212939_6307037508466333559_o.jpg"
+    ]
   },
-
-  // 25. Google Drive Curated Highlight 25: Stage Lighting & Event Production
   {
-    id: "stage-lighting-event-management",
-    title: "Statewide Cultural Festival Stage Lighting",
-    category: "Behind The Scenes",
-    client: "Cultural Directorate",
-    year: "2024",
-    image: "/medien/galerie/21.jpg",
-    aspect: "landscape",
-    summary: "Dynamic robotic lighting choreography illuminating live dance performances and state musical celebrations.",
-    description: "Designing the complete atmospheric lighting for outdoor state cultural celebrations. Moving beams, warm tungsten washes, and low-lying fog created an enchanting theatrical stage.",
-    tools: ["Clay Paky Moving Heads", "Warm Tungsten Blinders", "Haze Fog Generators", "GrandMA3 Console"],
-    deliverables: [
-      "Live Cultural Festival Broadcast",
-      "Theatrical Stage Lighting Show",
-      "Press & Media Still Archive"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/21.jpg",
-      "/medien/galerie/308-stage-rigging.jpg"
-    ],
-    directorNotes: "Lighting traditional Indian classical dance requires honoring the hand mudras and eye expressions above all else.",
-    btsNotes: "Pre-programmed with timecode synchronization to the festival's musical track.",
-    createdAt: "2024-08-10"
+    "id": "drive-img-25",
+    "title": "Gallery Image 25",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/128-1024x659.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/128-1024x659.jpg"
+    ]
   },
-
-  // 26. Google Drive Curated Highlight 26: Director Storyboarding & Shot Breakdown
   {
-    id: "director-script-storyboard-session",
-    title: "Director Storyboarding & Shot Breakdown Session",
-    category: "Behind The Scenes",
-    client: "RFP Digital Creative Lab",
-    year: "2024",
-    image: "/medien/galerie/3ef60e56.jpg",
-    aspect: "landscape",
-    summary: "Pre-production conceptualization with frame-by-frame animatics, lighting maps, and creative dialogue.",
-    description: "Before cameras roll on any major film, our directors and cinematographers map every angle, character motivation, and transition on visual storyboard decks.",
-    tools: ["Digital Storyboard Software", "Floor Plan Light Maps", "Shot List Breakdown Spreadsheets"],
-    deliverables: [
-      "Comprehensive Pre-Visualization Deck",
-      "Director's Treatment Document",
-      "On-Location Production Schedule"
-    ],
-    featured: false,
-    stills: [
-      "/medien/galerie/3ef60e56.jpg",
-      "/medien/galerie/62-direction.jpg"
-    ],
-    directorNotes: "Storyboarding isn't about rigid rules; it is the common visual language that aligns 40 crew members to a single dream.",
-    btsNotes: "Developed at our creative development studio in New Delhi.",
-    createdAt: "2024-01-15"
+    "id": "drive-img-26",
+    "title": "Gallery Image 26",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/128389609_10157875512842939_46713540483933411_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/128389609_10157875512842939_46713540483933411_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-27",
+    "title": "Gallery Image 27",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/13177100_10153642525487939_6220244026841157265_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/13177100_10153642525487939_6220244026841157265_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-28",
+    "title": "Gallery Image 28",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/13315490_10153685942002939_3683638608568301982_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/13315490_10153685942002939_3683638608568301982_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-29",
+    "title": "Gallery Image 29",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/13433160_10153729775977939_2878465324501559875_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/13433160_10153729775977939_2878465324501559875_o.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-30",
+    "title": "Gallery Image 30",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/16806790_10154408141122939_2653761231588135194_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/16806790_10154408141122939_2653761231588135194_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-31",
+    "title": "Gallery Image 31",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/17425825_10154481380862939_5296291570883760569_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/17425825_10154481380862939_5296291570883760569_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-32",
+    "title": "Gallery Image 32",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/188453183_10158289849822939_4591247043169324053_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/188453183_10158289849822939_4591247043169324053_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-33",
+    "title": "Gallery Image 33",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/18920479_10154691552917939_701350251200274616_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/18920479_10154691552917939_701350251200274616_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-34",
+    "title": "Gallery Image 34",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/1900590_10152537953517939_9031374731007244116_o.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/1900590_10152537953517939_9031374731007244116_o.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-35",
+    "title": "Gallery Image 35",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/194-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/194-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-36",
+    "title": "Gallery Image 36",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/200580386_10158326491057939_2046709981384923968_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/200580386_10158326491057939_2046709981384923968_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-37",
+    "title": "Gallery Image 37",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/21.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/21.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-38",
+    "title": "Gallery Image 38",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/21151527_10154956206572939_5454106533294489051_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/21151527_10154956206572939_5454106533294489051_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-39",
+    "title": "Gallery Image 39",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/22046892_10155034439252939_8288793283947534407_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/22046892_10155034439252939_8288793283947534407_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-40",
+    "title": "Gallery Image 40",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/222113_219087634783967_4641840_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/222113_219087634783967_4641840_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-41",
+    "title": "Gallery Image 41",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/22528256_10155083824752939_837507611246686526_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/22528256_10155083824752939_837507611246686526_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-42",
+    "title": "Gallery Image 42",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/22728795_10155096648327939_7790400020470860815_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/22728795_10155096648327939_7790400020470860815_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-43",
+    "title": "Gallery Image 43",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/240995251_6854624161230248_1888254630602896099_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/240995251_6854624161230248_1888254630602896099_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-44",
+    "title": "Gallery Image 44",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/241.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/241.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-45",
+    "title": "Gallery Image 45",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/242737287_6865417563484241_269777570312621131_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/242737287_6865417563484241_269777570312621131_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-46",
+    "title": "Gallery Image 46",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/246938_231363656889698_2761231_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/246938_231363656889698_2761231_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-47",
+    "title": "Gallery Image 47",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/247413_231363340223063_4149734_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/247413_231363340223063_4149734_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-48",
+    "title": "Gallery Image 48",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/247430_230080100351387_1475880_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/247430_230080100351387_1475880_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-49",
+    "title": "Gallery Image 49",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/247850_231363746889689_3297020_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/247850_231363746889689_3297020_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-50",
+    "title": "Gallery Image 50",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/247864_231363213556409_7216098_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/247864_231363213556409_7216098_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-51",
+    "title": "Gallery Image 51",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/249401_230080070351390_2811057_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/249401_230080070351390_2811057_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-52",
+    "title": "Gallery Image 52",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/252-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/252-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-53",
+    "title": "Gallery Image 53",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/252510_231362386889825_7599867_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/252510_231362386889825_7599867_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-54",
+    "title": "Gallery Image 54",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/253751_230745380284859_7473953_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/253751_230745380284859_7473953_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-55",
+    "title": "Gallery Image 55",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/253833_231363270223070_1412853_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/253833_231363270223070_1412853_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-56",
+    "title": "Gallery Image 56",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/254105_231689363523794_8275842_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/254105_231689363523794_8275842_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-57",
+    "title": "Gallery Image 57",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/254235_231689923523738_8050882_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/254235_231689923523738_8050882_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-58",
+    "title": "Gallery Image 58",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/255657_230745203618210_7200983_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/255657_230745203618210_7200983_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-59",
+    "title": "Gallery Image 59",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/255728_231362610223136_7878751_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/255728_231362610223136_7878751_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-60",
+    "title": "Gallery Image 60",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/260178_231363153556415_5597050_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/260178_231363153556415_5597050_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-61",
+    "title": "Gallery Image 61",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/260281_233091703383560_5269682_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/260281_233091703383560_5269682_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-62",
+    "title": "Gallery Image 62",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/260499_231363840223013_2211764_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/260499_231363840223013_2211764_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-63",
+    "title": "Gallery Image 63",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/262326_245488705477193_756689_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/262326_245488705477193_756689_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-64",
+    "title": "Gallery Image 64",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/268875_246114985414565_4180114_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/268875_246114985414565_4180114_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-65",
+    "title": "Gallery Image 65",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/269567_245485285477535_7379177_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/269567_245485285477535_7379177_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-66",
+    "title": "Gallery Image 66",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/270865_245486225477441_2290276_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/270865_245486225477441_2290276_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-67",
+    "title": "Gallery Image 67",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/271167_245272888832108_182026_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/271167_245272888832108_182026_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-68",
+    "title": "Gallery Image 68",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/277567506_7963328400359813_4960357365229000052_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/277567506_7963328400359813_4960357365229000052_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-69",
+    "title": "Gallery Image 69",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/280027036_8164053173620667_5437103905308762104_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/280027036_8164053173620667_5437103905308762104_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-70",
+    "title": "Gallery Image 70",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/281-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/281-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-71",
+    "title": "Gallery Image 71",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/298-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/298-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-72",
+    "title": "Gallery Image 72",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/301158943_462225222581832_2110258486435177309_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/301158943_462225222581832_2110258486435177309_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-73",
+    "title": "Gallery Image 73",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/30656265_10155529101887939_6215043923304251392_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/30656265_10155529101887939_6215043923304251392_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-74",
+    "title": "Gallery Image 74",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/30697884_10155530660022939_1489345897765535744_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/30697884_10155530660022939_1489345897765535744_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-75",
+    "title": "Gallery Image 75",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/308-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/308-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-76",
+    "title": "Gallery Image 76",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/310-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/310-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-77",
+    "title": "Gallery Image 77",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/311-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/311-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-78",
+    "title": "Gallery Image 78",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/31206334_10155555305647939_5647745401395085312_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/31206334_10155555305647939_5647745401395085312_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-79",
+    "title": "Gallery Image 79",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/313-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/313-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-80",
+    "title": "Gallery Image 80",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/314-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/314-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-81",
+    "title": "Gallery Image 81",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/315-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/315-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-82",
+    "title": "Gallery Image 82",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/319-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/319-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-83",
+    "title": "Gallery Image 83",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/320-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/320-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-84",
+    "title": "Gallery Image 84",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/321-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/321-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-85",
+    "title": "Gallery Image 85",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/343-1024x768.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/343-1024x768.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-86",
+    "title": "Gallery Image 86",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/36-1024x768.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/36-1024x768.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-87",
+    "title": "Gallery Image 87",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/37-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/37-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-88",
+    "title": "Gallery Image 88",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/370.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/370.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-89",
+    "title": "Gallery Image 89",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/371-1024x768.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/371-1024x768.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-90",
+    "title": "Gallery Image 90",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/38-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/38-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-91",
+    "title": "Gallery Image 91",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/380-1024x575.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/380-1024x575.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-92",
+    "title": "Gallery Image 92",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/386.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/386.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-93",
+    "title": "Gallery Image 93",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/389-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/389-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-94",
+    "title": "Gallery Image 94",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/389218_441855699173825_1229275172_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/389218_441855699173825_1229275172_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-95",
+    "title": "Gallery Image 95",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/38926407_10155795349067939_6454284785786290176_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/38926407_10155795349067939_6454284785786290176_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-96",
+    "title": "Gallery Image 96",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/39-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/39-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-97",
+    "title": "Gallery Image 97",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/390-1024x575.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/390-1024x575.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-98",
+    "title": "Gallery Image 98",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/396-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/396-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-99",
+    "title": "Gallery Image 99",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/3ef60e56-ab17-4f1c-9126-c2e3b8d14263.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/3ef60e56-ab17-4f1c-9126-c2e3b8d14263.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-100",
+    "title": "Gallery Image 100",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/404.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/404.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-101",
+    "title": "Gallery Image 101",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/405-1024x768.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/405-1024x768.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-102",
+    "title": "Gallery Image 102",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/406-1024x768.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/406-1024x768.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-103",
+    "title": "Gallery Image 103",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/426.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/426.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-104",
+    "title": "Gallery Image 104",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/440.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/440.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-105",
+    "title": "Gallery Image 105",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/441-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/441-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-106",
+    "title": "Gallery Image 106",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/448.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/448.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-107",
+    "title": "Gallery Image 107",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/45417463_10155976093297939_4793466751134203904_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/45417463_10155976093297939_4793466751134203904_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-108",
+    "title": "Gallery Image 108",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/466.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/466.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-109",
+    "title": "Gallery Image 109",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/469.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/469.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-110",
+    "title": "Gallery Image 110",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/470.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/470.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-111",
+    "title": "Gallery Image 111",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/471.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/471.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-112",
+    "title": "Gallery Image 112",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/48372984_10156102876537939_4555643644471672832_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/48372984_10156102876537939_4555643644471672832_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-113",
+    "title": "Gallery Image 113",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/48416148_10156061229682939_6950959902021910528_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/48416148_10156061229682939_6950959902021910528_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-114",
+    "title": "Gallery Image 114",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/48423606_10156086925202939_2660285580453085184_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/48423606_10156086925202939_2660285580453085184_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-115",
+    "title": "Gallery Image 115",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/490.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/490.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-116",
+    "title": "Gallery Image 116",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/49031432_10156090454442939_7633549223195049984_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/49031432_10156090454442939_7633549223195049984_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-117",
+    "title": "Gallery Image 117",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/492-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/492-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-118",
+    "title": "Gallery Image 118",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/49723830_10156110849612939_6638109759717244928_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/49723830_10156110849612939_6638109759717244928_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-119",
+    "title": "Gallery Image 119",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/49895556_10156129140477939_3544339151623028736_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/49895556_10156129140477939_3544339151623028736_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-120",
+    "title": "Gallery Image 120",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/49897384_10156123645917939_1375293973228158976_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/49897384_10156123645917939_1375293973228158976_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-121",
+    "title": "Gallery Image 121",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/51616514_10156161333887939_997605308110995456_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/51616514_10156161333887939_997605308110995456_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-122",
+    "title": "Gallery Image 122",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/52864505_10156206607992939_3313056889310281728_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/52864505_10156206607992939_3313056889310281728_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-123",
+    "title": "Gallery Image 123",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/62-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/62-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-124",
+    "title": "Gallery Image 124",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/65860859_10156490383832939_4920836024931713024_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/65860859_10156490383832939_4920836024931713024_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-125",
+    "title": "Gallery Image 125",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/66634584_10156506187322939_4496779601556537344_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/66634584_10156506187322939_4496779601556537344_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-126",
+    "title": "Gallery Image 126",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/67489751_10156550530957939_5905168101686640640_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/67489751_10156550530957939_5905168101686640640_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-127",
+    "title": "Gallery Image 127",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/67874438_10156565754852939_5357961690191233024_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/67874438_10156565754852939_5357961690191233024_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-128",
+    "title": "Gallery Image 128",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/69329015_10156631581692939_6684245813079572480_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/69329015_10156631581692939_6684245813079572480_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-129",
+    "title": "Gallery Image 129",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/69475383_10156629044322939_1531900060072148992_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/69475383_10156629044322939_1531900060072148992_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-130",
+    "title": "Gallery Image 130",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/70062499_10156668509497939_3874679281225302016_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/70062499_10156668509497939_3874679281225302016_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-131",
+    "title": "Gallery Image 131",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/70367473_10156668509867939_6340880331863752704_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/70367473_10156668509867939_6340880331863752704_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-132",
+    "title": "Gallery Image 132",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/71478839_10156709991197939_7902528649687990272_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/71478839_10156709991197939_7902528649687990272_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-133",
+    "title": "Gallery Image 133",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/72086411_10156728366392939_637062642065735680_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/72086411_10156728366392939_637062642065735680_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-134",
+    "title": "Gallery Image 134",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/76775158_10156855690827939_6538791887992520704_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/76775158_10156855690827939_6538791887992520704_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-135",
+    "title": "Gallery Image 135",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/77-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/77-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-136",
+    "title": "Gallery Image 136",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/77165480_10156861434362939_898216054029811712_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/77165480_10156861434362939_898216054029811712_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-137",
+    "title": "Gallery Image 137",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/78318792_10156863980202939_26194468667392000_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/78318792_10156863980202939_26194468667392000_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-138",
+    "title": "Gallery Image 138",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/79633961_10156911795622939_3214792869416009728_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/79633961_10156911795622939_3214792869416009728_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-139",
+    "title": "Gallery Image 139",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/83-1024x683.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/83-1024x683.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-140",
+    "title": "Gallery Image 140",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/83997670_10157036491797939_511983058283397120_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/83997670_10157036491797939_511983058283397120_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-141",
+    "title": "Gallery Image 141",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/86261818_10157082175837939_4018196536839110656_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/86261818_10157082175837939_4018196536839110656_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-142",
+    "title": "Gallery Image 142",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/86621767_10157080591247939_9105290917597675520_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/86621767_10157080591247939_9105290917597675520_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-143",
+    "title": "Gallery Image 143",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/87269988_10157104551352939_8117386063707635712_n.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/87269988_10157104551352939_8117386063707635712_n.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-144",
+    "title": "Gallery Image 144",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/A46A4DC5-0B00-4120-80C9-7176E7688BC3.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/A46A4DC5-0B00-4120-80C9-7176E7688BC3.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-145",
+    "title": "Gallery Image 145",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/B14B12A5-98B4-4067-85C5-316C3AFA8C2F.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/B14B12A5-98B4-4067-85C5-316C3AFA8C2F.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-146",
+    "title": "Gallery Image 146",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/Cooper-Office.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/Cooper-Office.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-147",
+    "title": "Gallery Image 147",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1211.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1211.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-148",
+    "title": "Gallery Image 148",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1256.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1256.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-149",
+    "title": "Gallery Image 149",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1289.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1289.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-150",
+    "title": "Gallery Image 150",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1317.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1317.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-151",
+    "title": "Gallery Image 151",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1375.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1375.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-152",
+    "title": "Gallery Image 152",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1484.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1484.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-153",
+    "title": "Gallery Image 153",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1657.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1657.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-154",
+    "title": "Gallery Image 154",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1669.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1669.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-155",
+    "title": "Gallery Image 155",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1672.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1672.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-156",
+    "title": "Gallery Image 156",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1673.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1673.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-157",
+    "title": "Gallery Image 157",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1702.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1702.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-158",
+    "title": "Gallery Image 158",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_1707.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_1707.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-159",
+    "title": "Gallery Image 159",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_2155.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_2155.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-160",
+    "title": "Gallery Image 160",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_2628.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_2628.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-161",
+    "title": "Gallery Image 161",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_2629.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_2629.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-162",
+    "title": "Gallery Image 162",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_2630.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_2630.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-163",
+    "title": "Gallery Image 163",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_2938.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_2938.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-164",
+    "title": "Gallery Image 164",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_4059.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_4059.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-165",
+    "title": "Gallery Image 165",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_4397.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_4397.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-166",
+    "title": "Gallery Image 166",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_4404.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_4404.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-167",
+    "title": "Gallery Image 167",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_4415.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_4415.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-168",
+    "title": "Gallery Image 168",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_4423.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_4423.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-169",
+    "title": "Gallery Image 169",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_4779.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_4779.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-170",
+    "title": "Gallery Image 170",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_5029.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_5029.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-171",
+    "title": "Gallery Image 171",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_6351.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_6351.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-172",
+    "title": "Gallery Image 172",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_6353.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_6353.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-173",
+    "title": "Gallery Image 173",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_6462.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_6462.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-174",
+    "title": "Gallery Image 174",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_7448-682x1024.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_7448-682x1024.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-175",
+    "title": "Gallery Image 175",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_7482.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_7482.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-176",
+    "title": "Gallery Image 176",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_7687.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_7687.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-177",
+    "title": "Gallery Image 177",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_8280-1024x682.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_8280-1024x682.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-178",
+    "title": "Gallery Image 178",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_9700.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_9700.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-179",
+    "title": "Gallery Image 179",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_9707.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_9707.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-180",
+    "title": "Gallery Image 180",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_9710.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_9710.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-181",
+    "title": "Gallery Image 181",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_9727.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_9727.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-182",
+    "title": "Gallery Image 182",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/IMG_9734.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/IMG_9734.JPG"
+    ]
+  },
+  {
+    "id": "drive-img-183",
+    "title": "Gallery Image 183",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/_MG_0109.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/_MG_0109.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-184",
+    "title": "Gallery Image 184",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/_MG_8046.jpg",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/_MG_8046.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-185",
+    "title": "Gallery Image 185",
+    "category": "Cinema & Film",
+    "year": "2024",
+    "image": "/medien/drive-gallery/cd82e6fc-1261-4eb6-a2a6-4b7e6eabab64.JPG",
+    "summary": "",
+    "description": "",
+    "featured": false,
+    "stills": [
+      "/medien/drive-gallery/cd82e6fc-1261-4eb6-a2a6-4b7e6eabab64.JPG"
+    ]
   }
 ];

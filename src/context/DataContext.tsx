@@ -6,7 +6,7 @@ import { ProjectCard, PROJECTS_DATA } from "@/data/imagineContent";
 import { INITIAL_GALLERY_ITEMS } from "@/data/galleryData";
 
 const STORAGE_KEYS = {
-  GALLERY: "rfp_gallery_items_v3",
+  GALLERY: "rfp_gallery_items_v4",
   PROJECTS: "rfp_projects_items_v4",
   SETTINGS: "rfp_site_settings_v2",
   INQUIRIES: "rfp_inquiries_items_v2",

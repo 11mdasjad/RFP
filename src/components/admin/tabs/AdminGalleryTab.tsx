@@ -256,7 +256,7 @@ export const AdminGalleryTab: React.FC = () => {
 
             <div className="p-3 bg-black/30 border-t border-white/[0.06] flex items-center justify-between text-xs">
               <Link
-                href={`/gallery/${item.id}`}
+                href="/gallery"
                 target="_blank"
                 className="inline-flex items-center space-x-1 text-white/60 hover:text-white transition-colors"
               >

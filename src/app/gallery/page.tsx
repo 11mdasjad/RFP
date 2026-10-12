@@ -1,71 +1,79 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import Link from "next/link";
+import React, { useState, useEffect, useCallback } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useData } from "@/context/DataContext";
-import { GalleryCategory } from "@/types/gallery";
 import { 
-  Sparkles, 
-  Search, 
-  ArrowUpRight, 
-  Filter, 
-  Film, 
-  Layers, 
-  Tv, 
-  Camera, 
-  SlidersHorizontal,
-  ImageIcon,
-  Maximize2
+  Maximize2, 
+  X, 
+  ChevronLeft, 
+  ChevronRight, 
+  ZoomIn, 
+  ZoomOut,
+  ImageIcon
 } from "lucide-react";
-
-const CATEGORIES: GalleryCategory[] = [
-  "All",
-  "Cinema & Film",
-  "AI & Generative",
-  "3D & VFX",
-  "Commercials",
-  "Behind The Scenes",
-];
-
-const CATEGORY_ICONS: Record<string, React.ReactNode> = {
-  "All": <Layers className="w-3.5 h-3.5" />,
-  "Cinema & Film": <Film className="w-3.5 h-3.5" />,
-  "AI & Generative": <Sparkles className="w-3.5 h-3.5" />,
-  "3D & VFX": <SlidersHorizontal className="w-3.5 h-3.5" />,
-  "Commercials": <Tv className="w-3.5 h-3.5" />,
-  "Behind The Scenes": <Camera className="w-3.5 h-3.5" />,
-};
 
 export default function GalleryPage() {
   const { galleryItems } = useData();
-  const [selectedCategory, setSelectedCategory] = useState<GalleryCategory>("All");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [zoomLevel, setZoomLevel] = useState<number>(1);
 
-  // Filter items based on category and search query
-  const filteredItems = useMemo(() => {
-    return galleryItems.filter((item) => {
-      const matchesCategory =
-        selectedCategory === "All" || item.category === selectedCategory;
-      const matchesSearch =
-        !searchQuery.trim() ||
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.client?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.tools?.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
-      return matchesCategory && matchesSearch;
-    });
-  }, [galleryItems, selectedCategory, searchQuery]);
+  const total = galleryItems.length;
 
-  // Counts by category
-  const counts = useMemo(() => {
-    const map: Record<string, number> = { All: galleryItems.length };
-    CATEGORIES.slice(1).forEach((cat) => {
-      map[cat] = galleryItems.filter((i) => i.category === cat).length;
-    });
-    return map;
-  }, [galleryItems]);
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setZoomLevel(1);
+  };
+
+  const closeLightbox = useCallback(() => {
+    setLightboxIndex(null);
+    setZoomLevel(1);
+  }, []);
+
+  const showPrev = useCallback(() => {
+    if (lightboxIndex === null || total === 0) return;
+    setLightboxIndex((prev) => ((prev! - 1 + total) % total));
+    setZoomLevel(1);
+  }, [lightboxIndex, total]);
+
+  const showNext = useCallback(() => {
+    if (lightboxIndex === null || total === 0) return;
+    setLightboxIndex((prev) => ((prev! + 1) % total));
+    setZoomLevel(1);
+  }, [lightboxIndex, total]);
+
+  const toggleZoom = useCallback(() => {
+    setZoomLevel((prev) => (prev === 1 ? 1.6 : 1));
+  }, []);
+
+  // Keyboard navigation & body scroll lock
+  useEffect(() => {
+    if (lightboxIndex === null) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeLightbox();
+      } else if (e.key === "ArrowLeft") {
+        showPrev();
+      } else if (e.key === "ArrowRight") {
+        showNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [lightboxIndex, closeLightbox, showPrev, showNext]);
+
+  const currentItem = lightboxIndex !== null ? galleryItems[lightboxIndex] : null;
 
   return (
     <main className="relative min-h-screen bg-[#0e0d12] text-[#f4f2f7] font-sans antialiased selection:bg-[#6b54ee] selection:text-white">
@@ -73,229 +81,156 @@ export default function GalleryPage() {
       <Header />
 
       {/* Hero Header Section */}
-      <section className="relative pt-32 pb-14 sm:pt-40 sm:pb-20 overflow-hidden border-b border-white/[0.08]">
-        {/* Ambient Gradient Background Glows */}
+      <section className="relative pt-32 pb-10 sm:pt-40 sm:pb-14 overflow-hidden border-b border-white/[0.08]">
+        {/* Ambient Gradient Background Glow */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-[#7c6af2]/20 via-[#a89bfa]/10 to-transparent blur-[140px] pointer-events-none rounded-full" />
         <div className="absolute -top-10 right-10 w-96 h-96 bg-[#D4AF37]/10 blur-[130px] pointer-events-none rounded-full" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
-            <div className="max-w-3xl">
-              {/* Badge */}
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
-                <ImageIcon className="w-3.5 h-3.5 text-[#E6C665]" />
-                <span>Visual Arts & Image Archive</span>
-              </div>
-
-              {/* Main Heading */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-5">
-                Stills, Renders & <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#a89bfa]">
-                  Cinematic Photography
-                </span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-base sm:text-lg text-white/70 font-light leading-relaxed max-w-2xl">
-                Explore high-resolution production stills, photorealistic 3D renders, AI synthesized imagery, and behind-the-scenes captures. Click any work to explore full resolution details.
-              </p>
-            </div>
-
-            {/* Quick Stats Counter */}
-            <div className="flex items-center gap-6 sm:gap-8 pt-4 md:pt-0 border-t md:border-t-0 border-white/[0.08]">
-              <div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono">
-                  {galleryItems.length}
-                </div>
-                <div className="text-xs font-mono text-white/50 uppercase tracking-wider mt-1">
-                  Works Published
-                </div>
-              </div>
-              <div className="h-10 w-px bg-white/[0.1]" />
-              <div>
-                <div className="text-3xl sm:text-4xl font-extrabold text-[#a89bfa] font-mono">
-                  4K / 8K
-                </div>
-                <div className="text-xs font-mono text-white/50 uppercase tracking-wider mt-1">
-                  Master Fidelity
-                </div>
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
+            <ImageIcon className="w-3.5 h-3.5 text-[#E6C665]" />
+            <span>Image Archive</span>
           </div>
 
-          {/* Interactive Category Filter Pills */}
-          <div className="pt-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex items-center space-x-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-              {CATEGORIES.map((cat) => {
-                const count = counts[cat] || 0;
-                const isSelected = selectedCategory === cat;
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all whitespace-nowrap ${
-                      isSelected
-                        ? "bg-white text-[#0e0d12] shadow-lg shadow-white/10 font-bold scale-[1.02]"
-                        : "bg-white/[0.04] text-white/70 hover:bg-white/[0.08] hover:text-white border border-white/[0.06]"
-                    }`}
-                  >
-                    <span>{CATEGORY_ICONS[cat]}</span>
-                    <span>{cat}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                        isSelected
-                          ? "bg-black/20 text-[#0e0d12]"
-                          : "bg-white/[0.08] text-white/50"
-                      }`}
-                    >
-                      {count}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-3">
+            Visual Gallery
+          </h1>
 
-            {/* Instant Search Bar */}
-            <div className="relative min-w-[240px] sm:min-w-[280px]">
-              <Search className="w-4 h-4 text-white/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search images, tools, clients..."
-                className="w-full pl-10 pr-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.1] text-base sm:text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#a89bfa] transition-colors"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white text-xs"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-          </div>
+          {/* Subtitle with Count */}
+          <p className="text-sm sm:text-base text-white/60 font-light max-w-xl mx-auto">
+            {total} Production Stills & Photographs · Click any image to view in high resolution
+          </p>
         </div>
       </section>
 
-      {/* Gallery Cards Grid */}
-      <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {filteredItems.length === 0 ? (
+      {/* Pure Image Grid */}
+      <section className="py-8 sm:py-12 max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
+        {total === 0 ? (
           <div className="py-24 text-center border border-dashed border-white/[0.1] rounded-3xl bg-white/[0.01]">
-            <Filter className="w-12 h-12 text-white/30 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">No matching gallery items found</h3>
-            <p className="text-sm text-white/60 max-w-md mx-auto mb-6">
-              Try adjusting your category filter or search keywords.
-            </p>
-            <div className="flex items-center justify-center gap-3">
-              <button
-                onClick={() => {
-                  setSelectedCategory("All");
-                  setSearchQuery("");
-                }}
-                className="px-4 py-2 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-xs font-semibold text-white transition-all"
-              >
-                Reset Filters
-              </button>
-            </div>
+            <ImageIcon className="w-12 h-12 text-white/30 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-white mb-2">No Images Available</h3>
+            <p className="text-sm text-white/60">Images are being loaded...</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {filteredItems.map((item) => (
-              <article
-                key={item.id}
-                className="group relative flex flex-col rounded-2xl bg-[#17161d] border border-white/[0.08] hover:border-[#a89bfa]/50 transition-all duration-300 hover:shadow-2xl hover:shadow-[#7c6af2]/10 overflow-hidden"
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 sm:gap-4">
+            {galleryItems.map((item, idx) => (
+              <button
+                key={item.id || idx}
+                onClick={() => openLightbox(idx)}
+                className="group relative aspect-square sm:aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#17161d] border border-white/[0.08] hover:border-[#a89bfa]/60 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#a89bfa]"
+                aria-label={`View photo ${idx + 1}`}
               >
-                {/* Media Container with Click to Navigate */}
-                <Link
-                  href={`/gallery/${item.id}`}
-                  className="relative aspect-[16/10] w-full overflow-hidden bg-black/40 block"
-                >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#17161d] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
+                <img
+                  src={item.image}
+                  alt={`Photo ${idx + 1}`}
+                  loading={idx < 6 ? undefined : "lazy"}
+                  fetchPriority={idx === 0 ? "high" : undefined}
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-108"
+                />
 
-                  {/* Category Pill Top Left */}
-                  <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
-                    <span className="px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-black/60 backdrop-blur-md text-[#a89bfa] border border-white/[0.15] shadow-sm">
-                      {item.category}
-                    </span>
-                    {item.featured && (
-                      <span className="px-2 py-0.5 rounded-full text-[9px] font-mono uppercase tracking-wider bg-[#D4AF37]/20 text-[#E6C665] border border-[#D4AF37]/40">
-                        Featured
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Stills Count / Year Top Right */}
-                  <div className="absolute top-3.5 right-3.5 flex items-center gap-1.5">
-                    {item.stills && item.stills.length > 1 && (
-                      <span className="px-2 py-1 rounded-md text-[10px] font-mono bg-black/70 backdrop-blur-md text-[#a89bfa] border border-[#a89bfa]/30 flex items-center gap-1">
-                        <ImageIcon className="w-3 h-3" />
-                        <span>{item.stills.length}</span>
-                      </span>
-                    )}
-                    <span className="px-2 py-1 rounded-md text-[10px] font-mono bg-black/60 backdrop-blur-md text-white/70 border border-white/[0.1]">
-                      {item.year}
-                    </span>
-                  </div>
-
-                  {/* Hover Quick Zoom Cue */}
-                  <div className="absolute bottom-3.5 right-3.5 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white/80 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all">
-                    <Maximize2 className="w-4 h-4 text-[#a89bfa]" />
-                  </div>
-                </Link>
-
-                {/* Content Section */}
-                <div className="p-5 flex-1 flex flex-col justify-between">
-                  <div>
-                    {item.client && (
-                      <div className="text-[11px] font-mono tracking-widest text-white/40 uppercase mb-1">
-                        {item.client}
-                      </div>
-                    )}
-
-                    <h2 className="text-lg font-bold text-white group-hover:text-[#a89bfa] transition-colors leading-snug mb-2 line-clamp-1">
-                      <Link href={`/gallery/${item.id}`}>{item.title}</Link>
-                    </h2>
-
-                    <p className="text-xs text-white/70 leading-relaxed line-clamp-2 mb-4 font-light">
-                      {item.summary}
-                    </p>
-                  </div>
-
-                  {/* Tags and Action Bar */}
-                  <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                    <div className="flex flex-wrap gap-1.5 max-w-[70%]">
-                      {(item.tools || []).slice(0, 2).map((tool, idx) => (
-                        <span
-                          key={idx}
-                          className="text-[9.5px] font-mono text-white/50 bg-white/[0.04] px-2 py-0.5 rounded border border-white/[0.06]"
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-
-                    <Link
-                      href={`/gallery/${item.id}`}
-                      className="inline-flex items-center space-x-1 text-xs font-semibold text-[#a89bfa] group-hover:text-white group-hover:translate-x-0.5 transition-all"
-                    >
-                      <span>View Stills</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </Link>
+                {/* Subtle Hover Gradient & Zoom Indicator */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[#a89bfa] flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                    <Maximize2 className="w-4 h-4" />
                   </div>
                 </div>
-              </article>
+              </button>
             ))}
           </div>
         )}
       </section>
+
+      {/* Lightbox Enlargement Modal */}
+      {lightboxIndex !== null && currentItem && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center select-none"
+          onClick={closeLightbox}
+        >
+          {/* Top Bar Controls */}
+          <div 
+            className="absolute top-0 inset-x-0 p-4 sm:p-6 flex items-center justify-between z-10 bg-gradient-to-b from-black/80 to-transparent"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Counter */}
+            <div className="text-xs sm:text-sm font-mono text-white/70 tracking-wider bg-white/[0.08] px-3.5 py-1.5 rounded-full border border-white/[0.1] backdrop-blur-md">
+              {lightboxIndex + 1} / {total}
+            </div>
+
+            {/* Actions */}
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={toggleZoom}
+                className="w-10 h-10 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-white/80 hover:text-white border border-white/[0.1] backdrop-blur-md flex items-center justify-center transition-all"
+                title={zoomLevel === 1 ? "Zoom in" : "Reset zoom"}
+                aria-label={zoomLevel === 1 ? "Zoom in" : "Reset zoom"}
+              >
+                {zoomLevel === 1 ? <ZoomIn className="w-4 h-4" /> : <ZoomOut className="w-4 h-4" />}
+              </button>
+
+              <button
+                onClick={closeLightbox}
+                className="w-10 h-10 rounded-full bg-white/[0.08] hover:bg-white/[0.2] text-white border border-white/[0.1] backdrop-blur-md flex items-center justify-center transition-all hover:rotate-90 duration-200"
+                title="Close (Esc)"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              showPrev();
+            }}
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/50 hover:bg-black/80 text-white/80 hover:text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-all z-10 hover:scale-105 active:scale-95"
+            title="Previous (Left Arrow)"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7" />
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              showNext();
+            }}
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/50 hover:bg-black/80 text-white/80 hover:text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-all z-10 hover:scale-105 active:scale-95"
+            title="Next (Right Arrow)"
+            aria-label="Next"
+          >
+            <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7" />
+          </button>
+
+          {/* Main Enlarged Image Container */}
+          <div
+            className="relative max-w-[92vw] max-h-[86vh] flex items-center justify-center p-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={currentItem.image}
+              alt={`Photo ${lightboxIndex + 1}`}
+              className={`max-w-[92vw] max-h-[85vh] object-contain rounded-lg shadow-2xl transition-transform duration-300 ease-out cursor-zoom-in ${
+                zoomLevel > 1 ? "scale-150 cursor-zoom-out" : ""
+              }`}
+              onClick={toggleZoom}
+            />
+          </div>
+
+          {/* Bottom Hint */}
+          <div 
+            className="absolute bottom-4 sm:bottom-6 text-center text-[11px] font-mono text-white/40 tracking-wider pointer-events-none"
+          >
+            Use ← → arrows to navigate · Esc to close · Click image to zoom
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <Footer />
