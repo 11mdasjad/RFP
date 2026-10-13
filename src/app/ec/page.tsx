@@ -279,7 +279,7 @@ export default function ElectionCampaignPortalPage() {
                 </div>
                 
                 <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif text-white font-medium tracking-tight group-hover:text-[#F3E5AB] transition-colors">
-                  Our RFP’s Political Documentary FILMS
+                  Political Documentary FILMS
                 </h2>
                 
                 <p className="text-sm sm:text-base text-white/70 font-sans leading-relaxed">
