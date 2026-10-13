@@ -167,7 +167,7 @@ export default function ElectionCampaignPortalPage() {
       icon: Share2,
       title: "Social Media Management",
       desc: "High-cadence viral reels, voter-targeted digital ad campaigns, daily narrative shaping, counter-propaganda blitzes, and multi-platform presence across Meta, YouTube & X.",
-      href: "/services/social-media-digital-marketing",
+      href: "/ec/social-media-management",
       tagline: "Viral Content • High-Cadence Reels & Ads"
     }
   ];
