@@ -22,8 +22,11 @@ import {
   Headphones,
   Sliders,
   Flame,
-  Award
+  Award,
+  ExternalLink,
+  Video
 } from "lucide-react";
+import { VideoModal } from "@/components/modals/VideoModal";
 
 interface SongTrack {
   id: string;
@@ -31,7 +34,8 @@ interface SongTrack {
   candidate: string;
   partyBadge: string;
   duration: string;
-  audioSrc: string;
+  audioSrc?: string;
+  videoUrl?: string;
   coverImage: string;
   description: string;
   genre: string;
@@ -62,6 +66,18 @@ const PLAYLIST: SongTrack[] = [
     description: "Studio mastered high-dynamic stereo campaign song crafted for loud public rally loudspeakers, vehicle megaphones, and viral street DJ mixes.",
     genre: "Rally Loudspeaker CD Master",
     lyricsSnippet: "“Karmasheel neta, vikas ki pehchan... Om Kumar ji ke sang pura aawam...”"
+  },
+  {
+    id: "danish-ali",
+    title: "Aayenge Danish Ali, Chhayenge Danish Ali",
+    candidate: "Kunwar Danish Ali (Mahagathbandhan)",
+    partyBadge: "Amroha Lok Sabha 9 Campaign",
+    duration: "02:37",
+    videoUrl: "https://www.youtube.com/watch?v=yJwUYC21n1A",
+    coverImage: "/medien/ec-assets/audio-prachar-song/danish-ali-prachar-song.jpg",
+    description: "Official high-energy lyrical campaign anthem & rally video for Kunwar Danish Ali, Mahagathbandhan candidate for Amroha Lok Sabha 9.",
+    genre: "Official Lyrical Video Anthem",
+    lyricsSnippet: "“आएंगे दानिश अली, छाएंगे दानिश अली... Amroha ki aawaz, jan-jan ka vishwas...”"
   }
 ];
 
@@ -92,12 +108,31 @@ export default function PracharSongsPage() {
   const [volume, setVolume] = useState(0.85);
   const [isMuted, setIsMuted] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string; subtitle: string } | null>(null);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const activeTrack = PLAYLIST[currentTrackIndex];
 
-  // Sync audio play/pause
+  const openVideo = (url: string, title: string, subtitle: string) => {
+    if (audioRef.current && isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+    setSelectedVideo({ url, title, subtitle });
+    setVideoModalOpen(true);
+  };
+
+  // Sync audio play/pause or open video modal
   const togglePlay = () => {
+    if (activeTrack.videoUrl) {
+      openVideo(
+        activeTrack.videoUrl,
+        activeTrack.title,
+        `${activeTrack.candidate} • ${activeTrack.partyBadge}`
+      );
+      return;
+    }
     if (!audioRef.current) return;
     if (isPlaying) {
       audioRef.current.pause();
@@ -121,6 +156,10 @@ export default function PracharSongsPage() {
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+    }
+    const track = PLAYLIST[index];
+    if (track.videoUrl) {
+      openVideo(track.videoUrl, track.title, `${track.candidate} • ${track.partyBadge}`);
     }
   };
 
@@ -242,21 +281,37 @@ export default function PracharSongsPage() {
             {/* Ambient Back Glow */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none" />
 
-            {/* Hidden HTML5 Audio Element */}
-            <audio
-              ref={audioRef}
-              src={activeTrack.audioSrc}
-              onTimeUpdate={handleTimeUpdate}
-              onLoadedMetadata={handleTimeUpdate}
-              onEnded={() => setIsPlaying(false)}
-              onError={() => setHasError(true)}
-              preload="metadata"
-            />
+            {/* Hidden HTML5 Audio Element for audio tracks */}
+            {activeTrack.audioSrc && (
+              <audio
+                ref={audioRef}
+                src={activeTrack.audioSrc}
+                onTimeUpdate={handleTimeUpdate}
+                onLoadedMetadata={handleTimeUpdate}
+                onEnded={() => setIsPlaying(false)}
+                onError={() => setHasError(true)}
+                preload="metadata"
+              />
+            )}
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-              {/* Album Art with Vinyl Effect */}
+              {/* Album Art with Vinyl / Video Effect */}
               <div className="lg:col-span-4 flex flex-col items-center">
-                <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl group bg-black/80">
+                <div
+                  onClick={() => {
+                    if (activeTrack.videoUrl) {
+                      openVideo(
+                        activeTrack.videoUrl,
+                        activeTrack.title,
+                        `${activeTrack.candidate} • ${activeTrack.partyBadge}`
+                      );
+                    } else {
+                      togglePlay();
+                    }
+                  }}
+                  className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl group bg-black/80 cursor-pointer"
+                  title={activeTrack.videoUrl ? "Click to play official video" : "Click to play/pause"}
+                >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={activeTrack.coverImage}
@@ -265,8 +320,17 @@ export default function PracharSongsPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                  {/* Playing Wave Indicator */}
-                  {isPlaying && (
+                  {/* Video Play Badge overlay */}
+                  {activeTrack.videoUrl ? (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/35 group-hover:bg-black/20 transition-all">
+                      <div className="w-16 h-16 rounded-full bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center shadow-2xl shadow-red-600/50 transform group-hover:scale-110 transition-transform">
+                        <Play className="w-7 h-7 fill-white ml-1" />
+                      </div>
+                      <span className="mt-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[11px] font-mono text-[#F3E5AB]">
+                        Watch Official Video
+                      </span>
+                    </div>
+                  ) : isPlaying ? (
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-black/70 backdrop-blur-md border border-white/10">
                       {[1, 2, 3, 4, 5, 6, 7].map((bar) => (
                         <div
@@ -278,6 +342,12 @@ export default function PracharSongsPage() {
                           }}
                         />
                       ))}
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
+                      <div className="w-12 h-12 rounded-full bg-[#D4AF37] flex items-center justify-center shadow-lg shadow-[#D4AF37]/30">
+                        <Play className="w-5 h-5 fill-black ml-0.5" />
+                      </div>
                     </div>
                   )}
                 </div>
@@ -292,7 +362,7 @@ export default function PracharSongsPage() {
               {/* Controls and Track Info */}
               <div className="lg:col-span-8 space-y-6">
                 <div>
-                  <div className="flex items-center gap-3 mb-2">
+                  <div className="flex items-center gap-3 mb-2 flex-wrap">
                     <span className="text-xs font-mono text-white/50 uppercase tracking-widest">
                       {activeTrack.genre}
                     </span>
@@ -300,6 +370,15 @@ export default function PracharSongsPage() {
                     <span className="text-xs font-mono text-[#E6C665]">
                       Candidate: {activeTrack.candidate}
                     </span>
+                    {activeTrack.videoUrl && (
+                      <>
+                        <span className="text-white/30">•</span>
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-red-600/20 border border-red-500/30 text-[10px] font-mono text-red-300">
+                          <Video className="w-3 h-3" />
+                          <span>YouTube Official</span>
+                        </span>
+                      </>
+                    )}
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-serif text-white font-medium">
                     {activeTrack.title}
@@ -314,79 +393,122 @@ export default function PracharSongsPage() {
                   {activeTrack.lyricsSnippet}
                 </div>
 
-                {/* Progress Bar & Seek */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs font-mono text-white/60">
-                    <span>{formatTime(currentTime)}</span>
-                    <span>{formatTime(duration || 0)}</span>
+                {/* Audio Seek Bar vs Video Status Bar */}
+                {activeTrack.audioSrc ? (
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs font-mono text-white/60">
+                      <span>{formatTime(currentTime)}</span>
+                      <span>{formatTime(duration || 0)}</span>
+                    </div>
+                    <input
+                      type="range"
+                      min="0"
+                      max={duration || 100}
+                      step="0.1"
+                      value={currentTime}
+                      onChange={handleSeek}
+                      className="w-full h-2 rounded-lg bg-white/10 appearance-none cursor-pointer accent-[#D4AF37]"
+                    />
                   </div>
-                  <input
-                    type="range"
-                    min="0"
-                    max={duration || 100}
-                    step="0.1"
-                    value={currentTime}
-                    onChange={handleSeek}
-                    className="w-full h-2 rounded-lg bg-white/10 appearance-none cursor-pointer accent-[#D4AF37]"
-                  />
-                </div>
+                ) : (
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-between text-xs font-mono">
+                    <div className="flex items-center gap-2 text-white/70">
+                      <Video className="w-4 h-4 text-[#E6C665]" />
+                      <span>YouTube High-Definition Master Track</span>
+                    </div>
+                    <span className="text-[#E6C665] font-semibold">{activeTrack.duration}</span>
+                  </div>
+                )}
 
                 {/* Main Player Buttons */}
                 <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-                  <div className="flex items-center gap-4">
-                    {/* Play/Pause Button */}
-                    <button
-                      onClick={togglePlay}
-                      className="w-14 h-14 rounded-full bg-[#D4AF37] hover:bg-[#E6C665] text-black flex items-center justify-center transition-all transform hover:scale-105 shadow-xl shadow-[#D4AF37]/30"
-                      aria-label={isPlaying ? "Pause Song" : "Play Song"}
-                    >
-                      {isPlaying ? (
-                        <Pause className="w-6 h-6 fill-black" />
-                      ) : (
-                        <Play className="w-6 h-6 fill-black ml-1" />
-                      )}
-                    </button>
-
-                    {/* Reset Track */}
-                    <button
-                      onClick={() => {
-                        if (audioRef.current) {
-                          audioRef.current.currentTime = 0;
-                          setCurrentTime(0);
+                  {activeTrack.videoUrl ? (
+                    /* Video Controls */
+                    <div className="flex flex-wrap items-center gap-3">
+                      <button
+                        onClick={() =>
+                          openVideo(
+                            activeTrack.videoUrl!,
+                            activeTrack.title,
+                            `${activeTrack.candidate} • ${activeTrack.partyBadge}`
+                          )
                         }
-                      }}
-                      className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-colors"
-                      title="Replay from start"
-                    >
-                      <RotateCcw className="w-5 h-5" />
-                    </button>
-
-                    {/* Volume Slider */}
-                    <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl bg-black/40 border border-white/10">
-                      <button onClick={toggleMute} className="text-white/70 hover:text-[#E6C665]">
-                        {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                        className="px-6 py-3 rounded-full bg-[#D4AF37] hover:bg-[#E6C665] text-black font-semibold flex items-center gap-2.5 transition-all transform hover:scale-105 shadow-xl shadow-[#D4AF37]/30"
+                        aria-label="Watch Video Anthem"
+                      >
+                        <Play className="w-5 h-5 fill-black" />
+                        <span className="text-xs font-mono tracking-wider uppercase">Watch Video Anthem</span>
                       </button>
-                      <input
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.05"
-                        value={isMuted ? 0 : volume}
-                        onChange={handleVolumeChange}
-                        className="w-20 h-1.5 rounded-lg bg-white/10 appearance-none cursor-pointer accent-[#D4AF37]"
-                      />
-                    </div>
-                  </div>
 
-                  {/* Direct Download Link */}
-                  <a
-                    href={activeTrack.audioSrc}
-                    download
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-white/80 hover:text-white transition-colors"
-                  >
-                    <Download className="w-4 h-4 text-[#E6C665]" />
-                    <span>Download Audio File</span>
-                  </a>
+                      <a
+                        href={activeTrack.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-xs font-mono text-red-200 hover:text-white transition-colors"
+                      >
+                        <ExternalLink className="w-4 h-4 text-red-400" />
+                        <span>Open on YouTube</span>
+                      </a>
+                    </div>
+                  ) : (
+                    /* Audio Controls */
+                    <div className="flex items-center gap-4">
+                      {/* Play/Pause Button */}
+                      <button
+                        onClick={togglePlay}
+                        className="w-14 h-14 rounded-full bg-[#D4AF37] hover:bg-[#E6C665] text-black flex items-center justify-center transition-all transform hover:scale-105 shadow-xl shadow-[#D4AF37]/30"
+                        aria-label={isPlaying ? "Pause Song" : "Play Song"}
+                      >
+                        {isPlaying ? (
+                          <Pause className="w-6 h-6 fill-black" />
+                        ) : (
+                          <Play className="w-6 h-6 fill-black ml-1" />
+                        )}
+                      </button>
+
+                      {/* Reset Track */}
+                      <button
+                        onClick={() => {
+                          if (audioRef.current) {
+                            audioRef.current.currentTime = 0;
+                            setCurrentTime(0);
+                          }
+                        }}
+                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white transition-colors"
+                        title="Replay from start"
+                      >
+                        <RotateCcw className="w-5 h-5" />
+                      </button>
+
+                      {/* Volume Slider */}
+                      <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl bg-black/40 border border-white/10">
+                        <button onClick={toggleMute} className="text-white/70 hover:text-[#E6C665]">
+                          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                        </button>
+                        <input
+                          type="range"
+                          min="0"
+                          max="1"
+                          step="0.05"
+                          value={isMuted ? 0 : volume}
+                          onChange={handleVolumeChange}
+                          className="w-20 h-1.5 rounded-lg bg-white/10 appearance-none cursor-pointer accent-[#D4AF37]"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Direct Download Link for Audio Tracks */}
+                  {activeTrack.audioSrc && (
+                    <a
+                      href={activeTrack.audioSrc}
+                      download
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-mono text-white/80 hover:text-white transition-colors"
+                    >
+                      <Download className="w-4 h-4 text-[#E6C665]" />
+                      <span>Download Audio File</span>
+                    </a>
+                  )}
                 </div>
 
                 {hasError && (
@@ -400,25 +522,25 @@ export default function PracharSongsPage() {
             {/* Playlist Track Selection List */}
             <div className="mt-10 pt-8 border-t border-white/[0.08]">
               <span className="text-xs font-mono text-[#E6C665] uppercase tracking-widest block mb-4">
-                Available Campaign Audio Masters:
+                Available Campaign Audio Masters &amp; Video Anthems:
               </span>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {PLAYLIST.map((track, idx) => {
                   const isSelected = idx === currentTrackIndex;
                   return (
                     <div
                       key={track.id}
                       onClick={() => handleTrackChange(idx)}
-                      className={`p-4 rounded-2xl border transition-all duration-300 cursor-pointer flex items-center justify-between ${
+                      className={`p-4 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between gap-3 ${
                         isSelected
                           ? "bg-[#D4AF37]/10 border-[#D4AF37] text-white shadow-lg shadow-[#D4AF37]/10"
                           : "bg-black/30 border-white/[0.08] hover:border-white/20 text-white/70"
                       }`}
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-start gap-3">
                         <div
-                          className={`w-10 h-10 rounded-xl flex items-center justify-center font-mono text-xs font-bold ${
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center font-mono text-xs font-bold shrink-0 ${
                             isSelected
                               ? "bg-[#D4AF37] text-black"
                               : "bg-white/5 text-white/50"
@@ -426,29 +548,48 @@ export default function PracharSongsPage() {
                         >
                           {isSelected && isPlaying ? (
                             <Disc3 className="w-5 h-5 animate-spin" />
+                          ) : track.videoUrl ? (
+                            <Play className="w-4 h-4 fill-current ml-0.5" />
                           ) : (
                             `0${idx + 1}`
                           )}
                         </div>
-                        <div>
-                          <h4 className="text-sm font-medium font-serif text-white">
+                        <div className="min-w-0 flex-1">
+                          <h4 className="text-sm font-medium font-serif text-white line-clamp-1">
                             {track.title}
                           </h4>
-                          <span className="text-xs font-mono text-[#E6C665]">
-                            {track.candidate} • {track.genre}
+                          <span className="text-xs font-mono text-[#E6C665] block truncate mt-0.5">
+                            {track.candidate}
+                          </span>
+                          <span className="text-[11px] font-mono text-white/50 block truncate">
+                            {track.genre}
                           </span>
                         </div>
                       </div>
 
-                      <div className="text-right">
-                        <span className="text-xs font-mono text-white/40 block">
-                          {track.duration}
-                        </span>
-                        {isSelected && (
-                          <span className="text-[10px] font-mono text-[#E6C665] uppercase">
-                            {isPlaying ? "Playing Now" : "Selected"}
-                          </span>
-                        )}
+                      <div className="flex items-center justify-between pt-2 border-t border-white/[0.06] text-xs font-mono">
+                        <div>
+                          {track.videoUrl ? (
+                            <span className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-red-400 bg-red-950/40 px-2 py-0.5 rounded border border-red-500/20">
+                              <Video className="w-3 h-3" />
+                              <span>Video Master</span>
+                            </span>
+                          ) : (
+                            <span className="inline-flex items-center gap-1 text-[10px] uppercase text-white/50">
+                              <Music className="w-3 h-3" />
+                              <span>Audio Master</span>
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <span className="text-white/40">{track.duration}</span>
+                          {isSelected && (
+                            <span className="text-[10px] uppercase text-[#E6C665] font-bold">
+                              {track.videoUrl ? "Active" : isPlaying ? "Playing" : "Selected"}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   );
@@ -510,6 +651,15 @@ export default function PracharSongsPage() {
           </div>
         </section>
       </main>
+
+      {/* Video Modal for YouTube Video Tracks */}
+      <VideoModal
+        isOpen={videoModalOpen}
+        onClose={() => setVideoModalOpen(false)}
+        videoUrl={selectedVideo?.url || activeTrack.videoUrl}
+        title={selectedVideo?.title || activeTrack.title}
+        subtitle={selectedVideo?.subtitle || `${activeTrack.candidate} • ${activeTrack.partyBadge}`}
+      />
 
       <Footer />
     </div>

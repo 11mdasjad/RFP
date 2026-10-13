@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { VideoModal } from "@/components/modals/VideoModal";
 import {
   ArrowLeft,
   ArrowRight,
@@ -14,10 +15,108 @@ import {
   MessageSquare,
   Sparkles,
   ShieldCheck,
-  CheckCircle2
+  CheckCircle2,
+  Play,
+  Film,
+  ChevronDown,
+  ChevronUp,
+  ExternalLink
 } from "lucide-react";
 
+interface PoliticalFilm {
+  id: string;
+  leader: string;
+  designation: string;
+  party: string;
+  partyBadgeClass: string;
+  videoUrl: string;
+  thumbnail: string;
+  fullTitle: string;
+}
+
+const POLITICAL_DOCUMENTARY_FILMS: PoliticalFilm[] = [
+  {
+    id: "jirysVZwPIE",
+    leader: "Dr. Antul Teotia",
+    designation: "Zila Pramukh Bulandshahr",
+    party: "Zila Panchayat Bulandshahr",
+    partyBadgeClass: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+    videoUrl: "https://youtu.be/jirysVZwPIE",
+    thumbnail: "/medien/youtube-thumbs/jirysVZwPIE.jpg",
+    fullTitle: "Dr. Antul Teotia Documentary Film | Zila Panchayat Bulandshahr"
+  },
+  {
+    id: "3n58zR1Reqs",
+    leader: "Ajit Sharma",
+    designation: "MLA INC Bhagalpur",
+    party: "INC • Bihar Vidhan Sabha",
+    partyBadgeClass: "bg-sky-500/15 text-sky-300 border-sky-500/30",
+    videoUrl: "https://youtu.be/3n58zR1Reqs",
+    thumbnail: "/medien/youtube-thumbs/3n58zR1Reqs.jpg",
+    fullTitle: "Profile Documentary Film | MLA Ajeet Sharma Bhagalpur | Bihar"
+  },
+  {
+    id: "3JWmjrRbYDM",
+    leader: "Umesh Agarwal",
+    designation: "BJP Gurugram",
+    party: "BJP • Haryana Vidhan Sabha",
+    partyBadgeClass: "bg-orange-500/15 text-orange-300 border-orange-500/30",
+    videoUrl: "https://youtu.be/3JWmjrRbYDM",
+    thumbnail: "/medien/youtube-thumbs/3JWmjrRbYDM.jpg",
+    fullTitle: "Documentary Film Umesh Agarwal MLA BJP | Gurugram Vikas Yatra"
+  },
+  {
+    id: "I9b_Bg9VzOE",
+    leader: "Rajendra Pal Gautam",
+    designation: "AAP Seemapuri MLA",
+    party: "AAP • Delhi Vidhan Sabha",
+    partyBadgeClass: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
+    videoUrl: "https://youtu.be/I9b_Bg9VzOE",
+    thumbnail: "/medien/youtube-thumbs/I9b_Bg9VzOE.jpg",
+    fullTitle: "Rajendra Pal Gautam (Seemapuri MLA) Sangharsh Gatha Documentary Film"
+  },
+  {
+    id: "X6WGGZucJ1U",
+    leader: "Devender Singh Babli",
+    designation: "MLA Tohana",
+    party: "Haryana Vidhan Sabha",
+    partyBadgeClass: "bg-purple-500/15 text-purple-300 border-purple-500/30",
+    videoUrl: "https://youtu.be/X6WGGZucJ1U",
+    thumbnail: "/medien/youtube-thumbs/X6WGGZucJ1U.jpg",
+    fullTitle: "Devender Singh Babli Documentary Film | Tohana, Haryana"
+  },
+  {
+    id: "cNJq_La_yzY",
+    leader: "Devendra Yadav",
+    designation: "INC Delhi",
+    party: "INC • AICC Secretary & Ex MLA Badli",
+    partyBadgeClass: "bg-blue-500/15 text-blue-300 border-blue-500/30",
+    videoUrl: "https://youtu.be/cNJq_La_yzY",
+    thumbnail: "/medien/youtube-thumbs/cNJq_La_yzY.jpg",
+    fullTitle: "Profile Documentary Film Devender Yadav - AICC Secretary & Ex MLA, Badli, Delhi"
+  },
+  {
+    id: "KLfO_N4a6V8",
+    leader: "Shashi Jain",
+    designation: "BJP - Amroha Chairman",
+    party: "BJP • Amroha, Uttar Pradesh",
+    partyBadgeClass: "bg-orange-500/15 text-orange-300 border-orange-500/30",
+    videoUrl: "https://youtu.be/KLfO_N4a6V8",
+    thumbnail: "/medien/youtube-thumbs/KLfO_N4a6V8.jpg",
+    fullTitle: "Shashi Jain Chairman Amroha, Uttar Pradesh Documentary Film"
+  }
+];
+
 export default function ElectionCampaignPortalPage() {
+  const [isFilmsOpen, setIsFilmsOpen] = useState(true);
+  const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string; subtitle: string } | null>(null);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  const openVideo = (url: string, title: string, subtitle: string) => {
+    setSelectedVideo({ url, title, subtitle });
+    setIsVideoModalOpen(true);
+  };
+
   const pillars = [
     {
       step: "01",
@@ -160,6 +259,128 @@ export default function ElectionCampaignPortalPage() {
           </div>
         </section>
 
+        {/* Our RFP’s Political Documentary FILMS Section */}
+        <section className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]" id="documentary-films">
+          {/* Clickable Section Header Box */}
+          <div
+            onClick={() => setIsFilmsOpen((prev) => !prev)}
+            className="cursor-pointer group rounded-3xl bg-gradient-to-r from-[#171622] via-[#12111a] to-[#0c0b11] border border-[#D4AF37]/35 p-6 sm:p-10 shadow-2xl transition-all duration-300 hover:border-[#D4AF37] relative overflow-hidden"
+            title="Click to expand/collapse Political Documentary Films"
+          >
+            {/* Ambient Background Glow */}
+            <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute -bottom-10 right-0 w-64 h-64 bg-red-600/10 rounded-full blur-[90px] pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="space-y-3 max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-xs font-mono text-[#F3E5AB]">
+                  <Film className="w-3.5 h-3.5 text-[#E6C665]" />
+                  <span>OFFICIAL CAMPAIGN MEDIA ARCHIVE</span>
+                </div>
+                
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif text-white font-medium tracking-tight group-hover:text-[#F3E5AB] transition-colors">
+                  Our RFP’s Political Documentary FILMS
+                </h2>
+                
+                <p className="text-sm sm:text-base text-white/70 font-sans leading-relaxed">
+                  Comprehensive political biography films, constituency development documentaries, and leader profile stories produced for high-profile MLAs, MPs, and Panchayat leaders across India.
+                </p>
+              </div>
+
+              {/* Toggle Trigger Button */}
+              <div className="flex items-center gap-3 shrink-0">
+                <div className="px-5 py-3 rounded-2xl bg-[#D4AF37]/15 group-hover:bg-[#D4AF37] border border-[#D4AF37]/40 text-[#F3E5AB] group-hover:text-black font-mono text-xs uppercase tracking-wider flex items-center gap-2.5 transition-all shadow-lg shadow-[#D4AF37]/10">
+                  <span className="font-bold">7 Documentary Films</span>
+                  {isFilmsOpen ? (
+                    <ChevronUp className="w-4 h-4 transition-transform" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 transition-transform animate-bounce" />
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Films Grid (Visible when open) */}
+          {isFilmsOpen && (
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-in fade-in duration-300">
+              {POLITICAL_DOCUMENTARY_FILMS.map((film) => (
+                <div
+                  key={film.id}
+                  onClick={() => openVideo(film.videoUrl, film.leader, `${film.designation} • ${film.party}`)}
+                  className="group relative rounded-2xl overflow-hidden bg-[#131219] border border-white/[0.1] hover:border-[#D4AF37]/80 transition-all duration-300 flex flex-col justify-between shadow-xl hover:shadow-2xl hover:shadow-[#D4AF37]/15 cursor-pointer"
+                >
+                  {/* Thumbnail Container */}
+                  <div className="relative aspect-video w-full overflow-hidden bg-black/90">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={film.thumbnail}
+                      alt={film.leader}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
+
+                    {/* Glowing Red Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-red-600/90 group-hover:bg-red-600 text-white flex items-center justify-center shadow-xl shadow-red-600/40 transform group-hover:scale-110 transition-transform">
+                        <Play className="w-5 h-5 fill-white ml-0.5" />
+                      </div>
+                    </div>
+
+                    {/* Top Party Badge */}
+                    <div className="absolute top-3 right-3 max-w-[65%] truncate">
+                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono border backdrop-blur-md block truncate ${film.partyBadgeClass}`}>
+                        {film.party}
+                      </span>
+                    </div>
+
+                    {/* Top Left Tag */}
+                    <div className="absolute top-3 left-3">
+                      <span className="px-2 py-0.5 rounded-md bg-black/75 backdrop-blur-md border border-white/10 text-[9px] font-mono uppercase tracking-wider text-white/80">
+                        Documentary
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Film Details */}
+                  <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                    <div>
+                      <h3 className="text-lg font-serif text-white group-hover:text-[#F3E5AB] transition-colors line-clamp-1 font-medium">
+                        {film.leader}
+                      </h3>
+                      <p className="text-xs font-mono text-[#E6C665] mt-1 line-clamp-1">
+                        {film.designation}
+                      </p>
+                      <p className="text-xs text-white/60 font-sans mt-2 line-clamp-2 leading-relaxed">
+                        {film.fullTitle}
+                      </p>
+                    </div>
+
+                    {/* Bottom Action Bar */}
+                    <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-mono text-[#E6C665] group-hover:text-white transition-colors">
+                        <Play className="w-3.5 h-3.5 fill-current" />
+                        <span className="font-semibold">Watch Film</span>
+                      </span>
+
+                      <a
+                        href={film.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="p-1.5 rounded-lg text-white/40 hover:text-red-400 hover:bg-white/5 transition-colors"
+                        title="Open on YouTube"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+
         {/* 4 Pillars of [EC] Operations */}
         <section className="py-16 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
@@ -231,6 +452,15 @@ export default function ElectionCampaignPortalPage() {
           </div>
         </section>
       </main>
+
+      {/* Video Modal for Documentary Films */}
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        videoUrl={selectedVideo?.url}
+        title={selectedVideo?.title}
+        subtitle={selectedVideo?.subtitle}
+      />
 
       {/* Global Footer */}
       <Footer />
