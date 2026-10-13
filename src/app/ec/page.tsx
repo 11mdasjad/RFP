@@ -21,7 +21,8 @@ import {
   ChevronDown,
   ChevronUp,
   ExternalLink,
-  Share2
+  Share2,
+  PhoneCall
 } from "lucide-react";
 
 interface PoliticalFilm {
@@ -155,11 +156,11 @@ export default function ElectionCampaignPortalPage() {
     },
     {
       step: "04",
-      icon: MessageSquare,
-      title: "Digital War Room & WhatsApp Outreach",
-      desc: "24/7 political media command center, real-time counter-narrative creation, micro-targeted voter pin-code messaging, and rapid response networks.",
+      icon: PhoneCall,
+      title: "Bulk SMS / Automated Voice Calls / WhatsApp",
+      desc: "Direct communication with wider voter reach via high-volume broadcast SMS, automated voice calls (IVR), missed-call response engines, and micro-targeted WhatsApp broadcast campaigns.",
       href: "/ec/digital-war-room",
-      tagline: "Missed-Call Video Engine • 24/7 War Room Desk"
+      tagline: "Direct Communication • Wider Reach"
     },
     {
       step: "05",
