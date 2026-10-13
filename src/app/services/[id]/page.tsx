@@ -171,6 +171,8 @@ export default function ServiceDetailPage({
               className={`relative ${
                 service.id === "website-development"
                   ? "aspect-[16/10]"
+                  : service.id === "social-media-digital-marketing"
+                  ? "aspect-video"
                   : "aspect-video sm:aspect-[21/9]"
               } w-full bg-black/90 overflow-hidden group`}
             >
@@ -178,29 +180,33 @@ export default function ServiceDetailPage({
                 src={service.image}
                 alt={service.title}
                 className={`w-full h-full ${
-                  service.id === "website-development"
+                  service.id === "website-development" || service.id === "social-media-digital-marketing"
                     ? "object-contain bg-[#06080e]"
                     : "object-cover"
-                } filter contrast-[1.03] brightness-95 group-hover:scale-[1.02] transition-transform duration-700 ease-out`}
+                } filter contrast-[1.03] brightness-95 group-hover:scale-[1.01] transition-transform duration-700 ease-out`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+              {service.id !== "social-media-digital-marketing" && (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
-              <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                <div className="max-w-xl">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#E6C665] block mb-1">
-                    Field Execution • {service.title}
-                  </span>
-                  <p className="text-sm sm:text-base text-white/90 font-serif italic">
-                    &ldquo;{service.tagline}&rdquo;
-                  </p>
-                </div>
+                  <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div className="max-w-xl">
+                      <span className="text-xs font-mono uppercase tracking-widest text-[#E6C665] block mb-1">
+                        Field Execution • {service.title}
+                      </span>
+                      <p className="text-sm sm:text-base text-white/90 font-serif italic">
+                        &ldquo;{service.tagline}&rdquo;
+                      </p>
+                    </div>
 
-                <div className="flex items-center gap-2">
-                  <span className="px-3.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-xs font-mono text-white/80 border border-white/10">
-                    Verified Production
-                  </span>
-                </div>
-              </div>
+                    <div className="flex items-center gap-2">
+                      <span className="px-3.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-xs font-mono text-white/80 border border-white/10">
+                        Verified Production
+                      </span>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </section>

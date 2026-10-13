@@ -130,8 +130,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       { step: "03", title: "Targeted Distribution & Ads", desc: "Peak-traffic deployment paired with micro-targeted paid campaigns." },
       { step: "04", title: "Real-Time Optimization", desc: "Continuous conversion tracking and daily creative iteration for peak ROI." }
     ],
-    image: "/medien/landing/social-media-management-banner.jpg",
-    videoThumbnail: "/medien/landing/social-media-management-banner.jpg",
+    image: "/medien/landing/social-media-and-management-poster.jpg",
+    videoThumbnail: "/medien/landing/social-media-and-management-poster.jpg",
     videoUrl: "https://www.instagram.com/reel/DaxoqAoR_1Z/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
     youtubeUrl: "https://www.instagram.com/reel/DaxoqAoR_1Z/",
     aspect: "16/9"
