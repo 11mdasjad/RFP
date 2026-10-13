@@ -36,6 +36,16 @@ interface PoliticalFilm {
 
 const POLITICAL_DOCUMENTARY_FILMS: PoliticalFilm[] = [
   {
+    id: "OlIKKn9HyBo",
+    leader: "RFP Digital Productions",
+    designation: "Election Campaign & Documentary Production",
+    party: "RFP Media & Films",
+    partyBadgeClass: "bg-[#D4AF37]/20 text-[#F3E5AB] border-[#D4AF37]/40",
+    videoUrl: "https://youtu.be/OlIKKn9HyBo",
+    thumbnail: "/medien/youtube-thumbs/OlIKKn9HyBo.jpg",
+    fullTitle: "चुनाव प्रचार RFP डिजिटल मीडिया | Video Production & Election Management Company"
+  },
+  {
     id: "jirysVZwPIE",
     leader: "Dr. Antul Teotia",
     designation: "Zila Pramukh Bulandshahr",
@@ -290,7 +300,7 @@ export default function ElectionCampaignPortalPage() {
               {/* Toggle Trigger Button */}
               <div className="flex items-center gap-3 shrink-0">
                 <div className="px-5 py-3 rounded-2xl bg-[#D4AF37]/15 group-hover:bg-[#D4AF37] border border-[#D4AF37]/40 text-[#F3E5AB] group-hover:text-black font-mono text-xs uppercase tracking-wider flex items-center gap-2.5 transition-all shadow-lg shadow-[#D4AF37]/10">
-                  <span className="font-bold">7 Documentary Films</span>
+                  <span className="font-bold">{POLITICAL_DOCUMENTARY_FILMS.length} Documentary Films</span>
                   {isFilmsOpen ? (
                     <ChevronUp className="w-4 h-4 transition-transform" />
                   ) : (
