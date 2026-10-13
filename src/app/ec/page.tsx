@@ -237,34 +237,16 @@ export default function ElectionCampaignPortalPage() {
           </div>
         </section>
 
-        {/* Grand Visual Banner */}
-        <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]">
-          <div className="relative w-full rounded-3xl overflow-hidden bg-[#17161d] border border-[#D4AF37]/30 shadow-2xl group">
-            <div className="relative aspect-video sm:aspect-[21/9] w-full bg-black/90 overflow-hidden">
+        {/* Grand Visual Banner Poster */}
+        <section className="py-10 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]">
+          <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-black border border-[#D4AF37]/35 shadow-2xl">
+            <div className="relative w-full aspect-video bg-black flex items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/medien/landing/neutral-election-campaign-banner.jpg"
-                alt="[EC] Election Campaign Execution"
-                className="w-full h-full object-cover filter contrast-[1.03] brightness-95 group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                src="/medien/landing/rfp-election-campaign-master-poster.jpg"
+                alt="RFP Digital Productions - चुनाव प्रचार मतलब आरएफसी डिजिटल मीडिया"
+                className="w-full h-full object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-
-              <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                <div className="max-w-xl">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#E6C665] block mb-1">
-                    On-Ground Political Execution • [EC] Hub
-                  </span>
-                  <p className="text-sm sm:text-base text-white/90 font-serif italic">
-                    Mobile LED Screen Vans, Rally Multicam Live Feeds &amp; Public Outreach
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <span className="px-3.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-xs font-mono text-[#F3E5AB] border border-[#D4AF37]/40 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#E6C665] animate-pulse" />
-                    <span>[EC] Certified Operations</span>
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
