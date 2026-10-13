@@ -20,7 +20,8 @@ import {
   Film,
   ChevronDown,
   ChevronUp,
-  ExternalLink
+  ExternalLink,
+  Share2
 } from "lucide-react";
 
 interface PoliticalFilm {
@@ -133,7 +134,6 @@ export default function ElectionCampaignPortalPage() {
       icon: Tv,
       title: "Mobile LED Display Fleet",
       desc: "High-brightness P3.91 outdoor daylight LED display vans mobilized across assembly constituencies with GPS route tracking and live rally feeds.",
-      bgImage: "/medien/landing/mobile-led-van.jpg",
       href: "/ec/mobile-led-fleet",
       tagline: "Daylight LED Vans • GPS Route Fleet"
     },
@@ -142,7 +142,6 @@ export default function ElectionCampaignPortalPage() {
       icon: Music,
       title: "Original Prachar Songs & Anthems",
       desc: "Studio-recorded political songs, catchy lyrical anthems, and campaign jingles written to electrify public rallies and dominate social media reels.",
-      bgImage: "/medien/landing/chunav-prachar-song.png",
       href: "/ec/prachar-songs",
       tagline: "Custom Audio Masters • In-Page Player"
     },
@@ -151,7 +150,6 @@ export default function ElectionCampaignPortalPage() {
       icon: Users,
       title: "Nukkad Natak & Street Theatre",
       desc: "Experienced theatrical troupes performing high-impact grassroots street plays in rural haats, village squares, and urban mohallas to connect with voters.",
-      bgImage: "/medien/landing/nukkad-natak-street-theatre.jpg",
       href: "/ec/nukkad-natak",
       tagline: "Grassroots Street Plays • Live Village Chaupals"
     },
@@ -160,9 +158,16 @@ export default function ElectionCampaignPortalPage() {
       icon: MessageSquare,
       title: "Digital War Room & WhatsApp Outreach",
       desc: "24/7 political media command center, real-time counter-narrative creation, micro-targeted voter pin-code messaging, and rapid response networks.",
-      bgImage: "/medien/landing/whatsapp-marketing-campaigns.png",
       href: "/ec/digital-war-room",
       tagline: "Missed-Call Video Engine • 24/7 War Room Desk"
+    },
+    {
+      step: "05",
+      icon: Share2,
+      title: "Social Media Management",
+      desc: "High-cadence viral reels, voter-targeted digital ad campaigns, daily narrative shaping, counter-propaganda blitzes, and multi-platform presence across Meta, YouTube & X.",
+      href: "/services/social-media-digital-marketing",
+      tagline: "Viral Content • High-Cadence Reels & Ads"
     }
   ];
 
@@ -373,7 +378,7 @@ export default function ElectionCampaignPortalPage() {
           )}
         </section>
 
-        {/* 4 Pillars of [EC] Operations */}
+        {/* Core Pillars of [EC] Operations */}
         <section className="py-16 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <div className="text-xs font-mono text-[#E6C665] uppercase tracking-widest mb-2 flex items-center gap-2">
@@ -385,50 +390,46 @@ export default function ElectionCampaignPortalPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {pillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
                 <Link
                   key={idx}
                   href={pillar.href}
-                  className="relative rounded-2xl overflow-hidden border border-white/[0.12] hover:border-[#D4AF37] transition-all duration-300 min-h-[290px] flex flex-col justify-between p-6 sm:p-8 group shadow-xl hover:shadow-2xl hover:shadow-[#D4AF37]/10"
+                  className="relative rounded-2xl overflow-hidden border border-white/[0.08] bg-[#121118] hover:bg-[#181622] hover:border-[#D4AF37]/50 transition-all duration-300 min-h-[270px] flex flex-col justify-between p-6 sm:p-8 group shadow-xl hover:shadow-2xl hover:shadow-[#D4AF37]/10"
                 >
-                  {/* Background Image & Gradient Scrim */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    style={{ backgroundImage: `url(${pillar.bgImage})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#09080e]/95 via-[#09080e]/80 to-[#09080e]/50 group-hover:via-[#09080e]/70 transition-all duration-300" />
-                  <div className="absolute inset-0 bg-black/30" />
+                  {/* Subtle ambient corner glow on hover */}
+                  <div className="absolute -top-20 -right-20 w-44 h-44 bg-[#D4AF37]/[0.03] group-hover:bg-[#D4AF37]/[0.08] rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
+                  <div className="absolute -bottom-20 -left-20 w-44 h-44 bg-[#6b54ee]/[0.03] group-hover:bg-[#6b54ee]/[0.08] rounded-full blur-2xl transition-all duration-500 pointer-events-none" />
 
                   {/* Card Header */}
                   <div className="relative z-10 flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-black/60 backdrop-blur-md text-[#F3E5AB] border border-[#D4AF37]/40 flex items-center justify-center group-hover:bg-[#D4AF37] group-hover:text-black transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-white/[0.04] text-[#F3E5AB] border border-[#D4AF37]/30 flex items-center justify-center group-hover:bg-[#D4AF37] group-hover:text-black group-hover:border-[#D4AF37] transition-all duration-300 shadow-md">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono font-bold text-[#E6C665] px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10">
+                      <span className="text-xs font-mono font-bold text-[#E6C665] px-3 py-1 rounded-full bg-white/[0.04] border border-[#D4AF37]/25">
                         PILLAR {pillar.step}
                       </span>
                     </div>
                   </div>
 
                   {/* Card Content & Action Button */}
-                  <div className="relative z-10 space-y-3 pt-8">
+                  <div className="relative z-10 space-y-3 pt-6">
                     <div>
                       <span className="text-[11px] font-mono text-[#E6C665] uppercase tracking-wider block mb-1">
                         {pillar.tagline}
                       </span>
-                      <h3 className="text-xl sm:text-2xl font-serif text-white group-hover:text-[#F3E5AB] transition-colors font-medium drop-shadow-md">
+                      <h3 className="text-xl sm:text-2xl font-serif text-white group-hover:text-[#F3E5AB] transition-colors font-medium">
                         {pillar.title}
                       </h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-sans drop-shadow-sm">
+                    <p className="text-xs sm:text-sm text-white/70 group-hover:text-white/85 transition-colors leading-relaxed font-sans">
                       {pillar.desc}
                     </p>
 
-                    <div className="pt-3 flex items-center justify-between text-xs font-mono text-[#E6C665] group-hover:text-white transition-colors">
+                    <div className="pt-4 flex items-center justify-between text-xs font-mono text-[#E6C665] group-hover:text-white transition-colors">
                       <span className="flex items-center gap-1.5 font-semibold">
                         <span>Explore Dedicated Page</span>
                         <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
