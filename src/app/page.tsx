@@ -6,10 +6,8 @@ import { Hero } from "@/components/Hero";
 import { Fakten } from "@/components/Fakten";
 import { Logos } from "@/components/Logos";
 import { Zusammenarbeit } from "@/components/Zusammenarbeit";
-import { Leistungen } from "@/components/Leistungen";
 import { Prozess } from "@/components/Prozess";
 import { Skalierung } from "@/components/Skalierung";
-import { KiWorkflows } from "@/components/KiWorkflows";
 import { FAQ } from "@/components/FAQ";
 import { Kontakt } from "@/components/Kontakt";
 import { Footer } from "@/components/Footer";
@@ -78,8 +76,6 @@ export default function Home() {
         {/* 4. How We Collaborate */}
         <Zusammenarbeit />
 
-        {/* 5. Comprehensive Services */}
-        <Leistungen onOpenContact={(topic) => handleOpenContactWithTopic(topic)} />
 
         {/* 6. Production Process & Acharya Narendra Dev College Spotlight */}
         <Prozess onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)} />
@@ -94,8 +90,6 @@ export default function Home() {
           reverse
         />
 
-        {/* 9. Election Campaign & Voter Outreach Management */}
-        <KiWorkflows />
 
         {/* 10. FAQ Accordion */}
         <FAQ />

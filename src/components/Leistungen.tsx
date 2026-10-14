@@ -17,11 +17,8 @@ export const Leistungen: React.FC<LeistungenProps> = ({ onOpenContact }) => {
     <section id="leistungen" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.08]">
       {/* Section Header */}
       <div className="max-w-3xl mb-16 lg:mb-20">
-        <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block mb-3">
-          Our Core Capabilities
-        </span>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#f4f2f7] mb-6">
-          The project objective dictates the direction.
+          Our Core Capabilities
         </h2>
         <p className="text-base sm:text-lg text-[#f4f2f7b8] leading-relaxed">
           From full corporate documentaries and university campus films to election campaigns and viral social media reels, we provide end-to-end creative direction, production, and execution.

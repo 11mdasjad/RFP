@@ -2,6 +2,216 @@ import { GalleryItem } from '@/types/gallery';
 
 export const INITIAL_GALLERY_ITEMS: GalleryItem[] = [
   {
+    "id": "drive-img-wb-goa",
+    "title": "The World Bank - Strategic Forum, Goa",
+    "category": "Behind The Scenes",
+    "client": "The World Bank Group",
+    "year": "2025",
+    "image": "/medien/drive-gallery/world-bank-event-goa.jpg",
+    "summary": "Strategic Planning for Human Resources for Health in India - A Knowledge Exchange Forum at JW Marriott, Goa.",
+    "description": "Comprehensive event photography and visual documentation for The World Bank's high-level knowledge exchange summit in Goa.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/world-bank-event-goa.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-field-unit",
+    "title": "Documentary Field Production Unit",
+    "category": "Cinema & Film",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/38-documentary-field-unit.jpg",
+    "summary": "On-location field cinematography with community engagement and rural documentary filming.",
+    "description": "Authentic on-ground community documentary filming with telephoto cinema rig and rural gathering.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/38-documentary-field-unit.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-doc-shoot",
+    "title": "Documentary Film Shoot & Production Crew",
+    "category": "Cinema & Film",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/documentary-film-shoot-crew.jpg",
+    "summary": "Professional field film crew capturing ground-level narratives and cinematic documentary footage.",
+    "description": "Crew operating cinema cameras on tripod and handheld rigs during an active documentary production shoot.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/documentary-film-shoot-crew.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-drone-aerial",
+    "title": "Drone Shoots & Aerial Cinematography",
+    "category": "Cinema & Film",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/drone-shoots-aerial.jpg",
+    "summary": "Licensed 4K drone cinematography capturing sweeping landscape vistas, mega events, and spatial layouts.",
+    "description": "Aerial cinematography and high-angle drone operations for institutional facilities and large-scale public events.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/drone-shoots-aerial.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-interview-rig",
+    "title": "Cinema Camera Interview & Executive Framing",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/ee-cinema-camera-interview.jpg",
+    "summary": "Nikon Cinema Z setup with wireless audio receiver, focused on corporate executive round-table discussion.",
+    "description": "Precision interview framing with wireless audio transmitters, calibrated lighting, and depth of field separation.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/ee-cinema-camera-interview.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-studio-directing",
+    "title": "Studio Directing & Commercial Table Setup",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/fg-studio-directing-setup.jpg",
+    "summary": "Studio director guiding talent with high-CRI softbox lighting, external monitor, and teleprompter setup.",
+    "description": "Controlled indoor studio production with director, lighting technician, and on-camera corporate participants.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/fg-studio-directing-setup.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-shoot-set",
+    "title": "Active Production Shoot & Filming Set",
+    "category": "Cinema & Film",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/gallery-production-shoot-set.jpg",
+    "summary": "Cinematic production set with cinema cameras, boom microphones, and synchronized field audio.",
+    "description": "Field production setup capturing crisp cinema-grade video and audio on active filming sets.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/gallery-production-shoot-set.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-director-rfp",
+    "title": "Director & Principal Filmmaker",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2025",
+    "image": "/medien/drive-gallery/me-director-rfp-productions.jpg",
+    "summary": "Creative leadership and on-ground direction on high-impact visual narratives and nationwide campaigns.",
+    "description": "RFP Digital Productions director overseeing production setups, creative composition, and storytelling.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/me-director-rfp-productions.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-df-cinema",
+    "title": "Field Cinematography & Story Crafting",
+    "category": "Cinema & Film",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/df-production-cinematography.jpg",
+    "summary": "Visual storytelling and camera operations capturing authentic moments across diverse Indian landscapes.",
+    "description": "Field cinematography capturing rich human stories and cultural narratives with professional precision.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/df-production-cinematography.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-bts-631329",
+    "title": "Ground Campaign & Production Spotlight",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/production-bts-631329785.jpg",
+    "summary": "Field production crew capturing public interaction, voter outreach, and live assembly campaigns.",
+    "description": "Live production coverage and event cinematography capturing genuine voter emotions and mass turnout.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/production-bts-631329785.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-bts-518178",
+    "title": "On-Site Production Behind The Scenes",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/production-bts-518178231.jpg",
+    "summary": "Cinematographers and sound engineers coordinating on-location takes during high-profile shoots.",
+    "description": "Behind-the-scenes look at the technical crew managing sound, camera moves, and monitor checks.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/production-bts-518178231.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-bts-517925",
+    "title": "Media Production & Crew Coordination",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/production-bts-517925099.jpg",
+    "summary": "Creative team collaborating on shot planning, lighting ratios, and talent blocking.",
+    "description": "Production crew in action refining shot composition and audio balance for maximum emotional impact.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/production-bts-517925099.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-bts-505423",
+    "title": "Documentary Field Crew in Action",
+    "category": "Cinema & Film",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/production-bts-505423829.jpg",
+    "summary": "Documentary filmmakers working closely with local communities and field subjects.",
+    "description": "On-ground documentary filmmakers capturing unscripted moments with sensitivity and cinematic flair.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/production-bts-505423829.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-bts-500523",
+    "title": "Field Production Highlights",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/production-bts-500523063.jpg",
+    "summary": "Behind the lens with RFP Digital's technical team across multi-day filming schedules.",
+    "description": "Technical team managing camera gear, batteries, memory cards, and backups on location.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/production-bts-500523063.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-field-coverage",
+    "title": "Constituency Outreach & Field Coverage",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2024",
+    "image": "/medien/drive-gallery/gggg-field-coverage.jpg",
+    "summary": "Field team capturing mass public rallies, roadshows, and election campaign events.",
+    "description": "High-mobility field crew filming live public rallies and cultural gatherings across India.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/gggg-field-coverage.jpg"
+    ]
+  },
+  {
     "id": "drive-img-1",
     "title": "Gallery Image 1",
     "category": "Cinema & Film",

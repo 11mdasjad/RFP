@@ -220,8 +220,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       { step: "03", title: "Live Capture", desc: "Continuous live switching, pristine audio capture, and live stream feed." },
       { step: "04", title: "Instant PR Delivery", desc: "Curated, color-corrected photo sets transmitted to media teams on the spot." }
     ],
-    image: "/medien/landing/photography-events-coverage-banner.jpg",
-    videoThumbnail: "/medien/landing/photography-events-coverage-banner.jpg",
+    image: "/medien/landing/world-bank-event-photography.jpg",
+    videoThumbnail: "/medien/landing/world-bank-event-photography.jpg",
     videoUrl: "https://www.youtube.com/embed/3n58zR1Reqs?autoplay=1",
     youtubeUrl: "https://youtu.be/3n58zR1Reqs",
     aspect: "16/9"
