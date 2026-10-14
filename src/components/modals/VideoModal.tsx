@@ -54,6 +54,17 @@ export function extractYouTubeId(url?: string): string | null {
 }
 
 function getYouTubeDetails(url?: string): { id: string; embedUrl: string; directUrl: string } | null {
+  if (!url) return null;
+  const trimmed = url.trim();
+  if (trimmed.includes("@rfpdigitalproductions/shorts") || (trimmed.includes("/shorts") && !extractYouTubeId(url))) {
+    const featuredShortId = "IpnNqiRCDhU";
+    return {
+      id: featuredShortId,
+      embedUrl: `https://www.youtube.com/embed/${featuredShortId}?autoplay=1&rel=0&modestbranding=1`,
+      directUrl: "https://www.youtube.com/@rfpdigitalproductions/shorts",
+    };
+  }
+
   const id = extractYouTubeId(url);
   if (!id) return null;
   return {

@@ -7,7 +7,7 @@ import { INITIAL_GALLERY_ITEMS } from "@/data/galleryData";
 
 const STORAGE_KEYS = {
   GALLERY: "rfp_gallery_items_v4",
-  PROJECTS: "rfp_projects_items_v5",
+  PROJECTS: "rfp_projects_items_v6",
   SETTINGS: "rfp_site_settings_v2",
   INQUIRIES: "rfp_inquiries_items_v2",
 };
@@ -112,7 +112,9 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
           try {
             const parsed = JSON.parse(storedProjects);
             if (Array.isArray(parsed) && parsed.length > 0) {
-              setProjects(parsed);
+              const existingIds = new Set(parsed.map((p: ProjectCard) => p.id));
+              const missingDefaults = PROJECTS_DATA.filter((p) => !existingIds.has(p.id));
+              setProjects([...parsed, ...missingDefaults]);
             }
           } catch (e) {
             console.error("Failed to parse stored projects", e);

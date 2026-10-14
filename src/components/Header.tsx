@@ -28,6 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
   const isTeam = pathname?.startsWith("/team");
   const isTestimonials = pathname?.startsWith("/testimonials");
   const isEc = pathname === "/ec" || pathname?.startsWith("/ec");
+  const isProjects = pathname === "/projects" || pathname?.startsWith("/projects");
 
   return (
     <header
@@ -76,10 +77,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
 
           {/* 2. Project */}
           <Link
-            href={isHome ? "#projekte" : "/#projekte"}
-            className="px-2.5 xl:px-3.5 2xl:px-4 py-2 text-[13.5px] xl:text-[15px] 2xl:text-[16px] text-white/90 hover:text-white rounded-xl hover:bg-white/[0.08] transition-all font-semibold whitespace-nowrap"
+            href="/projects"
+            className={`px-2.5 xl:px-3.5 2xl:px-4 py-2 text-[13.5px] xl:text-[15px] 2xl:text-[16px] rounded-xl transition-all font-semibold whitespace-nowrap ${
+              isProjects
+                ? "text-white bg-white/[0.12] border border-[#a89bfa]/50 shadow-[0_0_20px_rgba(168,155,250,0.25)]"
+                : "text-white/90 hover:text-white hover:bg-white/[0.08]"
+            }`}
           >
-            Project
+            Projects
           </Link>
 
           {/* 3. Gallery */}
@@ -210,11 +215,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
 
               {/* 2. Project */}
               <Link
-                href={isHome ? "#projekte" : "/#projekte"}
+                href="/projects"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-semibold text-white/90 hover:text-white py-2 px-3 rounded-xl hover:bg-white/[0.04] transition-all"
+                className={`text-base font-semibold py-2 px-3 rounded-xl transition-all flex items-center justify-between ${
+                  isProjects
+                    ? "text-[#a89bfa] bg-white/[0.08] font-bold"
+                    : "text-white/90 hover:text-white hover:bg-white/[0.04]"
+                }`}
               >
-                Project
+                <span>Projects</span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#6b54ee]/20 text-[#a89bfa] border border-[#6b54ee]/30">
+                  All Work
+                </span>
               </Link>
 
               {/* 3. Gallery */}

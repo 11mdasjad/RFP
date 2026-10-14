@@ -5,7 +5,6 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Fakten } from "@/components/Fakten";
 import { Logos } from "@/components/Logos";
-import { Projects } from "@/components/Projects";
 import { Zusammenarbeit } from "@/components/Zusammenarbeit";
 import { Leistungen } from "@/components/Leistungen";
 import { Prozess } from "@/components/Prozess";
@@ -15,8 +14,7 @@ import { FAQ } from "@/components/FAQ";
 import { Kontakt } from "@/components/Kontakt";
 import { Footer } from "@/components/Footer";
 import { VideoModal } from "@/components/modals/VideoModal";
-import { ProjectModal } from "@/components/modals/ProjectModal";
-import { ProjectCard, CLIENT_LOGOS } from "@/data/imagineContent";
+import { CLIENT_LOGOS } from "@/data/imagineContent";
 
 export default function Home() {
   const [videoModal, setVideoModal] = useState<{
@@ -31,7 +29,6 @@ export default function Home() {
     subtitle: "",
   });
 
-  const [selectedProject, setSelectedProject] = useState<ProjectCard | null>(null);
   const [contactTopic, setContactTopic] = useState<string>("Corporate Films");
 
   const handleOpenVideo = (
@@ -78,41 +75,35 @@ export default function Home() {
           items={CLIENT_LOGOS}
         />
 
-        {/* 4. Selected Work with Bento Grid and Video Showcase */}
-        <Projects
-          onSelectProject={(project) => setSelectedProject(project)}
-          onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)}
-        />
-
-        {/* 5. How We Collaborate */}
+        {/* 4. How We Collaborate */}
         <Zusammenarbeit />
 
-        {/* 6. Comprehensive Services */}
+        {/* 5. Comprehensive Services */}
         <Leistungen onOpenContact={(topic) => handleOpenContactWithTopic(topic)} />
 
-        {/* 7. Production Process & Acharya Narendra Dev College Spotlight */}
+        {/* 6. Production Process & Acharya Narendra Dev College Spotlight */}
         <Prozess onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)} />
 
-        {/* 8. Scalable Production Making-of Gallery */}
+        {/* 7. Scalable Production Making-of Gallery */}
         <Skalierung />
 
-        {/* 9. Client Logos 2 */}
+        {/* 8. Client Logos 2 */}
         <Logos
           titleEn="Nationwide Organizations & Partners"
           items={[...CLIENT_LOGOS].reverse()}
           reverse
         />
 
-        {/* 10. Election Campaign & Voter Outreach Management */}
+        {/* 9. Election Campaign & Voter Outreach Management */}
         <KiWorkflows />
 
-        {/* 11. FAQ Accordion */}
+        {/* 10. FAQ Accordion */}
         <FAQ />
 
-        {/* 12. Direct Contact with RFP Executive Production Team */}
+        {/* 11. Direct Contact with RFP Executive Production Team */}
         <Kontakt prefilledTopic={contactTopic} />
 
-        {/* 13. Footer */}
+        {/* 12. Footer */}
         <Footer />
       </div>
 
@@ -123,16 +114,6 @@ export default function Home() {
         videoUrl={videoModal.videoUrl}
         title={videoModal.title}
         subtitle={videoModal.subtitle}
-      />
-
-      {/* Project Case Study Details Modal */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-        onWatchReel={(url, title) => {
-          setSelectedProject(null);
-          handleOpenVideo(url, title, "RFP Digital Production Showcase");
-        }}
       />
     </main>
   );

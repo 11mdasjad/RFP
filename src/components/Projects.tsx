@@ -13,7 +13,7 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ onSelectProject, onPlayVideo }) => {
   const { projects: contextProjects } = useData();
   const projectsList = contextProjects && contextProjects.length > 0 ? contextProjects : PROJECTS_DATA;
-  const [activeFilter, setActiveFilter] = useState<"all" | "film" | "campaign" | "documentary" | "marketing">("all");
+  const [activeFilter, setActiveFilter] = useState<"all" | "ai" | "film" | "campaign" | "documentary" | "marketing">("all");
 
   const filteredProjects = projectsList.filter((p) => {
     if (activeFilter === "all") return true;
@@ -41,6 +41,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject, onPlayVideo
           <div className="inline-flex items-center gap-1 sm:gap-1.5 p-1.5 rounded-full bg-[#17161d] border border-white/[0.08] shadow-lg shrink-0 mx-auto">
             {[
               { id: "all", labelEn: "All Work" },
+              { id: "ai", labelEn: "AI Video Production" },
               { id: "film", labelEn: "Corporate Films" },
               { id: "campaign", labelEn: "Election Campaigns" },
               { id: "documentary", labelEn: "Documentaries" },
@@ -309,16 +310,31 @@ const ProjectCardItem: React.FC<{
         </div>
 
         <div className="flex items-center justify-between pt-3 border-t border-white/[0.08]">
-          <span className="text-[11px] font-mono text-[#f4f2f780] truncate max-w-[65%]">
+          <span className="text-[11px] font-mono text-[#f4f2f780] truncate max-w-[50%]">
             {project.client}
           </span>
-          <button
-            onClick={() => onSelectProject(project)}
-            className="inline-flex items-center space-x-1 text-xs font-semibold text-[#a89bfa] hover:text-white transition-colors shrink-0"
-          >
-            <span>View Details</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex items-center space-x-2 shrink-0">
+            {project.youtubeUrl && (
+              <a
+                href={project.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-red-600/15 hover:bg-red-600 text-red-400 hover:text-white border border-red-500/25 text-[10px] font-mono font-medium transition-all"
+                title="Watch on YouTube"
+              >
+                <span>YouTube</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+            )}
+            <button
+              onClick={() => onSelectProject(project)}
+              className="inline-flex items-center space-x-1 text-xs font-semibold text-[#a89bfa] hover:text-white transition-colors shrink-0"
+            >
+              <span>Details</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
       </div>
     </article>

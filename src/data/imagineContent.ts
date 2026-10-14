@@ -25,7 +25,7 @@ export interface ProjectCard {
   title: string;
   client: string;
   categoryEn: string;
-  filterCat: "film" | "campaign" | "documentary" | "marketing";
+  filterCat: "film" | "campaign" | "documentary" | "marketing" | "ai";
   descEn: string;
   poster: string;
   videoUrl?: string;
@@ -131,6 +131,48 @@ export const PROJECTS_DATA: ProjectCard[] = [
     videoUrl: "https://www.youtube-nocookie.com/embed/Cgvx6w13ZNg?autoplay=1",
     youtubeUrl: "https://youtu.be/Cgvx6w13ZNg",
     tags: ["Institutional Master", "University of Delhi", "Scientific Labs", "4K Cinema"]
+  },
+  {
+    id: "projekt-ai-rfp-shorts",
+    slot: "slot-ai-1",
+    title: "RFP Digital Shorts & Vertical Media",
+    client: "RFP Digital Productions",
+    categoryEn: "AI Video Production",
+    filterCat: "ai",
+    descEn:
+      "High-impact vertical cinema, viral short-form narratives, and dynamic visual hooks engineered for modern algorithmic feeds and mobile-first audiences.",
+    poster: "/medien/youtube-thumbs/IpnNqiRCDhU.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=IpnNqiRCDhU",
+    youtubeUrl: "https://www.youtube.com/@rfpdigitalproductions/shorts",
+    tags: ["AI Video Production", "RFP Shorts", "Vertical Cinema", "Shorts & Reels", "4K Vertical"]
+  },
+  {
+    id: "projekt-ai-3d-animation",
+    slot: "slot-ai-2",
+    title: "3D Animation Work | RFP Digital Productions",
+    client: "RFP Digital Productions",
+    categoryEn: "AI Video Production",
+    filterCat: "ai",
+    descEn:
+      "High-fidelity 3D modeling, dynamic visual simulations, photorealistic rendering, and architectural motion graphics produced for broadcast and commercial standards.",
+    poster: "/medien/youtube-thumbs/4Q7U8yOny-Q.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=4Q7U8yOny-Q",
+    youtubeUrl: "https://youtu.be/4Q7U8yOny-Q",
+    tags: ["AI Video Production", "3D Animation", "CGI Motion", "VFX Pipeline", "3D Modeling"]
+  },
+  {
+    id: "projekt-ai-work-fiction",
+    slot: "slot-ai-3",
+    title: "AI Work Fiction | RFP Digital Productions",
+    client: "RFP Digital Productions",
+    categoryEn: "AI Video Production",
+    filterCat: "ai",
+    descEn:
+      "Pioneering AI-driven narrative world-building, neural character rendering, speculative fiction cinematography, and generative post-production workflows.",
+    poster: "/medien/youtube-thumbs/uofSOLCSuC4.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=uofSOLCSuC4",
+    youtubeUrl: "https://youtu.be/uofSOLCSuC4",
+    tags: ["AI Video Production", "AI Filmmaking", "Generative Cinema", "AI Workflow", "Speculative AI"]
   },
   {
     id: "projekt-election",

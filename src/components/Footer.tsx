@@ -172,7 +172,7 @@ export const Footer: React.FC = () => {
                 Core Disciplines
               </span>
               <Link href="/services" className="text-[10px] font-mono text-[#E6C665] hover:underline flex items-center gap-1">
-                <span>View All 7</span>
+                <span>View All 6</span>
                 <ArrowUpRight className="w-3 h-3" />
               </Link>
             </div>
@@ -250,7 +250,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/#projekte" className="hover:text-white transition-colors block py-1">
+                <Link href="/projects" className="hover:text-white transition-colors block py-1">
                   Selected Projects
                 </Link>
               </li>

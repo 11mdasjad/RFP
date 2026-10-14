@@ -243,6 +243,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                       className="w-full px-4 py-2.5 rounded-xl bg-[#17161d] border border-white/[0.1] focus:border-[#a89bfa] focus:outline-none text-base sm:text-sm text-white transition-colors"
                     >
                       <option value="Corporate Films">Corporate Films</option>
+                      <option value="AI Video Production">AI Video Production</option>
                       <option value="Documentary Films">Documentary Films</option>
                       <option value="Election Campaign Services">Election Campaign Services</option>
                       <option value="Social Media Management">Social Media Management</option>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowUpRight, Play } from "lucide-react";
 
 interface HeroProps {
@@ -43,13 +44,13 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-            <a
-              href="#projekte"
+            <Link
+              href="/projects"
               className="group inline-flex items-center justify-center space-x-2 px-7 py-3.5 sm:py-4 rounded-full bg-[#f4f2f7] hover:bg-white text-[#0e0d12] text-sm sm:text-base font-semibold tracking-wide shadow-xl hover:shadow-[#7c6af2]/25 transition-all duration-200 active:scale-95 text-center"
             >
               <span>Explore Projects</span>
               <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
 
             <button
               onClick={() =>
