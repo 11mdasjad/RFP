@@ -207,8 +207,16 @@ export default function ProjectsPage() {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl">
-              Curated Productions &amp; Filmography
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1] max-w-4xl">
+              <span className="block text-white/60 font-medium">
+                We don’t just <span className="text-white font-bold">shoot videos.</span>
+              </span>
+              <span className="block mt-1.5 sm:mt-2.5">
+                We build{" "}
+                <span className="bg-gradient-to-r from-[#b4a6ff] via-[#e5c665] to-white bg-clip-text text-transparent italic font-serif">
+                  visual stories.
+                </span>
+              </span>
             </h1>
 
             <p className="text-base sm:text-lg text-[#f4f2f7b8] leading-relaxed max-w-3xl mb-8">

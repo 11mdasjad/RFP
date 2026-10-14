@@ -123,8 +123,8 @@ export const PROJECTS_DATA: ProjectCard[] = [
     slot: "slot-g",
     title: "Acharya Narendra Dev College (ANDC) Institutional Corporate Film",
     client: "University of Delhi / ANDC",
-    categoryEn: "Institutional & Campus Documentary",
-    filterCat: "documentary",
+    categoryEn: "Institutional & Campus Corporate Film",
+    filterCat: "film",
     descEn:
       "A cinematic campus documentary capturing academic breakthroughs, world-class research laboratories, and student innovations at Acharya Narendra Dev College, Delhi University.",
     poster: "/medien/youtube-thumbs/Cgvx6w13ZNg.jpg",
@@ -322,8 +322,8 @@ export const PROJECTS_DATA: ProjectCard[] = [
     slot: "slot-c",
     title: "AIIMS Corporate Movie - Medical Leadership & Clinical Care",
     client: "All India Institute of Medical Sciences (AIIMS)",
-    categoryEn: "Healthcare & Research Documentary",
-    filterCat: "documentary",
+    categoryEn: "Healthcare Corporate Film",
+    filterCat: "film",
     descEn:
       "Empathetic, authoritative medical documentary illustrating cutting-edge clinical research, compassionate healthcare teams, and patient care advancements.",
     poster: "/medien/youtube-thumbs/B8-5NEnLjQ8.jpg",
@@ -350,8 +350,8 @@ export const PROJECTS_DATA: ProjectCard[] = [
     slot: "slot-e",
     title: "IIT Roorkee & IIT Delhi Corporate Films",
     client: "Indian Institute of Technology (IIT)",
-    categoryEn: "Premier Institutional Cinema",
-    filterCat: "documentary",
+    categoryEn: "Premier Institutional Corporate Film",
+    filterCat: "film",
     descEn:
       "Comprehensive institutional films highlighting academic legacy, world-class engineering research facilities, and national technological contributions.",
     poster: "/medien/youtube-thumbs/TAv-50-CHjc.jpg",
@@ -360,18 +360,18 @@ export const PROJECTS_DATA: ProjectCard[] = [
     tags: ["IIT Roorkee", "IIT Delhi", "Engineering Research", "Institutional Master"]
   },
   {
-    id: "projekt-faridabad",
+    id: "projekt-doc-mewat",
     slot: "slot-f",
-    title: "Faridabad Smart City Limited - Urban Transformation",
-    client: "Faridabad Smart City Limited (Govt of Haryana)",
-    categoryEn: "Urban Governance & Civic Infrastructure",
+    title: "MEWAT | Documentary Film | दास्तान-ए-मेवात",
+    client: "A Film by Maqsood Khan / RFP Productions",
+    categoryEn: "Cultural & Historical Documentary",
     filterCat: "documentary",
     descEn:
-      "Documenting transformative smart urban infrastructure, automated traffic command centers, clean mobility networks, and civic modernization.",
-    poster: "/medien/youtube-thumbs/bSNcL7srjqA.jpg",
-    videoUrl: "https://www.youtube-nocookie.com/embed/bSNcL7srjqA?autoplay=1",
-    youtubeUrl: "https://youtu.be/bSNcL7srjqA",
-    tags: ["Smart City", "Urban Governance", "Infrastructure", "Public Impact"]
+      "A profoundly moving cultural and historical documentary exploring the rich heritage, legendary folklore, resilience, and soul of the Mewat region (दास्तान-ए-मेवात). Directed by Maqsood Khan.",
+    poster: "/medien/youtube-thumbs/OgZJC0msHm8.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=OgZJC0msHm8",
+    youtubeUrl: "https://youtu.be/OgZJC0msHm8",
+    tags: ["Mewat", "दास्तान-ए-मेवात", "Historical Heritage", "Maqsood Khan", "Documentary Film"]
   },
   {
     id: "projekt-pathfinder",
@@ -386,6 +386,76 @@ export const PROJECTS_DATA: ProjectCard[] = [
     videoUrl: "https://www.youtube-nocookie.com/embed/7o09OEkupfA?autoplay=1",
     youtubeUrl: "https://youtu.be/7o09OEkupfA",
     tags: ["Pathfinder Academy", "Corporate Film", "Greater Noida", "Campus Cinema"]
+  },
+  {
+    id: "projekt-doc-qureshy",
+    slot: "slot-doc-1",
+    title: "Popular Documentary Film on Dr M.N. Qureshy (Geophysicist)",
+    client: "Dr Mohammad Naseeb Qureshy Memorial Trust",
+    categoryEn: "Scientific & Biographical Documentary",
+    filterCat: "documentary",
+    descEn:
+      "A landmark biographical documentary chronicling the life, pathbreaking gravity research, and national scientific contributions of Dr Mohammad Naseeb Qureshy, an eminent Indian geophysicist.",
+    poster: "/medien/youtube-thumbs/Vlv36qCyRVU.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=Vlv36qCyRVU",
+    youtubeUrl: "https://youtu.be/Vlv36qCyRVU",
+    tags: ["Dr M.N. Qureshy", "Biographical Film", "Geophysicist", "National Science", "Documentary Master"]
+  },
+  {
+    id: "projekt-doc-bulandshahr",
+    slot: "slot-doc-2",
+    title: "Bulandshahar Ki Vikas Yatra by District Magistrate (DM)",
+    client: "District Administration Bulandshahr / Govt of UP",
+    categoryEn: "Civic Governance & Development Documentary",
+    filterCat: "documentary",
+    descEn:
+      "An authoritative governance documentary capturing the developmental transformation, civic welfare initiatives, rural road connectivity, and public infrastructure across Bulandshahr district led by the DM.",
+    poster: "/medien/youtube-thumbs/sd1nYYl2YD0.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=sd1nYYl2YD0",
+    youtubeUrl: "https://youtu.be/sd1nYYl2YD0",
+    tags: ["Bulandshahar", "Vikas Yatra", "District Magistrate", "Civic Governance", "Infrastructure"]
+  },
+  {
+    id: "projekt-doc-meos-mewat",
+    slot: "slot-doc-3",
+    title: "Meos and Mewat - A Forgotten Legacy | Documentary Film",
+    client: "A Film by Maqsood Khan / Historical Archive",
+    categoryEn: "Historical & Cultural Documentary",
+    filterCat: "documentary",
+    descEn:
+      "An in-depth historical documentary uncovering the untold chronicles, cultural identity, and forgotten legacy of the Meo community across the Mewat belt. Directed by Maqsood Khan.",
+    poster: "/medien/youtube-thumbs/uGVcyxRvvZg.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=uGVcyxRvvZg",
+    youtubeUrl: "https://youtu.be/uGVcyxRvvZg",
+    tags: ["Meos and Mewat", "Forgotten Legacy", "Cultural History", "Maqsood Khan", "Historical Film"]
+  },
+  {
+    id: "projekt-doc-pinangwan-women",
+    slot: "slot-doc-4",
+    title: "पिनगंवा (मेवात) की जुझारू महिलाओं की अनूठी कहानी | Documentary Film",
+    client: "A Film by Maqsood Khan / Grassroots Impact",
+    categoryEn: "Social Impact & Women Leadership Documentary",
+    filterCat: "documentary",
+    descEn:
+      "An inspiring grassroots documentary chronicling the courage, perseverance, and transformative journey of resilient women changemakers in Pinangwan, Mewat. Directed by Maqsood Khan.",
+    poster: "/medien/youtube-thumbs/c6jrNreu0OM.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=c6jrNreu0OM",
+    youtubeUrl: "https://youtu.be/c6jrNreu0OM",
+    tags: ["Pinangwan", "Mewat", "Women Empowerment", "Social Impact", "Grassroots Heroes"]
+  },
+  {
+    id: "projekt-doc-ahle-hadees",
+    slot: "slot-doc-5",
+    title: "Ahle Hadees Documentary Film | जमीअत अहले हदीस की तारीख और अचीवमेंट्स",
+    client: "All India Jamiat Ahle Hadees / RFP Productions",
+    categoryEn: "Institutional & Historical Documentary",
+    filterCat: "documentary",
+    descEn:
+      "A comprehensive institutional documentary documenting the historical journey, educational contributions, public welfare institutions, and key milestones of Jamiat Ahle Hadees across India.",
+    poster: "/medien/youtube-thumbs/xzdQEOkeGeI.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=xzdQEOkeGeI",
+    youtubeUrl: "https://youtu.be/xzdQEOkeGeI",
+    tags: ["Ahle Hadees", "Institutional History", "Social Welfare", "Educational Legacy", "Documentary Master"]
   }
 ];
 
