@@ -8,11 +8,15 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
-  const showreelVideo = {
+  // Link 1: Kept on the Showcase Banner with its original thumbnail
+  const bannerVideo = {
     title: "Showreel",
     videoUrl: "https://www.youtube.com/watch?v=QvlClFaXJLc",
     thumbnail: "/medien/youtube-thumbs/QvlClFaXJLc.jpg",
   };
+
+  // Link 2: Dedicated for "Watch Showreel" Action Button
+  const showreelButtonUrl = "https://www.youtube.com/watch?v=X_U98b96fk0";
 
   return (
     <section className="relative pt-24 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1440px] mx-auto overflow-hidden">
@@ -50,8 +54,8 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
             <button
               onClick={() =>
                 onPlayVideo(
-                  showreelVideo.videoUrl,
-                  showreelVideo.title,
+                  showreelButtonUrl,
+                  "Watch Showreel",
                   "RFP Digital Productions"
                 )
               }
@@ -69,8 +73,8 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
             className="relative w-full aspect-[16/10] sm:aspect-[16/9.5] rounded-2xl sm:rounded-[32px] overflow-hidden bg-[#17161d] border border-white/[0.14] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.85)] group cursor-pointer transition-all duration-300 hover:border-[#7c6af2]/50 hover:shadow-[0_25px_70px_-10px_rgba(124,106,242,0.25)]"
             onClick={() =>
               onPlayVideo(
-                showreelVideo.videoUrl,
-                showreelVideo.title,
+                bannerVideo.videoUrl,
+                bannerVideo.title,
                 "RFP Digital Productions"
               )
             }
@@ -82,8 +86,8 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
             {/* Original YouTube Thumbnail Poster */}
             <div className="absolute inset-0">
               <img
-                src={showreelVideo.thumbnail}
-                alt={showreelVideo.title}
+                src={bannerVideo.thumbnail}
+                alt={bannerVideo.title}
                 fetchPriority="high"
                 decoding="async"
                 className="w-full h-full object-cover object-center filter saturate-[1.05] transition-transform duration-700 group-hover:scale-105"
@@ -98,13 +102,13 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
                 onClick={(e) => {
                   e.stopPropagation();
                   onPlayVideo(
-                    showreelVideo.videoUrl,
-                    showreelVideo.title,
+                    bannerVideo.videoUrl,
+                    bannerVideo.title,
                     "RFP Digital Productions"
                   );
                 }}
                 className="relative w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-[#0e0d12]/85 hover:bg-[#6b54ee] text-white border border-white/35 hover:border-transparent backdrop-blur-md flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-2xl active:scale-95"
-                aria-label={`Watch Video: ${showreelVideo.title}`}
+                aria-label={`Watch Video: ${bannerVideo.title}`}
               >
                 <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1 text-white" />
               </button>
@@ -113,7 +117,7 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
             {/* Scene Meta Info: Title "Showreel" */}
             <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-7 z-20 pointer-events-none">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug drop-shadow-lg">
-                {showreelVideo.title}
+                {bannerVideo.title}
               </h3>
             </div>
 
@@ -135,7 +139,7 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
             {/* Top-Right Direct YouTube Badge */}
             <div className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 z-20">
               <a
-                href={showreelVideo.videoUrl}
+                href={bannerVideo.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
