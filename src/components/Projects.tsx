@@ -209,13 +209,25 @@ const ProjectCardItem: React.FC<{
         {project.videos && project.videos.length > 1 && (
           <div className="absolute bottom-2.5 left-2.5 right-2.5 z-20 flex items-center gap-1.5 p-1 rounded-xl bg-black/85 backdrop-blur-md border border-white/15">
             {project.videos.map((vid, idx) => {
-              const label = vid.title.includes("Antul Teotia")
-                ? "Dr. Antul"
-                : vid.title.includes("Umesh Agarwal")
-                ? "Umesh Agarwal"
-                : vid.title.includes("Meera Brass")
-                ? "Meera Brass"
-                : `Video ${idx + 1}`;
+              const label =
+                vid.shortTitle ||
+                (vid.title.includes("Antul")
+                  ? "Dr. Antul"
+                  : vid.title.includes("Umesh")
+                  ? "Umesh Agarwal"
+                  : vid.title.includes("Ajit")
+                  ? "Ajit Sharma"
+                  : vid.title.includes("Gautam")
+                  ? "Rajendra Gautam"
+                  : vid.title.includes("Babli")
+                  ? "Devender Babli"
+                  : vid.title.includes("Devendra")
+                  ? "Devendra Yadav"
+                  : vid.title.includes("Shashi")
+                  ? "Shashi Jain"
+                  : vid.title.includes("Showreel")
+                  ? "Showreel"
+                  : `Video ${idx + 1}`);
               return (
                 <button
                   key={vid.id}

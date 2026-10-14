@@ -12,6 +12,7 @@ export interface StageScene {
 export interface VideoItem {
   id: string;
   title: string;
+  shortTitle?: string;
   subtitle?: string;
   poster: string;
   videoUrl: string;
@@ -141,35 +142,124 @@ export const PROJECTS_DATA: ProjectCard[] = [
     descEn:
       "Constituency-wide campaign operations featuring mobile high-brightness LED display vans, documentary storytelling, rally multi-camera live switching, and grassroots outreach.",
     poster: "/medien/youtube-thumbs/jirysVZwPIE.jpg",
-    videoUrl: "https://www.youtube-nocookie.com/embed/jirysVZwPIE?autoplay=1",
+    videoUrl: "https://www.youtube.com/watch?v=jirysVZwPIE",
     youtubeUrl: "https://youtu.be/jirysVZwPIE",
     videos: [
       {
         id: "antul-teotia",
         title: "Dr. Antul Teotia Zila Pramukh Bulandshahr",
+        shortTitle: "Dr. Antul",
         subtitle: "The People's Voice | Zila Panchayat Adhyaksh Campaign",
         poster: "/medien/youtube-thumbs/jirysVZwPIE.jpg",
-        videoUrl: "https://www.youtube-nocookie.com/embed/jirysVZwPIE?autoplay=1",
+        videoUrl: "https://www.youtube.com/watch?v=jirysVZwPIE",
         youtubeUrl: "https://youtu.be/jirysVZwPIE"
       },
       {
         id: "umesh-agarwal",
         title: "Umesh Agarwal MLA (#BJP Gurugram)",
+        shortTitle: "Umesh Agarwal",
         subtitle: "Gurugram's Transformation | Vikas Yatra Documentary",
         poster: "/medien/youtube-thumbs/3JWmjrRbYDM.jpg",
-        videoUrl: "https://www.youtube-nocookie.com/embed/3JWmjrRbYDM?autoplay=1",
+        videoUrl: "https://www.youtube.com/watch?v=3JWmjrRbYDM",
         youtubeUrl: "https://www.youtube.com/watch?v=3JWmjrRbYDM"
       },
       {
-        id: "meera-brass",
-        title: "Corporate Film for Meera Brass Products",
-        subtitle: "Industrial Manufacturing & Brand Production",
-        poster: "/medien/youtube-thumbs/7BHyfYAxREc.jpg",
-        videoUrl: "https://www.youtube-nocookie.com/embed/7BHyfYAxREc?autoplay=1",
-        youtubeUrl: "https://youtu.be/7BHyfYAxREc"
+        id: "ajit-sharma",
+        title: "Ajit Sharma MLA INC Bhagalpur",
+        shortTitle: "Ajit Sharma",
+        subtitle: "Profile Documentary Film | Bihar Vidhan Sabha",
+        poster: "/medien/youtube-thumbs/3n58zR1Reqs.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=3n58zR1Reqs",
+        youtubeUrl: "https://youtu.be/3n58zR1Reqs"
       }
     ],
-    tags: ["Election Campaign", "Dr. Antul Teotia", "Umesh Agarwal MLA", "Meera Brass", "Mobile LED Vans"]
+    tags: ["Election Campaign", "Dr. Antul Teotia", "Umesh Agarwal MLA", "Ajit Sharma MLA", "Mobile LED Vans"]
+  },
+  {
+    id: "projekt-election-legislative",
+    slot: "slot-e",
+    title: "Vidhan Sabha Legislative Profile Films",
+    client: "Rajendra Pal Gautam & Devender Singh Babli",
+    categoryEn: "Candidate Profile & Constituency Film",
+    filterCat: "campaign",
+    descEn:
+      "High-impact political profile films highlighting grassroots public service, Vidhan Sabha speeches, and developmental roadmaps.",
+    poster: "/medien/youtube-thumbs/I9b_Bg9VzOE.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=I9b_Bg9VzOE",
+    youtubeUrl: "https://youtu.be/I9b_Bg9VzOE",
+    videos: [
+      {
+        id: "rajendra-pal-gautam",
+        title: "Rajendra Pal Gautam (Seemapuri MLA - AAP)",
+        shortTitle: "Rajendra Gautam",
+        subtitle: "Sangharsh Gatha Documentary | Delhi Vidhan Sabha",
+        poster: "/medien/youtube-thumbs/I9b_Bg9VzOE.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=I9b_Bg9VzOE",
+        youtubeUrl: "https://youtu.be/I9b_Bg9VzOE"
+      },
+      {
+        id: "devender-babli",
+        title: "Devender Singh Babli MLA (Tohana)",
+        shortTitle: "Devender Babli",
+        subtitle: "Devender Singh Babli Documentary Film | Haryana",
+        poster: "/medien/youtube-thumbs/X6WGGZucJ1U.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=X6WGGZucJ1U",
+        youtubeUrl: "https://youtu.be/X6WGGZucJ1U"
+      },
+      {
+        id: "devendra-yadav",
+        title: "Devendra Yadav (INC Delhi - Ex MLA Badli)",
+        shortTitle: "Devendra Yadav",
+        subtitle: "AICC Secretary Profile Documentary | Badli, Delhi",
+        poster: "/medien/youtube-thumbs/cNJq_La_yzY.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=cNJq_La_yzY",
+        youtubeUrl: "https://youtu.be/cNJq_La_yzY"
+      }
+    ],
+    tags: ["Vidhan Sabha", "Rajendra Pal Gautam", "Devender Singh Babli", "Devendra Yadav", "Profile Films"]
+  },
+  {
+    id: "projekt-election-media-war-room",
+    slot: "slot-f",
+    title: "Election Management & Prachar Anthems",
+    client: "Shashi Jain BJP & RFP Election Media",
+    categoryEn: "Election War Room & Viral Prachar Media",
+    filterCat: "campaign",
+    descEn:
+      "Comprehensive election campaign management, campaign anthems, rapid-turnaround rally reels, and digital war room broadcasts.",
+    poster: "/medien/youtube-thumbs/OlIKKn9HyBo.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=OlIKKn9HyBo",
+    youtubeUrl: "https://youtu.be/OlIKKn9HyBo",
+    videos: [
+      {
+        id: "rfp-election-master",
+        title: "RFP Election Campaign & Media Management",
+        shortTitle: "RFP Prachar",
+        subtitle: "चुनाव प्रचार RFP डिजिटल मीडिया | Master Campaign Production",
+        poster: "/medien/youtube-thumbs/OlIKKn9HyBo.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=OlIKKn9HyBo",
+        youtubeUrl: "https://youtu.be/OlIKKn9HyBo"
+      },
+      {
+        id: "shashi-jain-amroha",
+        title: "Shashi Jain BJP (Amroha Chairman)",
+        shortTitle: "Shashi Jain",
+        subtitle: "Shashi Jain Chairman Amroha, UP Documentary Film",
+        poster: "/medien/youtube-thumbs/KLfO_N4a6V8.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=KLfO_N4a6V8",
+        youtubeUrl: "https://youtu.be/KLfO_N4a6V8"
+      },
+      {
+        id: "political-showreel",
+        title: "RFP Political Campaign & Media Showreel",
+        shortTitle: "Showreel",
+        subtitle: "Video Production & Election Management Showcase",
+        poster: "/medien/youtube-thumbs/X_U98b96fk0.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=X_U98b96fk0",
+        youtubeUrl: "https://www.youtube.com/watch?v=X_U98b96fk0"
+      }
+    ],
+    tags: ["Election Management", "Shashi Jain", "Chunav Prachar", "War Room", "Political Showreel"]
   },
   {
     id: "projekt-samsung",
