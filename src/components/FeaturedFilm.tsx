@@ -15,7 +15,7 @@ export const FeaturedFilm: React.FC<FeaturedFilmProps> = ({ onPlayFilm }) => {
     description:
       "A cinematic exploration of light, timber, and spatial restraint. Filmed across twilight transitions using bespoke anamorphic primes to capture organic materials in true form.",
     videoUrl:
-      "https://www.youtube.com/watch?v=QvlClFaXJLc",
+      "https://www.youtube.com/watch?v=X_U98b96fk0",
     poster:
       "/medien/landing/landing-camera-1256.jpg",
     specs: [
