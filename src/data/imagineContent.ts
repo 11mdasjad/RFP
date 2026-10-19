@@ -95,26 +95,172 @@ export const FAKTEN_DATA = [
   }
 ];
 
+// Client logos supplied in the LOGOS Google Drive folder.
 export const CLIENT_LOGOS = [
-  { name: "Unilever", src: "/medien/logos/unilever.png" },
-  { name: "Haryana Police", src: "/medien/logos/haryana-police.png" },
-  { name: "Sports Authority of India (SAI)", src: "/medien/logos/sports-authority-india.png" },
-  { name: "Pradhanmantri Fasal Bima Yojana", src: "/medien/logos/pmfby.png" },
-  { name: "GRC India (Save Globe)", src: "/medien/logos/grc-india.png" },
-  { name: "Parmarth - Empowering Process", src: "/medien/logos/parmarth.png" },
-  { name: "Smile India Trust", src: "/medien/logos/smile-india.png" },
-  { name: "Leaderz Walk", src: "/medien/logos/leaderz-walk.png" },
-  { name: "Pathfinder Academy", src: "/medien/logos/pathfinder-academy.png" },
-  { name: "IIT Roorkee", src: "/medien/logos/iit-roorkee.png" },
-  { name: "Jamia Hamdard University", src: "/medien/logos/jamia-hamdard.png" },
-  { name: "National Archives of India", src: "/medien/logos/national-archives.jpg" },
-  { name: "DD Kisan", src: "/medien/logos/dd-kisan.png" },
-  { name: "Samsung", src: "/medien/logos/samsung.png" },
-  { name: "Atal Bihari Vajpayee Hindi Vishwavidyalaya", src: "/medien/logos/atal-bihari-univ.png" },
-  { name: "Zila Panchayat Bulandshahr, Uttar Pradesh", src: "/medien/logos/bulandshahr-zila-panchayat.png" },
-  { name: "Bharat Construction", src: "/medien/logos/bharat-construction.jpg" },
-  { name: "Jamia Co-operative Bank", src: "/medien/logos/jamia-coop-bank.jpg" },
-  { name: "Brave Soul Foundation", src: "/medien/logos/brave-soul-foundation.jpg" }
+  {
+    "name": "Foundation for Equal Citizenship",
+    "src": "/medien/client-logos/foundation-for-equal-citizenship.png"
+  },
+  {
+    "name": "Mewat Development Agency",
+    "src": "/medien/client-logos/mewat-development-agency.jpg"
+  },
+  {
+    "name": "ProMedica",
+    "src": "/medien/client-logos/promedica.png"
+  },
+  {
+    "name": "Gayatri Public School",
+    "src": "/medien/client-logos/gayatri-public-school.jpg"
+  },
+  {
+    "name": "Jindal Infraprojects",
+    "src": "/medien/client-logos/jindal-infraprojects.jpg"
+  },
+  {
+    "name": "AR Constructions",
+    "src": "/medien/client-logos/ar-constructions.avif"
+  },
+  {
+    "name": "Meera Brass Products",
+    "src": "/medien/client-logos/meera-brass-products.jpg"
+  },
+  {
+    "name": "PFS Sports",
+    "src": "/medien/client-logos/pfs-sports.png"
+  },
+  {
+    "name": "DIET Moti Bagh",
+    "src": "/medien/client-logos/diet-moti-bagh.jpg"
+  },
+  {
+    "name": "DIET Darya Ganj",
+    "src": "/medien/client-logos/diet-darya-ganj.jpg"
+  },
+  {
+    "name": "Alwar Mewat Institute of Education and Development",
+    "src": "/medien/client-logos/alwar-mewat-institute-of-education-and-development.jpg"
+  },
+  {
+    "name": "IIT Delhi",
+    "src": "/medien/client-logos/iit-delhi.png"
+  },
+  {
+    "name": "Shalom Hills International School",
+    "src": "/medien/client-logos/shalom-hills-international-school.jpg"
+  },
+  {
+    "name": "Cooper Pharma",
+    "src": "/medien/client-logos/cooper-pharma.png"
+  },
+  {
+    "name": "Abbott",
+    "src": "/medien/client-logos/abbott.png"
+  },
+  {
+    "name": "NIMS University",
+    "src": "/medien/client-logos/nims-university.jpg"
+  },
+  {
+    "name": "Raheeq Global School",
+    "src": "/medien/client-logos/raheeq-global-school.png"
+  },
+  {
+    "name": "Jamia Hamdard",
+    "src": "/medien/client-logos/jamia-hamdard.png"
+  },
+  {
+    "name": "Islamic Relief Worldwide",
+    "src": "/medien/client-logos/islamic-relief-worldwide.jpg"
+  },
+  {
+    "name": "DD Kisan",
+    "src": "/medien/client-logos/dd-kisan.webp"
+  },
+  {
+    "name": "IIT Roorkee",
+    "src": "/medien/client-logos/iit-roorkee.png"
+  },
+  {
+    "name": "Jamia Co-operative Bank",
+    "src": "/medien/client-logos/jamia-co-operative-bank.jpg"
+  },
+  {
+    "name": "HIMSR",
+    "src": "/medien/client-logos/himsr.png"
+  },
+  {
+    "name": "Al-Hafeez",
+    "src": "/medien/client-logos/al-hafeez.png"
+  },
+  {
+    "name": "Atal Bihari Vajpayee Hindi Vishwavidyalaya",
+    "src": "/medien/client-logos/atal-bihari-vajpayee-hindi-vishwavidyalaya.png"
+  },
+  {
+    "name": "Bharat Construction",
+    "src": "/medien/client-logos/bharat-construction.jpg"
+  },
+  {
+    "name": "Brave Souls Foundation",
+    "src": "/medien/client-logos/brave-souls-foundation.jpg"
+  },
+  {
+    "name": "AIIMS New Delhi",
+    "src": "/medien/client-logos/aiims-new-delhi.png"
+  },
+  {
+    "name": "Faridabad Smart City",
+    "src": "/medien/client-logos/faridabad-smart-city.jpg"
+  },
+  {
+    "name": "Haryana Police",
+    "src": "/medien/client-logos/haryana-police.png"
+  },
+  {
+    "name": "Sports Authority of India",
+    "src": "/medien/client-logos/sports-authority-of-india.jpg"
+  },
+  {
+    "name": "Me and My Human",
+    "src": "/medien/client-logos/me-and-my-human.jpg"
+  },
+  {
+    "name": "Smile India Trust",
+    "src": "/medien/client-logos/smile-india-trust.png"
+  },
+  {
+    "name": "Acharya Narendra Dev College",
+    "src": "/medien/client-logos/acharya-narendra-dev-college.png"
+  },
+  {
+    "name": "GRC India",
+    "src": "/medien/client-logos/grc-india.png"
+  },
+  {
+    "name": "Leaderz Walk",
+    "src": "/medien/client-logos/leaderz-walk.png"
+  },
+  {
+    "name": "CanWinn Foundation",
+    "src": "/medien/client-logos/canwinn-foundation.jpg"
+  },
+  {
+    "name": "National Archives of India",
+    "src": "/medien/client-logos/national-archives-of-india.jpg"
+  },
+  {
+    "name": "Bharat Bharati Swadesh Pradesh",
+    "src": "/medien/client-logos/bharat-bharati-swadesh-pradesh.png"
+  },
+  {
+    "name": "go4WorldBusiness",
+    "src": "/medien/client-logos/go4worldbusiness.png"
+  },
+  {
+    "name": "AG Builders",
+    "src": "/medien/client-logos/ag-builders.jpg"
+  }
 ];
 
 export const PROJECTS_DATA: ProjectCard[] = [

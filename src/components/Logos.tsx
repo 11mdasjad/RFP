@@ -14,8 +14,7 @@ export const Logos: React.FC<LogosProps> = ({
   items = CLIENT_LOGOS,
   reverse = false,
 }) => {
-  // Duplicate items 3 times to ensure uninterrupted infinite marquee scroll
-  const displayItems = [...items, ...items, ...items];
+  // Two identical groups keep the halfway animation reset seamless.
 
   return (
     <section className="py-12 sm:py-16 border-b border-white/[0.08] overflow-hidden bg-[#0a090e]/80 relative">
@@ -34,20 +33,28 @@ export const Logos: React.FC<LogosProps> = ({
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#0a090e] via-[#0a090e]/80 to-transparent z-10" />
 
         {/* Continuous Horizontal Moving Track */}
-        <div className={reverse ? "animate-marquee-reverse gap-4 sm:gap-6 py-2" : "animate-marquee gap-4 sm:gap-6 py-2"}>
-          {displayItems.map((logo, idx) => (
+        <div
+          className={`${reverse ? "animate-marquee-reverse" : "animate-marquee"} py-2 motion-reduce:animate-none`}
+          style={{ animationDuration: `${Math.max(35, items.length * 4)}s` }}
+        >
+          {[0, 1].map((copy) => (
+          <div key={copy} aria-hidden={copy === 1 ? true : undefined} className="flex shrink-0 gap-4 sm:gap-6 pr-4 sm:pr-6">
+          {items.map((logo) => (
             <div
-              key={`${logo.name}-${idx}`}
+              key={logo.src}
               title={logo.name}
-              className="shrink-0 w-44 sm:w-52 h-20 sm:h-24 flex items-center justify-center p-3.5 sm:p-4 rounded-2xl bg-white shadow-md hover:shadow-xl hover:shadow-white/10 hover:scale-105 transition-all duration-300 border border-white/20 select-none group cursor-pointer"
+              className="shrink-0 w-48 sm:w-56 h-24 sm:h-28 flex items-center justify-center p-4 sm:p-5 rounded-2xl bg-white shadow-md border border-white/20 select-none group"
             >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="max-h-12 sm:max-h-14 max-w-[88%] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
+                decoding="async"
               />
             </div>
+          ))}
+          </div>
           ))}
         </div>
       </div>
