@@ -184,6 +184,9 @@ export default function ServiceDetailPage({
                     ? "object-contain bg-[#06080e]"
                     : "object-cover"
                 } filter contrast-[1.03] brightness-95 group-hover:scale-[1.01] transition-transform duration-700 ease-out`}
+                style={{
+                  objectPosition: service.id === "documentary-films" ? "center 65%" : "center"
+                }}
               />
               {service.id !== "social-media-digital-marketing" && (
                 <>

@@ -84,8 +84,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       { step: "03", title: "Narrative Assembly", desc: "Weaving oral histories, emotional arcs, and authentic field soundscapes." },
       { step: "04", title: "Screening Master", desc: "Archival grade color mastering and festival/institution delivery." }
     ],
-    image: "/medien/landing/documentary-film-production-banner.jpg",
-    videoThumbnail: "/medien/landing/documentary-film-production-banner.jpg",
+    image: "/medien/landing/documentary-films-ground-production.jpg",
+    videoThumbnail: "/medien/landing/documentary-films-ground-production.jpg",
     videoUrl: "https://www.youtube.com/embed/91kFY2xs7cE?autoplay=1",
     youtubeUrl: "https://youtu.be/91kFY2xs7cE",
     aspect: "16/9"

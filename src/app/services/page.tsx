@@ -188,6 +188,9 @@ export default function ServicesPage() {
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover filter contrast-[1.05] brightness-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+                      style={{
+                        objectPosition: service.id === "documentary-films" ? "center 65%" : "center"
+                      }}
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#17161d] via-black/30 to-transparent" />
