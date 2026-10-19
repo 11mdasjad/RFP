@@ -116,8 +116,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             href="/ec"
             className={`h-10 px-4 text-[15px] leading-none whitespace-nowrap rounded-full transition-colors duration-200 font-semibold tracking-normal inline-flex items-center justify-center shrink-0 ${
               isEc
-                ? "text-[#F3E5AB] bg-[#D4AF37]/15"
-                : "text-[#E6C665] hover:text-[#FFF8DC] bg-[#D4AF37]/[0.06] hover:bg-[#D4AF37]/15"
+                ? "text-white bg-white/[0.12]"
+                : "text-white/90 hover:text-white hover:bg-white/[0.08]"
             }`}
           >
             <span>Election Campaigns</span>
@@ -356,15 +356,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`text-base font-bold py-2.5 px-3 rounded-xl flex items-center justify-between transition-all ${
                   isEc
-                    ? "text-[#F3E5AB] bg-[#D4AF37]/25 border border-[#D4AF37]"
-                    : "text-[#E6C665] bg-[#D4AF37]/10 border border-[#D4AF37]/35 hover:bg-[#D4AF37]/20"
+                    ? "text-white bg-white/[0.12]"
+                    : "text-white/90 hover:text-white hover:bg-white/[0.08]"
                 }`}
               >
                 <div className="flex items-center gap-2">
                   <span className="font-semibold tracking-wide">Election Campaign</span>
-                  <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-[#D4AF37]/20 text-[#F3E5AB] border border-[#D4AF37]/30">Hub</span>
+                  <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-white/10 text-white/70">Hub</span>
                 </div>
-                <span className="text-xs text-[#E6C665]">✦</span>
+                <span className="text-xs text-white/70">✦</span>
               </Link>
 
               <div className="pt-3 border-t border-white/[0.08]">
