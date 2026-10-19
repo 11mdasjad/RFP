@@ -124,7 +124,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/[0.08]">
               <div className="space-y-1">
                 <span className="text-2xl sm:text-3xl font-serif font-bold text-white">17+</span>
-                <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Years (Since 2007)</p>
+                <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Years (Since 2009)</p>
               </div>
               <div className="space-y-1">
                 <span className="text-2xl sm:text-3xl font-serif font-bold text-[#E6C665]">1,000+</span>

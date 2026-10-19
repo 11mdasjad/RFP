@@ -22,7 +22,7 @@ export const Zusammenarbeit: React.FC = () => {
   const whyChooseUs = [
     {
       title: "17+ Years Industry Experience",
-      desc: "Proven legacy in high-stakes media production and mass visual communication since 2007.",
+      desc: "Proven legacy in high-stakes media production and mass visual communication since 2009.",
       icon: Award
     },
     {

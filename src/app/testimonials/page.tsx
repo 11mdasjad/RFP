@@ -124,7 +124,7 @@ export default function TestimonialsPage() {
             <div className="mt-12 pt-8 border-t border-white/[0.08] grid grid-cols-2 sm:grid-cols-4 gap-6">
               <div className="space-y-1">
                 <div className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">17+ Years</div>
-                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Production Excellence (Since 2007)</div>
+                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Production Excellence (Since 2009)</div>
               </div>
               <div className="space-y-1">
                 <div className="text-2xl sm:text-3xl font-serif font-bold text-[#E6C665] tracking-tight">500+</div>

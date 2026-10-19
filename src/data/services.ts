@@ -166,7 +166,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "GPS Fleet Tracking & Real-Time Telemetry"
     ],
     stats: [
-      { label: "Campaigns & Constituencies", value: "45+ (Since 2007)" },
+      { label: "Campaigns & Constituencies", value: "45+ (Since 2009)" },
       { label: "LED Vans Deployed", value: "80+ Fleet" },
       { label: "Voters Reached", value: "10M+" }
     ],

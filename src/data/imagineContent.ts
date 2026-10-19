@@ -76,7 +76,7 @@ export const FAKTEN_DATA = [
   {
     num: "17+",
     labelEn: "Years of Media Excellence",
-    descEn: "Established in 2007 by alumni of AJK MCRC, Jamia Millia Islamia, New Delhi."
+    descEn: "Established in 2009 by alumni of AJK MCRC, Jamia Millia Islamia, New Delhi."
   },
   {
     num: "1,000+",

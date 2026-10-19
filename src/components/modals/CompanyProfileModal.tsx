@@ -50,7 +50,7 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({ isOpen
               Official Company Profile
             </span>
             <span className="text-xs text-white/50 font-mono hidden sm:inline">
-              RFP Digital Productions · Established 2007
+              RFP Digital Productions · Established 2009
             </span>
           </div>
 
@@ -100,7 +100,7 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({ isOpen
               </div>
 
               <div className="text-left sm:text-right font-mono text-xs text-white/70 space-y-1 print:text-black">
-                <div className="text-[#E6C665] font-semibold print:text-black">Established 2007 • New Delhi, India</div>
+                <div className="text-[#E6C665] font-semibold print:text-black">Established 2009 • New Delhi, India</div>
                 <div>Alumni of AJK MCRC, Jamia Millia Islamia</div>
                 <div>Reg. Office: 156D, First Floor, Sarai Julena (NFC)</div>
               </div>
@@ -120,7 +120,7 @@ export const CompanyProfileModal: React.FC<CompanyProfileModalProps> = ({ isOpen
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] print:border-black/20 print:bg-gray-100">
             <div>
               <div className="text-2xl font-bold font-mono text-[#E6C665] print:text-black">17+ Years</div>
-              <div className="text-xs text-white/60 font-mono uppercase print:text-black">Media Excellence (Since 2007)</div>
+              <div className="text-xs text-white/60 font-mono uppercase print:text-black">Media Excellence (Since 2009)</div>
             </div>
             <div>
               <div className="text-2xl font-bold font-mono text-white print:text-black">1,000+</div>
