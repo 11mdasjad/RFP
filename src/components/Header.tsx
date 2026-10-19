@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
           : "bg-[#0a090e]/75 backdrop-blur-md border-b border-white/[0.06] py-4 sm:py-5"
       }`}
     >
-      <div className="max-w-[1600px] 2xl:max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         {/* Official Brand Logo */}
         <Link
           href="/"

@@ -21,7 +21,7 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
   const showreelButtonUrl = "https://www.youtube.com/watch?v=X_U98b96fk0";
 
   return (
-    <section className="relative pt-24 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1440px] mx-auto overflow-hidden">
+    <section className="relative pt-24 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       {/* Background ambient radial glows */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[700px] h-[350px] sm:h-[500px] bg-[#7c6af2]/12 blur-[120px] sm:blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute top-1/2 right-1/4 translate-x-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] h-[300px] sm:h-[450px] bg-[#6b54ee]/10 blur-[130px] sm:blur-[170px] pointer-events-none rounded-full" />
@@ -31,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
         <div className="lg:col-span-6 flex flex-col justify-center z-10">
 
           {/* Main Title: Bold, Grand & Prominent 2-Line Symmetry */}
-          <h1 className="text-3xl sm:text-5xl lg:text-[42px] xl:text-[50px] 2xl:text-[56px] font-extrabold tracking-tight text-[#f4f2f7] leading-[1.12] mb-5 sm:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[38px] xl:text-[44px] 2xl:text-[48px] font-extrabold tracking-tight text-[#f4f2f7] leading-[1.14] mb-5 sm:mb-6">
             <span className="block sm:whitespace-nowrap">Video Production &amp;</span>
             <span className="block sm:whitespace-nowrap bg-gradient-to-r from-[#b4a6ff] via-[#8d7df5] to-[#c4b5fd] bg-clip-text text-transparent">
               Election Management Co.

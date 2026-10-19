@@ -40,7 +40,7 @@ export const About: React.FC<AboutProps> = ({ onWatchStory }) => {
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+    <section id="about" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Editorial Section Badge */}
       <div className="flex items-center space-x-2.5 mb-10">
         <span className="text-sm text-[#5A7865]">☵</span>
