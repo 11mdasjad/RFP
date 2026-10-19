@@ -21,17 +21,17 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
   const showreelButtonUrl = "https://www.youtube.com/watch?v=X_U98b96fk0";
 
   return (
-    <section className="relative pt-24 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+    <section className="relative pt-24 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1600px] 2xl:max-w-[1720px] mx-auto overflow-hidden">
       {/* Background ambient radial glows */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[700px] h-[350px] sm:h-[500px] bg-[#7c6af2]/12 blur-[120px] sm:blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute top-1/2 right-1/4 translate-x-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] h-[300px] sm:h-[450px] bg-[#6b54ee]/10 blur-[130px] sm:blur-[170px] pointer-events-none rounded-full" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 xl:gap-14 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
         {/* Left Column: Typography & CTAs (6-span for balanced symmetry) */}
         <div className="lg:col-span-6 flex flex-col justify-center z-10">
 
           {/* Main Title: Bold, Grand & Prominent 2-Line Symmetry */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[38px] xl:text-[44px] 2xl:text-[48px] font-extrabold tracking-tight text-[#f4f2f7] leading-[1.14] mb-5 sm:mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-[42px] xl:text-[48px] 2xl:text-[54px] font-extrabold tracking-tight text-[#f4f2f7] leading-[1.12] mb-5 sm:mb-6">
             <span className="block sm:whitespace-nowrap">Video Production &amp;</span>
             <span className="block sm:whitespace-nowrap bg-gradient-to-r from-[#b4a6ff] via-[#8d7df5] to-[#c4b5fd] bg-clip-text text-transparent">
               Election Management Co.
@@ -44,13 +44,13 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5">
             <Link
               href="/projects"
-              className="group inline-flex items-center justify-center space-x-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-[#f4f2f7] hover:bg-white text-[#0e0d12] text-sm sm:text-base font-semibold tracking-wide shadow-xl hover:shadow-[#7c6af2]/25 transition-all duration-200 active:scale-95 text-center"
+              className="group inline-flex items-center justify-center space-x-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#f4f2f7] hover:bg-white text-[#0e0d12] text-xs sm:text-sm font-bold tracking-wide shadow-xl hover:shadow-[#7c6af2]/25 transition-all duration-200 active:scale-95 text-center whitespace-nowrap"
             >
               <span>Explore Projects</span>
-              <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
 
             <button
@@ -61,9 +61,9 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
                   "RFP Digital Productions"
                 )
               }
-              className="inline-flex items-center justify-center space-x-2.5 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-white/[0.22] hover:border-white/[0.45] bg-white/[0.04] hover:bg-white/[0.1] text-[#f4f2f7] text-sm sm:text-base font-medium tracking-wide transition-all duration-200 active:scale-95 text-center backdrop-blur-sm"
+              className="inline-flex items-center justify-center space-x-2 px-4.5 sm:px-5 py-3 sm:py-3.5 rounded-full border border-white/[0.22] hover:border-white/[0.45] bg-white/[0.04] hover:bg-white/[0.1] text-[#f4f2f7] text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 active:scale-95 text-center backdrop-blur-sm whitespace-nowrap"
             >
-              <Play className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current text-[#b4a6ff]" />
+              <Play className="w-3.5 h-3.5 fill-current text-[#b4a6ff]" />
               <span>Watch Showreel</span>
             </button>
 
@@ -71,9 +71,9 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
               <button
                 type="button"
                 onClick={onOpenCompanyProfile}
-                className="inline-flex items-center justify-center space-x-2 px-4 sm:px-5 py-3.5 sm:py-4 rounded-full border border-[#D4AF37]/35 hover:border-[#D4AF37]/80 bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 text-[#f4d47c] text-xs sm:text-sm font-medium tracking-wide transition-all duration-200 active:scale-95 text-center"
+                className="inline-flex items-center justify-center space-x-1.5 px-4 sm:px-4.5 py-3 sm:py-3.5 rounded-full border border-[#D4AF37]/35 hover:border-[#D4AF37]/80 bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 text-[#f4d47c] text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 active:scale-95 text-center whitespace-nowrap"
               >
-                <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <FileText className="w-3.5 h-3.5" />
                 <span>Company Profile</span>
               </button>
             )}
