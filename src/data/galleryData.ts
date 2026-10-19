@@ -2,6 +2,62 @@ import { GalleryItem } from '@/types/gallery';
 
 export const INITIAL_GALLERY_ITEMS: GalleryItem[] = [
   {
+    "id": "drive-img-studio-broadcast",
+    "title": "Live Studio Broadcast & Multi-Cam Crew",
+    "category": "Cinema & Film",
+    "client": "RFP Digital Productions",
+    "year": "2025",
+    "image": "/medien/drive-gallery/IMG_0495.jpg",
+    "summary": "Synchronized multi-camera production floor with live headsets, high-output softboxes, and teleprompter.",
+    "description": "End-to-end studio broadcast operation featuring camera operators on live talkback, teleprompting, and studio light banks.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/IMG_0495.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-studio-lighting",
+    "title": "Corporate Studio Production & Lighting Setup",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2025",
+    "image": "/medien/drive-gallery/IMG_0254.jpg",
+    "summary": "Full studio lighting and teleprompter configuration with Godox softboxes and director crew on-set.",
+    "description": "Comprehensive studio production environment featuring balanced three-point softbox lighting, prompt monitors, and multi-angle camera alignment.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/IMG_0254.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-exec-interview",
+    "title": "Executive Interview & Teleprompter Setup",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2025",
+    "image": "/medien/drive-gallery/IMG_0099.jpg",
+    "summary": "Lilliput 4K field monitor framing dual-interviewees with teleprompter rig in a corporate studio setup.",
+    "description": "Professional multi-camera setup with Lilliput field monitoring and teleprompter system for executive interviews and corporate productions.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/IMG_0099.jpg"
+    ]
+  },
+  {
+    "id": "drive-img-boardroom-conf",
+    "title": "Boardroom Conference & Multi-Camera Monitoring",
+    "category": "Behind The Scenes",
+    "client": "RFP Digital Productions",
+    "year": "2025",
+    "image": "/medien/drive-gallery/IMG_0315.jpg",
+    "summary": "Ultra-sharp Lilliput 4K monitor capturing high-level executive roundtable and conference proceedings.",
+    "description": "On-set visual monitoring of executive boardroom meetings with real-time color and exposure calibration.",
+    "featured": true,
+    "stills": [
+      "/medien/drive-gallery/IMG_0315.jpg"
+    ]
+  },
+  {
     "id": "drive-img-wb-goa",
     "title": "The World Bank - Strategic Forum, Goa",
     "category": "Behind The Scenes",
@@ -2097,19 +2153,6 @@ export const INITIAL_GALLERY_ITEMS: GalleryItem[] = [
     ]
   },
   {
-    "id": "drive-img-146",
-    "title": "Gallery Image 146",
-    "category": "Cinema & Film",
-    "year": "2024",
-    "image": "/medien/drive-gallery/Cooper-Office.jpg",
-    "summary": "",
-    "description": "",
-    "featured": false,
-    "stills": [
-      "/medien/drive-gallery/Cooper-Office.jpg"
-    ]
-  },
-  {
     "id": "drive-img-147",
     "title": "Gallery Image 147",
     "category": "Cinema & Film",
@@ -2419,19 +2462,6 @@ export const INITIAL_GALLERY_ITEMS: GalleryItem[] = [
     "featured": false,
     "stills": [
       "/medien/drive-gallery/IMG_5029.jpg"
-    ]
-  },
-  {
-    "id": "drive-img-171",
-    "title": "Gallery Image 171",
-    "category": "Cinema & Film",
-    "year": "2024",
-    "image": "/medien/drive-gallery/IMG_6351.JPG",
-    "summary": "",
-    "description": "",
-    "featured": false,
-    "stills": [
-      "/medien/drive-gallery/IMG_6351.JPG"
     ]
   },
   {
