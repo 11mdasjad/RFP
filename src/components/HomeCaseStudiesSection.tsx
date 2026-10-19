@@ -31,9 +31,9 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
         { label: "Verified Views", value: "120,000+ Reach" },
         { label: "Research Centers", value: "14 Labs Featured" }
       ],
-      videoUrl: "https://www.youtube.com/watch?v=7MGQPvm2zl8",
-      embedId: "7MGQPvm2zl8",
-      thumbnail: "/medien/youtube-thumbs/7MGQPvm2zl8.jpg"
+      videoUrl: "https://www.youtube.com/watch?v=Cgvx6w13ZNg",
+      embedId: "Cgvx6w13ZNg",
+      thumbnail: "/medien/youtube-thumbs/Cgvx6w13ZNg.jpg"
     },
     ngo: {
       category: "NGO & Social Impact Documentary",
@@ -55,7 +55,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
       ],
       videoUrl: "https://www.youtube.com/watch?v=hpacHvIGPNI",
       embedId: "hpacHvIGPNI",
-      thumbnail: "/medien/youtube-thumbs/hpacHvIGPNI.jpg"
+      thumbnail: "/medien/logos/smile-india.png"
     },
     election: {
       category: "Election Campaign Management",
@@ -85,14 +85,14 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
   const TabIcon = currentCase.icon;
 
   return (
-    <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.08]">
+    <section className="home-container home-section border-t border-white/[0.08]">
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-14">
+      <div className="max-w-3xl mb-10 sm:mb-12">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
           <Award className="w-3.5 h-3.5 text-[#E6C665]" />
           <span>Documented Evidence</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+        <h2 className="home-heading text-white leading-tight">
           Three Deep Case Studies
         </h2>
         <p className="text-sm sm:text-base text-white/70 mt-3 font-sans">
@@ -101,10 +101,10 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
       </div>
 
       {/* Case Study Sector Tabs */}
-      <div className="flex items-center justify-center gap-2 sm:gap-4 mb-10 overflow-x-auto pb-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
         <button
           onClick={() => setActiveTab("corporate")}
-          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap border ${
+          className={`flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all text-center border ${
             activeTab === "corporate"
               ? "bg-white text-black border-white shadow-xl"
               : "bg-white/[0.04] text-white/70 border-white/[0.08] hover:text-white hover:bg-white/[0.08]"
@@ -116,7 +116,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
 
         <button
           onClick={() => setActiveTab("ngo")}
-          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap border ${
+          className={`flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all text-center border ${
             activeTab === "ngo"
               ? "bg-white text-black border-white shadow-xl"
               : "bg-white/[0.04] text-white/70 border-white/[0.08] hover:text-white hover:bg-white/[0.08]"
@@ -128,7 +128,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
 
         <button
           onClick={() => setActiveTab("election")}
-          className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap border ${
+          className={`flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all text-center border ${
             activeTab === "election"
               ? "bg-[#D4AF37] text-black border-[#D4AF37] shadow-xl"
               : "bg-white/[0.04] text-white/70 border-white/[0.08] hover:text-white hover:bg-white/[0.08]"
@@ -140,22 +140,34 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
       </div>
 
       {/* Case Study Deep Dive Card */}
-      <div className="bg-[#14121a] rounded-[32px] border border-white/[0.12] p-6 sm:p-10 lg:p-12 shadow-2xl mb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div className="bg-[#14121a] rounded-[32px] border border-white/[0.12] p-5 sm:p-8 lg:p-10 shadow-2xl mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
           {/* Left Column: Video Preview */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="min-w-0 space-y-4">
             <div
-              className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-black border border-white/10 group cursor-pointer shadow-xl"
+              className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 group cursor-pointer shadow-xl"
               onClick={() => onPlayVideo(currentCase.videoUrl, currentCase.title, currentCase.category)}
             >
-              <img
+              {activeTab === "ngo" ? (
+                <div className="absolute inset-0 bg-gradient-to-br from-white via-[#f7f4ff] to-[#e5dcfa]">
+                  <img
+                    src={currentCase.thumbnail}
+                    alt="Smile India Trust"
+                    loading="lazy"
+                    className="absolute top-[6%] left-1/2 -translate-x-1/2 h-[32%] w-auto object-contain"
+                  />
+                  <p className="absolute bottom-[17%] inset-x-4 text-center text-sm sm:text-lg font-semibold text-[#35294d]">
+                    Community Care &amp; Social Impact
+                  </p>
+                </div>
+              ) : <img
                 src={currentCase.thumbnail}
                 alt={currentCase.title}
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+              />}
+              <div className={`absolute inset-0 ${activeTab === "ngo" ? "bg-black/0 group-hover:bg-black/5" : "bg-black/40 group-hover:bg-black/20"} transition-colors flex items-center justify-center`}>
                 <div className="w-16 h-16 rounded-full bg-[#6b54ee] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
                   <Play className="w-7 h-7 fill-current ml-0.5" />
                 </div>
@@ -166,7 +178,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
             </div>
 
             {/* Documented Outcome Counters */}
-            <div className="grid grid-cols-3 gap-2.5 p-4 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+            <div className="grid grid-cols-1 min-[480px]:grid-cols-3 gap-4 p-4 rounded-xl bg-white/[0.03] border border-white/[0.08]">
               {currentCase.results.map((res, i) => (
                 <div key={i} className="text-center">
                   <div className="text-xs sm:text-sm font-bold font-mono text-[#E6C665]">{res.value}</div>
@@ -177,7 +189,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
           </div>
 
           {/* Right Column: The Brief, Role & Deliverables */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="min-w-0 space-y-6">
             <div>
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#a89bfa] mb-1.5">
                 <TabIcon className="w-4 h-4" />
@@ -218,7 +230,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
               </div>
             </div>
 
-            <div className="pt-4 border-t border-white/[0.08] flex items-center gap-4">
+            <div className="pt-4 border-t border-white/[0.08] flex flex-wrap items-center gap-4">
               <button
                 onClick={() => onPlayVideo(currentCase.videoUrl, currentCase.title, currentCase.category)}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-wider hover:bg-white/90 transition-all active:scale-95"
@@ -241,7 +253,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
 
       {/* Verified Client Testimonials Strip */}
       <div className="border-t border-white/[0.08] pt-12">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#E6C665] block mb-1">
               Client Feedback
@@ -259,7 +271,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 auto-rows-fr gap-6">
           {CLIENT_TESTIMONIALS.map((t, idx) => (
             <div
               key={idx}

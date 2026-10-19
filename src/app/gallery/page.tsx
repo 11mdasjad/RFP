@@ -114,12 +114,12 @@ export default function GalleryPage() {
             <p className="text-sm text-white/60">Images are being loaded...</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 sm:gap-4">
+          <div className="flex flex-wrap gap-2.5 sm:gap-4">
             {galleryItems.map((item, idx) => (
               <button
                 key={item.id || idx}
                 onClick={() => openLightbox(idx)}
-                className="group relative aspect-square sm:aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#17161d] border border-white/[0.08] hover:border-[#a89bfa]/60 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#a89bfa]"
+                className="group relative aspect-square sm:aspect-[4/3] min-w-0 grow basis-[calc((100%-0.625rem)/2)] sm:basis-[calc((100%-2rem)/3)] md:basis-[calc((100%-3rem)/4)] lg:basis-[calc((100%-4rem)/5)] xl:basis-[calc((100%-5rem)/6)] overflow-hidden rounded-xl bg-[#17161d] border border-white/[0.08] hover:border-[#a89bfa]/60 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#a89bfa]"
                 aria-label={`View photo ${idx + 1}`}
               >
                 <img

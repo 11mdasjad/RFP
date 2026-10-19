@@ -12,7 +12,6 @@ import {
   Play,
   ArrowUpRight,
   ArrowLeft,
-  Search,
   X,
   Sparkles,
   Film,
@@ -21,7 +20,6 @@ import {
   Share2,
   Layers,
   LayoutGrid,
-  ListFilter
 } from "lucide-react";
 
 type FilterCategory = "all" | "ai" | "film" | "campaign" | "documentary" | "marketing";
@@ -84,8 +82,6 @@ export default function ProjectsPage() {
   const allProjects = contextProjects && contextProjects.length > 0 ? contextProjects : PROJECTS_DATA;
 
   const [activeFilter, setActiveFilter] = useState<FilterCategory>("all");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [viewMode, setViewMode] = useState<"grid" | "grouped">("grid");
 
   // Lightbox & Case Study Modals
   const [videoModal, setVideoModal] = useState<{
@@ -141,41 +137,9 @@ export default function ProjectsPage() {
     return counts;
   }, [allProjects]);
 
-  // Filter projects based on activeFilter & searchQuery
   const filteredProjects = useMemo(() => {
-    return allProjects.filter((project) => {
-      // Category filter
-      if (activeFilter !== "all" && project.filterCat !== activeFilter) {
-        return false;
-      }
-      // Search query filter
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase().trim();
-        const inTitle = project.title.toLowerCase().includes(q);
-        const inClient = project.client.toLowerCase().includes(q);
-        const inCategory = project.categoryEn.toLowerCase().includes(q);
-        const inDesc = project.descEn.toLowerCase().includes(q);
-        const inTags = project.tags && project.tags.some((t) => t.toLowerCase().includes(q));
-        return inTitle || inClient || inCategory || inDesc || inTags;
-      }
-      return true;
-    });
-  }, [allProjects, activeFilter, searchQuery]);
-
-  // Grouped projects for "grouped" view mode (only when activeFilter is "all" and no search query)
-  const groupedCategories = useMemo(() => {
-    const groups: { meta: CategoryMeta; projects: ProjectCard[] }[] = [];
-    CATEGORIES.filter((c) => c.id !== "all").forEach((cat) => {
-      const projs = allProjects.filter((p) => p.filterCat === cat.id);
-      if (projs.length > 0) {
-        groups.push({
-          meta: cat,
-          projects: projs,
-        });
-      }
-    });
-    return groups;
-  }, [allProjects]);
+    return allProjects.filter((project) => activeFilter === "all" || project.filterCat === activeFilter);
+  }, [allProjects, activeFilter]);
 
   return (
     <div className="min-h-screen bg-[#0e0d12] text-[#f4f2f7] font-sans antialiased selection:bg-[#6b54ee] selection:text-white">
@@ -297,56 +261,6 @@ export default function ProjectsPage() {
                 })}
               </div>
 
-              {/* Search Bar & View Mode Toggle */}
-              <div className="flex items-center gap-3 shrink-0">
-                {/* Search Input */}
-                <div className="relative flex-1 sm:w-64">
-                  <Search className="w-3.5 h-3.5 text-white/40 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search projects, clients..."
-                    className="w-full pl-9 pr-8 py-2 rounded-full bg-[#17161d] border border-white/[0.1] text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#7c6af2] transition-colors"
-                  />
-                  {searchQuery && (
-                    <button
-                      onClick={() => setSearchQuery("")}
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-white/40 hover:text-white p-0.5"
-                    >
-                      <X className="w-3.5 h-3.5" />
-                    </button>
-                  )}
-                </div>
-
-                {/* View Mode Toggle (Grid vs Grouped) */}
-                {activeFilter === "all" && !searchQuery && (
-                  <div className="hidden sm:inline-flex items-center p-1 rounded-full bg-[#17161d] border border-white/[0.1]">
-                    <button
-                      onClick={() => setViewMode("grid")}
-                      title="Unified Grid View"
-                      className={`p-1.5 rounded-full transition-all ${
-                        viewMode === "grid"
-                          ? "bg-[#6b54ee] text-white"
-                          : "text-white/50 hover:text-white"
-                      }`}
-                    >
-                      <LayoutGrid className="w-3.5 h-3.5" />
-                    </button>
-                    <button
-                      onClick={() => setViewMode("grouped")}
-                      title="Category-wise Grouped View"
-                      className={`p-1.5 rounded-full transition-all ${
-                        viewMode === "grouped"
-                          ? "bg-[#6b54ee] text-white"
-                          : "text-white/50 hover:text-white"
-                      }`}
-                    >
-                      <ListFilter className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                )}
-              </div>
             </div>
           </div>
         </section>
@@ -383,85 +297,22 @@ export default function ProjectsPage() {
             </div>
           )}
 
-          {/* Search Result Feedback */}
-          {searchQuery && (
-            <div className="mb-6 flex items-center justify-between text-xs text-white/60 font-mono">
-              <span>
-                Found {filteredProjects.length} results matching &ldquo;{searchQuery}&rdquo;
-              </span>
-              <button
-                onClick={() => setSearchQuery("")}
-                className="text-[#a89bfa] hover:underline"
-              >
-                Clear Search
-              </button>
-            </div>
-          )}
-
           {/* No Projects Found Fallback */}
           {filteredProjects.length === 0 ? (
             <div className="py-20 text-center rounded-3xl bg-[#17161d] border border-white/[0.08] p-8">
               <Layers className="w-12 h-12 text-white/30 mx-auto mb-4" />
               <h3 className="text-lg font-bold text-white mb-2">No projects found</h3>
               <p className="text-xs sm:text-sm text-white/60 max-w-md mx-auto mb-6">
-                We couldn&apos;t find any productions matching your filter or search criteria.
+                We couldn&apos;t find any productions matching your selected category.
               </p>
               <button
                 onClick={() => {
                   setActiveFilter("all");
-                  setSearchQuery("");
                 }}
                 className="px-5 py-2.5 rounded-full bg-[#6b54ee] hover:bg-[#7c6af2] text-xs font-semibold text-white transition-all"
               >
                 Reset All Filters
               </button>
-            </div>
-          ) : viewMode === "grouped" && activeFilter === "all" && !searchQuery ? (
-            /* Category-wise Grouped View */
-            <div className="space-y-16">
-              {groupedCategories.map(({ meta, projects: catProjects }) => {
-                const Icon = meta.icon;
-                return (
-                  <div key={meta.id} className="space-y-6">
-                    {/* Category Section Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-4 border-b border-white/[0.08]">
-                      <div>
-                        <div className="inline-flex items-center gap-2 mb-1.5">
-                          <Icon className="w-4 h-4 text-[#a89bfa]" />
-                          <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa]">
-                            {meta.label}
-                          </span>
-                        </div>
-                        <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-                          {meta.label}
-                        </h2>
-                        <p className="text-xs sm:text-sm text-white/60 mt-1 max-w-2xl">
-                          {meta.description}
-                        </p>
-                      </div>
-                      <button
-                        onClick={() => setActiveFilter(meta.id)}
-                        className="inline-flex items-center gap-1 text-xs font-semibold text-[#a89bfa] hover:text-white transition-colors"
-                      >
-                        <span>Filter this category ({catProjects.length})</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-
-                    {/* Cards Grid for this category */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                      {catProjects.map((project) => (
-                        <ProjectCardItem
-                          key={project.id}
-                          project={project}
-                          onPlayVideo={handleOpenVideo}
-                          onSelectProject={setSelectedProject}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
             </div>
           ) : (
             /* Unified Bento / Responsive Grid View */

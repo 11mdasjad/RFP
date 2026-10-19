@@ -67,32 +67,21 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
   };
 
   return (
-    <section id="kontakt" className="py-20 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="kontakt" className="home-container home-section">
       {/* Signature Radiant Contact Card */}
-      <div className="relative rounded-[32px] p-8 sm:p-12 lg:p-16 bg-[#17161d] border border-white/[0.12] overflow-hidden shadow-2xl">
+      <div className="relative rounded-3xl p-5 sm:p-8 lg:p-10 bg-[#17161d] border border-white/[0.12] overflow-hidden shadow-2xl">
         {/* Violet radiant background aura */}
         <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#7c6af2]/25 blur-[100px] pointer-events-none rounded-full" />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#6b54ee]/15 blur-[120px] pointer-events-none rounded-full" />
 
-        {/* Golden RFP Emblem Badge (Top Right) */}
-        <div className="absolute top-8 right-8 sm:top-12 sm:right-12 flex items-center space-x-2">
-          <img
-            src="/medien/logo/rfp-emblem.png"
-            alt="RFP Emblem"
-            loading="lazy"
-            decoding="async"
-            className="h-12 sm:h-16 w-auto object-contain filter drop-shadow-[0_2px_15px_rgba(212,175,55,0.4)] opacity-85 hover:opacity-100 hover:scale-110 transition-all duration-300"
-          />
-        </div>
-
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
           {/* Left Column: Direct Person & Information */}
-          <div className="lg:col-span-5 xl:col-span-5">
+          <div className="min-w-0">
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block mb-3">
               Get in Touch
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#f4f2f7] mb-6 max-w-md">
+            <h2 className="home-heading text-[#f4f2f7] mb-6 max-w-md">
               Let&apos;s talk about your next project.
             </h2>
 
@@ -102,7 +91,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
             </p>
 
             {/* Production House Info Box */}
-            <div className="flex items-center space-x-4 p-5 rounded-2xl bg-white/[0.04] border border-white/[0.08] mb-8 max-w-md">
+            <div className="flex items-start gap-3 p-4 rounded-2xl bg-white/[0.04] border border-white/[0.08] mb-8 max-w-md">
               <img
                 src="/medien/logo/rfp-emblem.png"
                 alt="RFP Emblem"
@@ -111,7 +100,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                 className="h-14 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(212,175,55,0.5)] flex-shrink-0"
               />
               <div className="flex flex-col justify-center">
-                <div className="flex items-center gap-2 leading-none">
+                <div className="flex flex-wrap items-center gap-2 leading-none">
                   <span className="font-extrabold text-xl tracking-[0.16em] text-white font-mono">
                     RFP
                   </span>
@@ -129,7 +118,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
             </div>
 
             {/* Quick Contact Buttons */}
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3">
               <a
                 href="mailto:info@rfpdigital.com"
                 className="inline-flex items-center space-x-2 px-5 py-3 rounded-full bg-white hover:bg-white/90 text-[#0e0d12] text-xs font-semibold tracking-wide transition-all shadow-md active:scale-95"
@@ -167,8 +156,8 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
           </div>
 
           {/* Right Column: Project Brief Inquiry Form */}
-          <div className="lg:col-span-7 xl:col-span-7 bg-[#0e0d12]/70 rounded-2xl p-6 sm:p-8 border border-white/[0.08] backdrop-blur-md">
-            <div className="flex items-center justify-between mb-2">
+          <div className="min-w-0 bg-[#0e0d12]/70 rounded-2xl p-6 sm:p-8 border border-white/[0.08] backdrop-blur-md">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
               <h3 className="text-lg font-bold text-white">
                 Submit Project Brief
               </h3>
@@ -266,7 +255,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                 </div>
 
                 {/* Optional Location, Timeline & Budget Fields for a richer project brief */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                   <div>
                     <label className="text-[11px] font-mono uppercase tracking-wider text-white/60 block mb-1.5">
                       Location / City (Optional)
@@ -296,7 +285,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                     </select>
                   </div>
 
-                  <div>
+                  <div className="sm:col-span-2 xl:col-span-1">
                     <label className="text-[11px] font-mono uppercase tracking-wider text-white/60 block mb-1.5">
                       Budget Range (Optional)
                     </label>

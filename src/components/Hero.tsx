@@ -6,10 +6,9 @@ import { ArrowUpRight, Play, FileText } from "lucide-react";
 
 interface HeroProps {
   onPlayVideo: (url: string, title: string, subtitle?: string) => void;
-  onOpenCompanyProfile?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile }) => {
+export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
   // Link 1: Kept on the Showcase Banner with its original thumbnail
   const bannerVideo = {
     title: "Showreel",
@@ -21,19 +20,19 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
   const showreelButtonUrl = "https://www.youtube.com/watch?v=X_U98b96fk0";
 
   return (
-    <section className="relative pt-24 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 xl:px-12 max-w-[1600px] 2xl:max-w-[1720px] mx-auto overflow-hidden">
+    <section className="home-masthead relative pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 overflow-hidden">
       {/* Background ambient radial glows */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[700px] h-[350px] sm:h-[500px] bg-[#7c6af2]/12 blur-[120px] sm:blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute top-1/2 right-1/4 translate-x-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] h-[300px] sm:h-[450px] bg-[#6b54ee]/10 blur-[130px] sm:blur-[170px] pointer-events-none rounded-full" />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
         {/* Left Column: Typography & CTAs (6-span for balanced symmetry) */}
-        <div className="lg:col-span-6 flex flex-col justify-center z-10">
+        <div className="lg:col-span-6 min-w-0 flex flex-col justify-center z-10">
 
           {/* Main Title: Bold, Grand & Prominent 2-Line Symmetry */}
-          <h1 className="text-3xl sm:text-5xl lg:text-[42px] xl:text-[48px] 2xl:text-[54px] font-extrabold tracking-tight text-[#f4f2f7] leading-[1.12] mb-5 sm:mb-6">
-            <span className="block sm:whitespace-nowrap">Video Production &amp;</span>
-            <span className="block sm:whitespace-nowrap bg-gradient-to-r from-[#b4a6ff] via-[#8d7df5] to-[#c4b5fd] bg-clip-text text-transparent">
+          <h1 className="home-hero-title font-extrabold tracking-tight text-[#f4f2f7] leading-[1.12] mb-5 sm:mb-6">
+            <span className="block">Video Production &amp;</span>
+            <span className="block bg-gradient-to-r from-[#b4a6ff] via-[#8d7df5] to-[#c4b5fd] bg-clip-text text-transparent">
               Election Management Co.
             </span>
           </h1>
@@ -67,21 +66,20 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
               <span>Watch Showreel</span>
             </button>
 
-            {onOpenCompanyProfile && (
-              <button
-                type="button"
-                onClick={onOpenCompanyProfile}
+            <a
+              href="/rfp-digital-productions-profile.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-1.5 px-4 sm:px-4.5 py-3 sm:py-3.5 rounded-full border border-[#D4AF37]/35 hover:border-[#D4AF37]/80 bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 text-[#f4d47c] text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 active:scale-95 text-center whitespace-nowrap"
               >
                 <FileText className="w-3.5 h-3.5" />
                 <span>Company Profile</span>
-              </button>
-            )}
+            </a>
           </div>
         </div>
 
         {/* Right Column: Enlarged Showreel Video Showcase (6-span for balanced symmetry) */}
-        <div className="lg:col-span-6 relative w-full">
+        <div className="lg:col-span-6 min-w-0 relative w-full">
           <div
             className="relative w-full aspect-[16/10] sm:aspect-[16/9.5] rounded-2xl sm:rounded-[32px] overflow-hidden bg-[#17161d] border border-white/[0.14] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.85)] group cursor-pointer transition-all duration-300 hover:border-[#7c6af2]/50 hover:shadow-[0_25px_70px_-10px_rgba(124,106,242,0.25)]"
             onClick={() =>
@@ -101,6 +99,8 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
               <img
                 src={bannerVideo.thumbnail}
                 alt={bannerVideo.title}
+                width={1280}
+                height={720}
                 fetchPriority="high"
                 decoding="async"
                 className="w-full h-full object-cover object-center filter saturate-[1.05] transition-transform duration-700 group-hover:scale-105"
@@ -109,7 +109,6 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile })
 
             {/* Play Button Trigger (Center) with pulse glow ring */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center">
-              <span className="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#7c6af2]/30 animate-ping opacity-60 pointer-events-none" />
               <button
                 type="button"
                 onClick={(e) => {

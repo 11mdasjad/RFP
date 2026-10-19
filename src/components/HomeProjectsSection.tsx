@@ -20,15 +20,15 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
   const featuredProjects = PROJECTS_DATA.slice(0, 6);
 
   return (
-    <section id="work" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="work" className="home-container home-section">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 gap-6">
+      <div className="home-section-header">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#E6C665]" />
             <span>Curated Portfolio</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+          <h2 className="home-heading text-white leading-[1.15]">
             Selected Works &amp; <br />
             <span className="bg-gradient-to-r from-[#b4a6ff] via-[#e5c665] to-white bg-clip-text text-transparent font-serif italic">
               Production Portals
@@ -36,7 +36,7 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
           </h2>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="flex max-w-md flex-col items-start gap-4">
           <p className="text-sm sm:text-base text-white/70 max-w-md font-sans">
             Explore our two specialized divisions or preview selected flagship productions below.
           </p>
@@ -51,7 +51,7 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
       </div>
 
       {/* TWO DISTINCT ENTRY POINTS (FILMS & MEDIA vs ELECTION CAMPAIGNS) */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16 lg:mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12 sm:mb-16">
         {/* Portal 1: Films & Digital Media */}
         <div className="relative rounded-3xl p-8 sm:p-10 bg-gradient-to-br from-[#181622] via-[#121118] to-[#15131d] border border-[#a89bfa]/30 hover:border-[#a89bfa]/70 transition-all duration-300 shadow-2xl flex flex-col justify-between group">
           <div>
@@ -179,14 +179,14 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-rows-fr gap-6">
         {featuredProjects.map((project) => (
           <div
             key={project.id}
             className="group bg-[#14121a] rounded-3xl border border-white/[0.1] overflow-hidden flex flex-col justify-between hover:border-white/[0.25] hover:shadow-2xl transition-all duration-300"
           >
             {/* Visual Thumbnail & Play Action */}
-            <div className="relative aspect-[16/10] bg-black overflow-hidden">
+            <div className="relative aspect-video bg-black overflow-hidden">
               <img
                 src={project.poster}
                 alt={project.title}
@@ -197,8 +197,8 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
               {/* Top Category Badge */}
-              <div className="absolute top-4 left-4">
-                <span className="text-[10px] font-mono tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/60 text-white backdrop-blur-md border border-white/15">
+              <div className="absolute top-4 left-4 right-4">
+                <span className="inline-block max-w-full text-[10px] font-mono tracking-wider uppercase px-2.5 py-1 rounded-full bg-black/60 text-white backdrop-blur-md border border-white/15">
                   {project.categoryEn}
                 </span>
               </div>
@@ -222,7 +222,7 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
                 <span className="text-[11px] font-mono uppercase tracking-wider text-[#E6C665] block mb-1">
                   {project.client}
                 </span>
-                <h4 className="text-lg font-bold text-white group-hover:text-[#a89bfa] transition-colors leading-snug line-clamp-2">
+                <h4 className="min-h-[3.5rem] text-lg font-bold text-white group-hover:text-[#a89bfa] transition-colors leading-snug line-clamp-2">
                   {project.title}
                 </h4>
                 <p className="text-xs text-white/70 font-sans leading-relaxed mt-2 line-clamp-2">
@@ -230,7 +230,7 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between">
+              <div className="pt-4 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-3">
                 <button
                   onClick={() => onSelectProject(project)}
                   className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-[#a89bfa] hover:text-white font-semibold transition-colors"

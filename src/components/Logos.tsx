@@ -19,7 +19,7 @@ export const Logos: React.FC<LogosProps> = ({
 
   return (
     <section className="py-12 sm:py-16 border-b border-white/[0.08] overflow-hidden bg-[#0a090e]/80 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8 text-center">
+      <div className="home-container mb-6 sm:mb-8 text-center">
         <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] font-medium">
           {titleEn}
         </h2>

@@ -99,14 +99,14 @@ export const HomeServicesSection: React.FC<HomeServicesSectionProps> = ({ onOpen
   ];
 
   return (
-    <section id="services" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.08]">
+    <section id="services" className="home-container home-section border-t border-white/[0.08]">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+      <div className="home-section-header">
         <div>
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block mb-3">
             Core Disciplines
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="home-heading text-white leading-tight">
             What You Receive: <br />
             <span className="bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-white bg-clip-text text-transparent font-serif italic">
               Deliverables, Timelines &amp; Proven Craft
@@ -120,13 +120,13 @@ export const HomeServicesSection: React.FC<HomeServicesSectionProps> = ({ onOpen
       </div>
 
       {/* Services Grid (6 Core Cards) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-rows-fr gap-6">
         {services.map((svc) => {
           const Icon = svc.icon;
           return (
             <div
               key={svc.num}
-              className="p-7 sm:p-8 rounded-3xl bg-[#14121a] border border-white/[0.08] hover:border-[#a89bfa]/50 transition-all duration-300 flex flex-col justify-between group shadow-xl"
+              className="p-6 sm:p-8 rounded-3xl bg-[#14121a] border border-white/[0.08] hover:border-[#a89bfa]/50 transition-all duration-300 flex flex-col justify-between group shadow-xl"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
@@ -138,11 +138,11 @@ export const HomeServicesSection: React.FC<HomeServicesSectionProps> = ({ onOpen
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#a89bfa] transition-colors">
+                <h3 className="md:min-h-[3.5rem] text-xl font-bold text-white mb-2 group-hover:text-[#a89bfa] transition-colors">
                   {svc.title}
                 </h3>
 
-                <p className="text-xs text-white/70 leading-relaxed font-sans mb-5">
+                <p className="md:min-h-[3.75rem] text-sm text-white/70 leading-relaxed font-sans mb-5">
                   {svc.tagline}
                 </p>
 
@@ -171,7 +171,7 @@ export const HomeServicesSection: React.FC<HomeServicesSectionProps> = ({ onOpen
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/[0.08] flex items-center justify-between">
+              <div className="pt-6 mt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-3">
                 <Link
                   href="/services"
                   className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-[#a89bfa] hover:text-white font-semibold transition-colors"

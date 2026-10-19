@@ -15,7 +15,6 @@ import { Kontakt } from "@/components/Kontakt";
 import { Footer } from "@/components/Footer";
 import { VideoModal } from "@/components/modals/VideoModal";
 import { ProjectModal } from "@/components/modals/ProjectModal";
-import { CompanyProfileModal } from "@/components/modals/CompanyProfileModal";
 import { CLIENT_LOGOS, ProjectCard } from "@/data/imagineContent";
 
 export default function Home() {
@@ -32,7 +31,6 @@ export default function Home() {
   });
 
   const [selectedProject, setSelectedProject] = useState<ProjectCard | null>(null);
-  const [isCompanyProfileOpen, setIsCompanyProfileOpen] = useState(false);
   const [contactTopic, setContactTopic] = useState<string>("Corporate Films");
 
   const handleOpenVideo = (
@@ -61,11 +59,10 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#0e0d12] text-[#f4f2f7] font-sans antialiased selection:bg-[#6b54ee] selection:text-white">
+    <main className="home-page relative min-h-screen bg-[#0e0d12] text-[#f4f2f7] font-sans antialiased selection:bg-[#6b54ee] selection:text-white">
       {/* Persistent Navigation Header */}
       <Header
         onOpenContact={() => handleOpenContactWithTopic()}
-        onOpenCompanyProfile={() => setIsCompanyProfileOpen(true)}
       />
 
       {/* Main Page Flow - Ordered exactly according to the recommended hierarchy */}
@@ -73,7 +70,6 @@ export default function Home() {
         {/* 1. Short introduction and showreel */}
         <Hero
           onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)}
-          onOpenCompanyProfile={() => setIsCompanyProfileOpen(true)}
         />
 
         {/* 2. Key Verified Metrics & Credentials */}
@@ -134,12 +130,6 @@ export default function Home() {
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
         onWatchReel={(url, title) => handleOpenVideo(url, title, selectedProject?.title)}
-      />
-
-      {/* Downloadable / Printable Company Profile Deck */}
-      <CompanyProfileModal
-        isOpen={isCompanyProfileOpen}
-        onClose={() => setIsCompanyProfileOpen(false)}
       />
     </main>
   );

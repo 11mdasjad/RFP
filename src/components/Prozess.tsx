@@ -10,14 +10,14 @@ interface ProzessProps {
 
 export const Prozess: React.FC<ProzessProps> = ({ onPlayVideo }) => {
   return (
-    <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.08]">
+    <section className="home-container home-section border-t border-white/[0.08]">
       {/* Top Section Intro */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-20 items-end">
-        <div className="lg:col-span-7">
+      <div className="home-section-header">
+        <div className="min-w-0">
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block mb-3">
             Workflow &amp; Quality Control
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#f4f2f7] mb-6">
+          <h2 className="home-heading text-[#f4f2f7] mb-6">
             Creative quality. Clear accountability.
           </h2>
           <p className="text-base sm:text-lg text-[#f4f2f7b8] leading-relaxed">
@@ -25,7 +25,7 @@ export const Prozess: React.FC<ProzessProps> = ({ onPlayVideo }) => {
           </p>
         </div>
 
-        <div className="lg:col-span-5 flex flex-col justify-end">
+        <div className="min-w-0 flex flex-col justify-end">
           <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm">
             <div className="flex items-center space-x-3 mb-2 text-[#a89bfa]">
               <ShieldCheck className="w-5 h-5" />
@@ -42,11 +42,11 @@ export const Prozess: React.FC<ProzessProps> = ({ onPlayVideo }) => {
 
 
       {/* 5-Phase Process Steps Roadmap */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-4 relative">
+      <div className="home-process-grid">
         {PROCESS_STEPS.map((step, idx) => (
           <div
             key={idx}
-            className="relative p-6 rounded-2xl bg-[#17161d] border border-white/[0.08] hover:border-[#a89bfa]/40 transition-all flex flex-col justify-between group"
+            className="relative min-w-0 p-6 rounded-2xl bg-[#17161d] border border-white/[0.08] hover:border-[#a89bfa]/40 transition-all flex flex-col justify-between group"
           >
             <div>
               <span className="text-2xl font-mono font-bold text-[#a89bfa] block mb-3">

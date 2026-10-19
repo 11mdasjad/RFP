@@ -7,10 +7,9 @@ import { Menu, X, ArrowUpRight, Sparkles, ChevronDown, Users, HelpCircle, Messag
 
 interface HeaderProps {
   onOpenContact?: () => void;
-  onOpenCompanyProfile?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProfile }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
           : "bg-[#0a090e]/75 backdrop-blur-md border-b border-white/[0.06] py-4 sm:py-5"
       }`}
     >
-      <div className="max-w-[1600px] 2xl:max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between gap-4">
+      <div className={`${isHome ? "home-masthead" : "max-w-[1600px] 2xl:max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12"} flex items-center justify-between gap-4`}>
         {/* Official Brand Logo */}
         <Link
           href="/"
@@ -79,11 +78,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
         </Link>
 
         {/* Focused Desktop Navigation: About, Services, Work, Election Campaigns, Contact + More ▾ */}
-        <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 shrink-0" aria-label="Main Navigation">
+        <nav className="hidden xl:flex items-center gap-2 2xl:gap-4 shrink-0" aria-label="Main Navigation">
           {/* 1. About */}
           <Link
             href={isHome ? "#about" : "/#about"}
-            className="px-3 xl:px-4 py-2 text-[14px] xl:text-[15px] text-white/90 hover:text-white rounded-xl hover:bg-white/[0.08] transition-all font-semibold whitespace-nowrap"
+            className="px-2 xl:px-2 py-2 text-[14px] xl:text-[15px] text-white/90 hover:text-white rounded-xl hover:bg-white/[0.08] transition-all font-semibold whitespace-nowrap"
           >
             About
           </Link>
@@ -91,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
           {/* 2. Services */}
           <Link
             href="/services"
-            className={`px-3 xl:px-4 py-2 text-[14px] xl:text-[15px] rounded-xl transition-all font-semibold whitespace-nowrap ${
+            className={`px-2 xl:px-2 py-2 text-[14px] xl:text-[15px] rounded-xl transition-all font-semibold whitespace-nowrap ${
               isServices
                 ? "text-white bg-white/[0.12] border border-[#a89bfa]/50 shadow-[0_0_20px_rgba(168,155,250,0.25)]"
                 : "text-white/90 hover:text-white hover:bg-white/[0.08]"
@@ -103,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
           {/* 3. Work */}
           <Link
             href="/projects"
-            className={`px-3 xl:px-4 py-2 text-[14px] xl:text-[15px] rounded-xl transition-all font-semibold whitespace-nowrap ${
+            className={`px-2 xl:px-2 py-2 text-[14px] xl:text-[15px] rounded-xl transition-all font-semibold whitespace-nowrap ${
               isProjects
                 ? "text-white bg-white/[0.12] border border-[#a89bfa]/50 shadow-[0_0_20px_rgba(168,155,250,0.25)]"
                 : "text-white/90 hover:text-white hover:bg-white/[0.08]"
@@ -115,10 +114,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
           {/* 4. Election Campaigns */}
           <Link
             href="/ec"
-            className={`px-3.5 xl:px-4.5 py-2 text-[13.5px] xl:text-[14.5px] whitespace-nowrap rounded-full transition-all font-bold tracking-normal flex items-center gap-1.5 shrink-0 ${
+            className={`h-10 px-4 text-[15px] leading-none whitespace-nowrap rounded-full transition-colors duration-200 font-semibold tracking-normal inline-flex items-center justify-center shrink-0 ${
               isEc
-                ? "text-[#F3E5AB] bg-[#D4AF37]/25 border border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.45)]"
-                : "text-[#E6C665] hover:text-[#FFF8DC] bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 border border-[#D4AF37]/45 hover:border-[#D4AF37]/80 shadow-sm"
+                ? "text-[#F3E5AB] bg-[#D4AF37]/15"
+                : "text-[#E6C665] hover:text-[#FFF8DC] bg-[#D4AF37]/[0.06] hover:bg-[#D4AF37]/15"
             }`}
           >
             <span>Election Campaigns</span>
@@ -127,7 +126,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
           {/* 5. Contact */}
           <Link
             href={isHome ? "#kontakt" : "/#kontakt"}
-            className="px-3 xl:px-4 py-2 text-[14px] xl:text-[15px] text-white/90 hover:text-white rounded-xl hover:bg-white/[0.08] transition-all font-semibold whitespace-nowrap"
+            className="px-2 xl:px-2 py-2 text-[14px] xl:text-[15px] text-white/90 hover:text-white rounded-xl hover:bg-white/[0.08] transition-all font-semibold whitespace-nowrap"
           >
             Contact
           </Link>
@@ -194,15 +193,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
 
                 <div className="my-1.5 border-t border-white/[0.08]" />
 
-                <button
-                  onClick={() => {
-                    setMoreDropdownOpen(false);
-                    if (onOpenCompanyProfile) {
-                      onOpenCompanyProfile();
-                    } else {
-                      window.open("/api/company-profile", "_blank");
-                    }
-                  }}
+                <a
+                  href="/rfp-digital-productions-profile.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMoreDropdownOpen(false)}
                   className="w-full text-left flex items-center justify-between px-4 py-2.5 text-xs font-mono uppercase tracking-wider text-[#E6C665] hover:bg-white/[0.06] transition-colors"
                 >
                   <div className="flex items-center gap-2">
@@ -210,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
                     <span>Company Profile</span>
                   </div>
                   <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40">PDF</span>
-                </button>
+                </a>
               </div>
             )}
           </div>
@@ -234,7 +229,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-xl bg-white/[0.08] hover:bg-white/[0.15] text-white transition-colors focus:outline-none"
+            className="xl:hidden p-2.5 rounded-xl bg-white/[0.08] hover:bg-white/[0.15] text-white transition-colors focus:outline-none"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -245,7 +240,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
 
       {/* Mobile Drawer Backdrop & Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 top-20">
+        <div className="xl:hidden fixed inset-0 z-40 top-20">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200"
@@ -344,20 +339,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact, onOpenCompanyProf
               </Link>
 
               {/* 9. Download Profile */}
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onOpenCompanyProfile) {
-                    onOpenCompanyProfile();
-                  } else {
-                    window.open("/api/company-profile", "_blank");
-                  }
-                }}
+              <a
+                href="/rfp-digital-productions-profile.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
                 className="text-left text-sm font-mono uppercase tracking-wider text-[#E6C665] py-2 px-3 rounded-xl hover:bg-white/[0.04] flex items-center justify-between transition-all"
               >
                 <span>Download Company Profile (PDF)</span>
                 <Download className="w-4 h-4" />
-              </button>
+              </a>
 
               {/* Election Campaign */}
               <Link

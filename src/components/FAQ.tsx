@@ -14,13 +14,13 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-t border-white/[0.08]">
+    <section id="faq" className="home-container home-section border-t border-white/[0.08]">
       {/* Header */}
-      <div className="mb-14">
+      <div className="mb-10 sm:mb-12">
         <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block mb-3">
           Frequently Asked Questions
         </span>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#f4f2f7]">
+        <h2 className="home-heading text-[#f4f2f7]">
           Good to know before we talk.
         </h2>
       </div>
@@ -37,7 +37,7 @@ export const FAQ: React.FC = () => {
                 className="w-full flex items-center justify-between text-left group focus:outline-none"
                 aria-expanded={isOpen}
               >
-                <span className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-[#f4f2f7] group-hover:text-[#a89bfa] transition-colors pr-6">
+                <span className="text-base sm:text-lg lg:text-xl font-bold tracking-tight text-[#f4f2f7] group-hover:text-[#a89bfa] transition-colors pr-6">
                   {item.qEn}
                 </span>
 
