@@ -330,11 +330,11 @@ export default function SocialMediaManagementPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-3.5 h-3.5 text-[#E6C665]" />
-                    <span>rfpdigitalmedia@gmail.com</span>
+                    <span>info@rfpdigital.com</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="w-3.5 h-3.5 text-[#E6C665]" />
-                    <span>Sarai Julena, New Delhi - 110025</span>
+                    <span>156D, Sarai Julena (NFC), New Delhi – 110025</span>
                   </div>
                 </div>
               </div>

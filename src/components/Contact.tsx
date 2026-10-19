@@ -255,9 +255,11 @@ export const Contact: React.FC = () => {
                   >
                     <option value="Corporate Film">Corporate Film</option>
                     <option value="Documentary Film">Documentary Film</option>
-                    <option value="Social Media Management">Social Media Management</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Campaign Services">Campaign Services</option>
+                    <option value="AI Video Production">AI Video Production</option>
+                    <option value="Election Campaign Services">Election Campaign Services</option>
+                    <option value="Social Media & Digital Marketing">Social Media & Digital Marketing</option>
+                    <option value="Photography & Event Coverage">Photography & Event Coverage</option>
+                    <option value="Website Development & Digital Platforms">Website Development & Digital Platforms</option>
                     <option value="Other">Other Media Requirement</option>
                   </select>
                 </div>

@@ -203,7 +203,7 @@ export default function ProjectsPage() {
             {/* Header Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
               <Sparkles className="w-3.5 h-3.5 text-[#E6C665]" />
-              <span>Full Portfolio Archive · Over 1,000+ Productions</span>
+              <span>Selected Work · Curated Production Showcase</span>
             </div>
 
             {/* Main Title */}

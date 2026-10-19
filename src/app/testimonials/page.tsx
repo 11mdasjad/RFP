@@ -116,27 +116,27 @@ export default function TestimonialsPage() {
               </h1>
 
               <p className="text-base sm:text-lg text-white/70 leading-relaxed font-sans font-light">
-                From Vidhan Sabha election campaign managers and University of Delhi leadership to national cultural archives and enterprise founders—read how our cinematic storytelling and on-ground execution deliver measurable prestige.
+                From Vidhan Sabha election campaign managers and University of Delhi leadership to national cultural archives and enterprise founders—read how our cinematic storytelling and on-ground execution deliver authentic storytelling, measurable engagement, and lasting institutional impact.
               </p>
             </div>
 
             {/* Credibility Counters */}
             <div className="mt-12 pt-8 border-t border-white/[0.08] grid grid-cols-2 sm:grid-cols-4 gap-6">
               <div className="space-y-1">
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">100%</div>
-                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Client Retention</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-[#E6C665] tracking-tight">5.0 / 5.0</div>
-                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Stakeholder Rating</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-[#a89bfa] tracking-tight">350K+</div>
-                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Voters Mobilized</div>
-              </div>
-              <div className="space-y-1">
                 <div className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">17+ Years</div>
-                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Delhi NCR Legacy</div>
+                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Production Excellence (Since 2007)</div>
+              </div>
+              <div className="space-y-1">
+                <div className="text-2xl sm:text-3xl font-serif font-bold text-[#E6C665] tracking-tight">500+</div>
+                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Productions Delivered</div>
+              </div>
+              <div className="space-y-1">
+                <div className="text-2xl sm:text-3xl font-serif font-bold text-[#a89bfa] tracking-tight">15+ States</div>
+                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Pan-India Field Outreach</div>
+              </div>
+              <div className="space-y-1">
+                <div className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">Top Tier</div>
+                <div className="text-xs font-mono text-white/50 uppercase tracking-wider">Institutional Ratings</div>
               </div>
             </div>
           </div>

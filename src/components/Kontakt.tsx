@@ -15,7 +15,10 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
     name: "",
     email: "",
     phone: "",
-    topic: prefilledTopic || "Film Production",
+    topic: prefilledTopic || "Corporate Films",
+    location: "",
+    timeline: "2-4 weeks",
+    budget: "To be discussed",
     message: "",
   });
 
@@ -36,7 +39,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
         name: formState.name.trim(),
         email: formState.email.trim(),
         phone: formState.phone.trim() || undefined,
-        discipline: formState.topic,
+        discipline: `${formState.topic} | ${formState.location ? formState.location + " | " : ""}${formState.timeline} | ${formState.budget}`,
         message: formState.message.trim(),
       });
     } catch (err) {
@@ -54,7 +57,10 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
       name: "",
       email: "",
       phone: "",
-      topic: prefilledTopic || "Film Production",
+      topic: prefilledTopic || "Corporate Films",
+      location: "",
+      timeline: "2-4 weeks",
+      budget: "To be discussed",
       message: "",
     });
     setSubmitted(false);
@@ -81,7 +87,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Direct Person & Information */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-5 xl:col-span-5">
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block mb-3">
               Get in Touch
             </span>
@@ -91,7 +97,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
             </h2>
 
             <p className="text-base text-[#f4f2f7b8] leading-relaxed mb-8 max-w-lg">
-              Whether it is a corporate film, an institutional documentary, an election campaign, or social media management,{" "}
+              Whether it is a corporate film, an institutional documentary, an election campaign, or a custom digital platform,{" "}
               <b className="text-white font-semibold">RFP Digital Productions</b> offers end-to-end video production services, from concept development and scripting to production, post-production, graphics, and digital distribution.
             </p>
 
@@ -117,7 +123,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                   Digital Productions
                 </span>
                 <span className="text-xs text-[#a89bfa] block mt-1">
-                  Video Production &amp; Election Management Company
+                  156D, First Floor, Sarai Julena (NFC), New Delhi – 110025
                 </span>
               </div>
             </div>
@@ -138,7 +144,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                 className="inline-flex items-center space-x-2 px-5 py-3 rounded-full border border-white/20 hover:border-white/40 bg-white/[0.03] hover:bg-white/[0.08] text-[#f4f2f7] text-xs font-medium tracking-wide transition-all"
               >
                 <Phone className="w-3.5 h-3.5 text-[#a89bfa]" />
-                <span>+91 97117 91403</span>
+                <span>Direct: +91 97117 91403</span>
               </a>
 
               <a
@@ -146,7 +152,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                 className="inline-flex items-center space-x-2 px-5 py-3 rounded-full border border-white/20 hover:border-white/40 bg-white/[0.03] hover:bg-white/[0.08] text-[#f4f2f7] text-xs font-medium tracking-wide transition-all"
               >
                 <Phone className="w-3.5 h-3.5 text-[#a89bfa]" />
-                <span>+91 95990 99320</span>
+                <span>Desk: +91 95990 99320</span>
               </a>
 
               <a
@@ -160,13 +166,18 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
             </div>
           </div>
 
-          {/* Right Column: Interactive Quick Inquiry Form */}
-          <div className="lg:col-span-6 bg-[#0e0d12]/70 rounded-2xl p-6 sm:p-8 border border-white/[0.08] backdrop-blur-md">
-            <h3 className="text-lg font-bold text-white mb-2">
-              Send Quick Inquiry
-            </h3>
+          {/* Right Column: Project Brief Inquiry Form */}
+          <div className="lg:col-span-7 xl:col-span-7 bg-[#0e0d12]/70 rounded-2xl p-6 sm:p-8 border border-white/[0.08] backdrop-blur-md">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-lg font-bold text-white">
+                Submit Project Brief
+              </h3>
+              <span className="text-[11px] font-mono text-[#a89bfa] px-2.5 py-1 rounded-full bg-[#a89bfa]/10 border border-[#a89bfa]/20">
+                24h Response SLA
+              </span>
+            </div>
             <p className="text-xs text-[#f4f2f780] mb-6">
-              Briefly let us know what you have in mind – we will be in touch promptly.
+              Share your project scope, location, and timeline. Our directors review every brief and return a tailored proposal within 24 hours.
             </p>
 
             {submitted ? (
@@ -176,8 +187,8 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                   <h4 className="text-lg font-bold text-white mb-1">
                     Thank you for reaching out!
                   </h4>
-                  <p className="text-xs text-white/70 max-w-sm mx-auto leading-relaxed">
-                    Your inquiry has been successfully transmitted directly to our studio dashboard. Our executive production team will review your brief and contact you shortly.
+                  <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed">
+                    Your project brief has been received. Our executive production team reviews every inquiry and typically responds within <strong className="text-white">24 hours</strong> with an initial consultation and tailored quote.
                   </p>
                 </div>
                 <div className="pt-2">
@@ -185,7 +196,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                     onClick={handleReset}
                     className="px-5 py-2 rounded-full bg-white/[0.08] hover:bg-white/[0.15] text-xs font-medium text-white transition-all"
                   >
-                    Send Another Message
+                    Submit Another Brief
                   </button>
                 </div>
               </div>
@@ -243,26 +254,76 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                       className="w-full px-4 py-2.5 rounded-xl bg-[#17161d] border border-white/[0.1] focus:border-[#a89bfa] focus:outline-none text-base sm:text-sm text-white transition-colors"
                     >
                       <option value="Corporate Films">Corporate Films</option>
-                      <option value="AI Video Production">AI Video Production</option>
                       <option value="Documentary Films">Documentary Films</option>
+                      <option value="AI Video Production">AI Video Production</option>
                       <option value="Election Campaign Services">Election Campaign Services</option>
-                      <option value="Social Media Management">Social Media Management</option>
-                      <option value="Digital Marketing">Digital Marketing</option>
+                      <option value="Social Media & Digital Marketing">Social Media & Digital Marketing</option>
                       <option value="Photography & Event Coverage">Photography & Event Coverage</option>
+                      <option value="Website Development & Digital Platforms">Website Development & Digital Platforms</option>
+                      <option value="Other">Other (Custom Requirement)</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Optional Location, Timeline & Budget Fields for a richer project brief */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
+                    <label className="text-[11px] font-mono uppercase tracking-wider text-white/60 block mb-1.5">
+                      Location / City (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      value={formState.location}
+                      onChange={(e) => setFormState({ ...formState, location: e.target.value })}
+                      placeholder="e.g. Delhi NCR, Patna..."
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.1] focus:border-[#a89bfa] focus:outline-none text-base sm:text-sm text-white placeholder-white/20 transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[11px] font-mono uppercase tracking-wider text-white/60 block mb-1.5">
+                      Target Timeline (Optional)
+                    </label>
+                    <select
+                      value={formState.timeline}
+                      onChange={(e) => setFormState({ ...formState, timeline: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl bg-[#17161d] border border-white/[0.1] focus:border-[#a89bfa] focus:outline-none text-base sm:text-sm text-white transition-colors"
+                    >
+                      <option value="Within 2 weeks">Within 2 weeks (Urgent)</option>
+                      <option value="2-4 weeks">2 to 4 weeks (Standard)</option>
+                      <option value="1-3 months">1 to 3 months</option>
+                      <option value="Flexible">Flexible / Planning stage</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="text-[11px] font-mono uppercase tracking-wider text-white/60 block mb-1.5">
+                      Budget Range (Optional)
+                    </label>
+                    <select
+                      value={formState.budget}
+                      onChange={(e) => setFormState({ ...formState, budget: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl bg-[#17161d] border border-white/[0.1] focus:border-[#a89bfa] focus:outline-none text-base sm:text-sm text-white transition-colors"
+                    >
+                      <option value="To be discussed">To be discussed</option>
+                      <option value="Below ₹1 Lakh">Below ₹1 Lakh</option>
+                      <option value="₹1L - ₹3 Lakhs">₹1 Lakh – ₹3 Lakhs</option>
+                      <option value="₹3L - ₹10 Lakhs">₹3 Lakhs – ₹10 Lakhs</option>
+                      <option value="₹10 Lakhs+">₹10 Lakhs+</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
                   <label className="text-[11px] font-mono uppercase tracking-wider text-white/60 block mb-1.5">
-                    Project Description / Message *
+                    Project Description / Brief *
                   </label>
                   <textarea
                     required
                     rows={4}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    placeholder="Briefly outline your goals, planned timeline, or initial questions..."
+                    placeholder="Briefly outline your goals, target audience, preferred style, or initial questions..."
                     className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.1] focus:border-[#a89bfa] focus:outline-none text-base sm:text-sm text-white placeholder-white/20 transition-colors resize-none"
                   />
                 </div>
@@ -275,11 +336,11 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Sending Inquiry…</span>
+                      <span>Transmitting Brief…</span>
                     </>
                   ) : (
                     <>
-                      <span>Submit Inquiry</span>
+                      <span>Submit Project Brief</span>
                       <Send className="w-3.5 h-3.5 ml-1" />
                     </>
                   )}
@@ -292,3 +353,4 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
     </section>
   );
 };
+

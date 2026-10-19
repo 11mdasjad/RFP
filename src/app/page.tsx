@@ -5,14 +5,18 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Fakten } from "@/components/Fakten";
 import { Logos } from "@/components/Logos";
-import { Zusammenarbeit } from "@/components/Zusammenarbeit";
+import { HomeProjectsSection } from "@/components/HomeProjectsSection";
+import { HomeServicesSection } from "@/components/HomeServicesSection";
+import { HomeCaseStudiesSection } from "@/components/HomeCaseStudiesSection";
 import { Prozess } from "@/components/Prozess";
-import { Skalierung } from "@/components/Skalierung";
+import { HomeTeamSection } from "@/components/HomeTeamSection";
 import { FAQ } from "@/components/FAQ";
 import { Kontakt } from "@/components/Kontakt";
 import { Footer } from "@/components/Footer";
 import { VideoModal } from "@/components/modals/VideoModal";
-import { CLIENT_LOGOS } from "@/data/imagineContent";
+import { ProjectModal } from "@/components/modals/ProjectModal";
+import { CompanyProfileModal } from "@/components/modals/CompanyProfileModal";
+import { CLIENT_LOGOS, ProjectCard } from "@/data/imagineContent";
 
 export default function Home() {
   const [videoModal, setVideoModal] = useState<{
@@ -27,6 +31,8 @@ export default function Home() {
     subtitle: "",
   });
 
+  const [selectedProject, setSelectedProject] = useState<ProjectCard | null>(null);
+  const [isCompanyProfileOpen, setIsCompanyProfileOpen] = useState(false);
   const [contactTopic, setContactTopic] = useState<string>("Corporate Films");
 
   const handleOpenVideo = (
@@ -57,47 +63,60 @@ export default function Home() {
   return (
     <main className="relative min-h-screen bg-[#0e0d12] text-[#f4f2f7] font-sans antialiased selection:bg-[#6b54ee] selection:text-white">
       {/* Persistent Navigation Header */}
-      <Header onOpenContact={() => handleOpenContactWithTopic()} />
+      <Header
+        onOpenContact={() => handleOpenContactWithTopic()}
+        onOpenCompanyProfile={() => setIsCompanyProfileOpen(true)}
+      />
 
-      {/* Main Page Flow */}
+      {/* Main Page Flow - Ordered exactly according to the recommended hierarchy */}
       <div className="relative z-10">
-        {/* 1. Hero with interactive rotating visual stage */}
-        <Hero onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)} />
+        {/* 1. Short introduction and showreel */}
+        <Hero
+          onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)}
+          onOpenCompanyProfile={() => setIsCompanyProfileOpen(true)}
+        />
 
-        {/* 2. Key Metrics & Credentials */}
+        {/* 2. Key Verified Metrics & Credentials */}
         <Fakten />
 
-        {/* 3. Client Logos Marquee 1 */}
+        {/* 3. Client Logos Marquee */}
         <Logos
-          titleEn="Esteemed Clients & Institutions We Have Produced For"
+          titleEn="Esteemed Clients &amp; Institutions We Have Produced For"
           items={CLIENT_LOGOS}
         />
 
-        {/* 4. How We Collaborate */}
-        <Zusammenarbeit />
-
-
-        {/* 6. Production Process & Acharya Narendra Dev College Spotlight */}
-        <Prozess onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)} />
-
-        {/* 7. Scalable Production Making-of Gallery */}
-        <Skalierung />
-
-        {/* 8. Client Logos 2 */}
-        <Logos
-          titleEn="Nationwide Organizations & Partners"
-          items={[...CLIENT_LOGOS].reverse()}
-          reverse
+        {/* 4. Selected Projects with 2 Clear Entry Points: Films & Digital Media vs Election Campaigns */}
+        <HomeProjectsSection
+          onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)}
+          onSelectProject={(project) => setSelectedProject(project)}
+          onOpenContactWithTopic={handleOpenContactWithTopic}
         />
 
+        {/* 5. Services: Clear Deliverables, Typical Timelines, & Practical Scope */}
+        <HomeServicesSection
+          onOpenContactWithTopic={handleOpenContactWithTopic}
+        />
 
-        {/* 10. FAQ Accordion */}
+        {/* 6. Case Studies (Institutional, NGO, Election) & Grounded Client Testimonials */}
+        <HomeCaseStudiesSection
+          onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)}
+        />
+
+        {/* 7. Production Process Workflow (Brief, Script, Shoot, Edit, Master) */}
+        <Prozess
+          onPlayVideo={(url, title, subtitle) => handleOpenVideo(url, title, subtitle)}
+        />
+
+        {/* 8. Team Introduction & Authentic Behind-the-Scenes Photographs */}
+        <HomeTeamSection />
+
+        {/* 9. Practical Buying FAQs (Timelines, Quotes, Revisions, Multilingual, Raw Footage) */}
         <FAQ />
 
-        {/* 11. Direct Contact with RFP Executive Production Team */}
+        {/* 10. Direct Project Brief & Enquiry with 24h SLA */}
         <Kontakt prefilledTopic={contactTopic} />
 
-        {/* 12. Footer */}
+        {/* 11. Footer with Verified Contacts, 156D Address, & ECI Model Code Compliance */}
         <Footer />
       </div>
 
@@ -108,6 +127,19 @@ export default function Home() {
         videoUrl={videoModal.videoUrl}
         title={videoModal.title}
         subtitle={videoModal.subtitle}
+      />
+
+      {/* Case Study Detail Modal for Selected Projects */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+        onWatchReel={(url, title) => handleOpenVideo(url, title, selectedProject?.title)}
+      />
+
+      {/* Downloadable / Printable Company Profile Deck */}
+      <CompanyProfileModal
+        isOpen={isCompanyProfileOpen}
+        onClose={() => setIsCompanyProfileOpen(false)}
       />
     </main>
   );

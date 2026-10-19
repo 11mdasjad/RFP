@@ -94,13 +94,13 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "social-media-digital-marketing",
     number: "03",
     title: "Social Media & Digital Marketing",
-    tagline: "Unifying high-cadence viral content with data-anchored performance marketing.",
+    tagline: "Strategic short-form video content paired with targeted digital marketing.",
     description:
-      "Full-funnel social media engines and performance marketing. From high-cadence reels, creative content calendars, and brand positioning to targeted Meta & Google Ads, SEO, and conversion funnels.",
+      "Full-funnel social media and digital marketing: strategic short-form video reels, creative content calendars, and targeted Meta & Google Ads to build audience engagement and lead conversion.",
     fullOverview:
-      "In the modern digital ecosystem, creative content and precision distribution must work as one synchronized machine. RFP Digital merges high-production cinema assets with rapid-fire social formatting and algorithmic ad placement. We build episodic short-form content engines, manage viral community engagement, and deploy granular demographic and geo-targeted ads across Meta and Google to convert passive scrollers into passionate supporters and loyal clients.",
+      "In the modern digital ecosystem, creative content and precision distribution must work as one synchronized machine. RFP Digital merges high-production cinema assets with rapid-fire social formatting and algorithmic ad placement. We build episodic short-form content engines, manage community engagement, and deploy granular demographic and geo-targeted ads across Meta and Google to convert passive scrollers into passionate supporters and loyal clients.",
     deliverables: [
-      "High-Cadence Reels & YouTube Shorts Production",
+      "Short-Form Reels & YouTube Shorts Production",
       "Precision Meta & Google Paid Ad Campaigns",
       "Platform Narrative Strategy & Content Calendars",
       "Geo-Fenced Demographic & Voter Pin-Code Targeting",
@@ -109,7 +109,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     features: [
       "Unified creative content production and paid ad management under one roof",
-      "Same-day edit turnaround for breaking events, roadshows, and rallies",
+      "Fast-turnaround edits for breaking events, roadshows, and rallies within 24 to 48 hours",
       "Continuous multivariate creative A/B testing with live spending dashboards",
       "Cross-channel syndication across Instagram, YouTube, Facebook, X, and LinkedIn"
     ],
@@ -140,11 +140,11 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "election-campaign-services",
     number: "04",
     title: "Election Campaign Services",
-    tagline: "Turn key Election Campaign Execution & Ground-to-Cloud Political Architecture.",
+    tagline: "Turnkey Election Campaign Execution & Integrated Field Outreach.",
     description:
-      "Complete assembly & parliamentary election management: mobile high-brightness LED display vans, original prachar songs, street plays (Nukkad Natak), rally multi-cam live feeds, and rapid-response war rooms.",
+      "Complete assembly & parliamentary election management: mobile high-brightness LED display vans, original prachar songs, street plays (Nukkad Natak), rally multi-cam live feeds, and rapid-response campaign war rooms.",
     fullOverview:
-      "RFP Digital Productions is a pioneer in turnkey election campaign execution. We bring deep grassroots ground capability combined with modern digital firepower. From mobilizing a fleet of GPS-tracked mobile LED display vans across hundreds of villages to staging captivating Nukkad Nataks, recording rousing prachar anthems, and running 24/7 social media command centers, we transform political campaigns into winning populist movements.",
+      "RFP Digital Productions is a pioneer in turnkey election campaign execution. We bring deep grassroots ground capability combined with modern digital communication. From mobilizing a fleet of GPS-tracked mobile LED display vans across hundreds of villages to staging captivating Nukkad Nataks, recording rousing prachar anthems, and running campaign communication centers, we transform political campaigns into memorable public connections.",
     deliverables: [
       "Mobile High-Brightness LED Display Vans (Solar/Gen Hybrid)",
       "Original Prachar Songs, Jingles & Campaign Anthems",
@@ -156,8 +156,8 @@ export const SERVICES_DATA: ServiceItem[] = [
     features: [
       "Turnkey on-ground execution with complete driver, crew, and technical support",
       "GPS-monitored van fleet with daily route verification and geo-tagging",
-      "Daily rally highlights delivered within 2 hours for same-evening screenings",
-      "Compliant with Election Commission of India (ECI) guidelines and protocols"
+      "Daily rally highlights delivered within rapid hours for same-evening village screenings",
+      "Compliant with Election Commission of India (ECI) Model Code guidelines"
     ],
     techStack: [
       "Outdoor P3.91 High-Brightness LED Walls",
@@ -166,7 +166,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "GPS Fleet Tracking & Real-Time Telemetry"
     ],
     stats: [
-      { label: "Constituencies Served", value: "45+" },
+      { label: "Campaigns & Constituencies", value: "45+ (Since 2007)" },
       { label: "LED Vans Deployed", value: "80+ Fleet" },
       { label: "Voters Reached", value: "10M+" }
     ],
@@ -190,12 +190,12 @@ export const SERVICES_DATA: ServiceItem[] = [
     description:
       "Comprehensive multi-camera live event coverage, corporate summits, high-profile political rallies, industrial expos, executive portraits, and candid photography.",
     fullOverview:
-      "When landmark moments happen, second takes do not exist. Our photography and event coverage team brings broadcast-standard technical precision and artistic sensitivity to corporate convocations, political gatherings, academic inaugurations, and cultural expos. We provide multi-angle live switching, immediate same-day press photos, and archival photo books that stand the test of time.",
+      "When landmark moments happen, second takes do not exist. Our photography and event coverage team brings broadcast-standard technical precision and artistic sensitivity to corporate convocations, political gatherings, academic inaugurations, and cultural expos. We provide multi-angle live switching, rapid press photos delivered within hours, and archival photo books that stand the test of time.",
     deliverables: [
       "Ultra-High-Resolution Event & Summit Photography",
       "Multi-Camera Live Video Streaming to YouTube & Socials",
       "Executive Headshots & Leadership Portfolios",
-      "Same-Day Edit Press Highlights & Retouched Stills"
+      "Rapid Edit Press Highlights & Retouched Stills"
     ],
     features: [
       "Fast on-site photo selection and delivery for instant press and social releases",
@@ -211,7 +211,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     stats: [
       { label: "Events Covered", value: "1,200+" },
-      { label: "Press Turnaround", value: "< 60 Mins" },
+      { label: "Press Turnaround", value: "< 2 Hours" },
       { label: "Stream Reliability", value: "99.9%" }
     ],
     workflow: [
@@ -258,7 +258,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Google Analytics 4 & SEO Architecture"
     ],
     stats: [
-      { label: "Websites Built", value: "90+" },
+      { label: "Digital Platforms & Websites", value: "90+ Delivered" },
       { label: "Page Load Speed", value: "< 1.2s" },
       { label: "Uptime SLA", value: "99.99%" }
     ],

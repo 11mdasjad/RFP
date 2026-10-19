@@ -124,7 +124,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-white/[0.08]">
               <div className="space-y-1">
                 <span className="text-2xl sm:text-3xl font-serif font-bold text-white">17+</span>
-                <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Years Experience</p>
+                <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Years (Since 2007)</p>
               </div>
               <div className="space-y-1">
                 <span className="text-2xl sm:text-3xl font-serif font-bold text-[#E6C665]">1,000+</span>
@@ -132,11 +132,11 @@ export default function ServicesPage() {
               </div>
               <div className="space-y-1">
                 <span className="text-2xl sm:text-3xl font-serif font-bold text-[#a89bfa]">45+</span>
-                <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Assembly Campaigns</p>
+                <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Campaign Outreach Tours</p>
               </div>
               <div className="space-y-1">
                 <span className="text-2xl sm:text-3xl font-serif font-bold text-white">90+</span>
-                <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Web Platforms Built</p>
+                <p className="text-xs font-mono text-white/50 uppercase tracking-wider">Web &amp; Digital Portals</p>
               </div>
             </div>
           </div>
@@ -294,13 +294,13 @@ export default function ServicesPage() {
             <div className="space-y-3 max-w-xl text-center md:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6b54ee]/20 text-[#a89bfa] text-xs font-mono border border-[#6b54ee]/40">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Turnkey Execution with Zero Outsourcing</span>
+                <span>Turnkey Execution with In-House Core Creative Team</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-serif text-white font-medium">
                 Need a Custom Package for Your Campaign or Brand?
               </h2>
               <p className="text-xs sm:text-sm text-white/70 font-sans leading-relaxed">
-                Connect directly with our creative directors and technical leads in New Delhi. We deliver same-day custom proposals, location recces, and cost estimates.
+                Connect directly with our creative directors and technical leads in New Delhi. We deliver detailed custom proposals, location recces, and transparent cost estimates within 24 to 48 hours.
               </p>
             </div>
 

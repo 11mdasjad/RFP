@@ -65,7 +65,7 @@ export const STAGE_SCENES: StageScene[] = [
   {
     id: "documentary-heritage",
     title: "Documentaries & Social Impact",
-    artEn: "Modern Delhi International School & National Heritage",
+    artEn: "Modern Delhi Public School & National Heritage",
     poster: "/medien/landing/landing-directing-1669.jpg",
     fullVideoUrl: "https://www.youtube-nocookie.com/embed/91kFY2xs7cE?autoplay=1",
     targetId: "projekt-documentary"
@@ -76,7 +76,7 @@ export const FAKTEN_DATA = [
   {
     num: "17+",
     labelEn: "Years of Media Excellence",
-    descEn: "Headed by alumni of AJK MCRC, Jamia Millia Islamia, New Delhi."
+    descEn: "Established in 2007 by alumni of AJK MCRC, Jamia Millia Islamia, New Delhi."
   },
   {
     num: "1,000+",
@@ -89,9 +89,9 @@ export const FAKTEN_DATA = [
     descEn: "From political conventions and expos to university convocations."
   },
   {
-    num: "100%",
-    labelEn: "Client Satisfaction",
-    descEn: "Trusted by government bodies, leading colleges, and enterprise brands."
+    num: "500+",
+    labelEn: "Campaign & Corporate Retainers",
+    descEn: "Trusted production partner to premier institutions, government bodies, and brands."
   }
 ];
 
@@ -110,7 +110,7 @@ export const CLIENT_LOGOS = [
   { name: "National Archives of India", src: "/medien/logos/national-archives.jpg" },
   { name: "DD Kisan", src: "/medien/logos/dd-kisan.png" },
   { name: "Samsung", src: "/medien/logos/samsung.png" },
-  { name: "Modern Delhi International School", src: "/medien/logos/modern-delhi-school.png" },
+  { name: "Modern Delhi Public School (MDPS)", src: "/medien/logos/modern-delhi-school.png" },
   { name: "Atal Bihari Vajpayee Hindi Vishwavidyalaya", src: "/medien/logos/atal-bihari-univ.png" },
   { name: "Bharat Construction", src: "/medien/logos/bharat-construction.jpg" },
   { name: "Jamia Co-operative Bank", src: "/medien/logos/jamia-coop-bank.jpg" },
@@ -334,16 +334,16 @@ export const PROJECTS_DATA: ProjectCard[] = [
   {
     id: "projekt-school",
     slot: "slot-d",
-    title: "Modern Delhi International School Showcase",
-    client: "Modern Delhi International School, Greater Faridabad",
+    title: "Modern Delhi Public School (MDPS) Showcase",
+    client: "Modern Delhi Public School, Faridabad",
     categoryEn: "Campus & Academic Film",
     filterCat: "film",
     descEn:
-      "Dynamic campus film showcasing sports arenas, robotics laboratories, performing arts, and student leadership across premier educational infrastructure.",
+      "Dynamic campus film showcasing sports arenas, robotics laboratories, performing arts, and student leadership under the direction of Dr. U.S. Verma.",
     poster: "/medien/youtube-thumbs/91kFY2xs7cE.jpg",
     videoUrl: "https://www.youtube-nocookie.com/embed/91kFY2xs7cE?autoplay=1",
     youtubeUrl: "https://youtu.be/91kFY2xs7cE",
-    tags: ["Campus Film", "Education", "Faridabad", "Student Life"]
+    tags: ["MDPS", "Campus Film", "Education", "Faridabad", "Student Life"]
   },
   {
     id: "projekt-iit",
@@ -456,6 +456,34 @@ export const PROJECTS_DATA: ProjectCard[] = [
     videoUrl: "https://www.youtube.com/watch?v=xzdQEOkeGeI",
     youtubeUrl: "https://youtu.be/xzdQEOkeGeI",
     tags: ["Ahle Hadees", "Institutional History", "Social Welfare", "Educational Legacy", "Documentary Master"]
+  },
+  {
+    id: "projekt-social-marketing-1",
+    slot: "slot-mkt-1",
+    title: "Brand Promotional Reel Series & Digital Campaign",
+    client: "Leading FMCG & Corporate Brands",
+    categoryEn: "Social Media & Digital Marketing",
+    filterCat: "marketing",
+    descEn:
+      "High-impact short-form video campaign designed for Instagram Reels, YouTube Shorts, and Meta ad funnels, driving strong engagement, brand awareness, and consumer recall.",
+    poster: "/medien/landing/corporate-film-production-banner.jpg",
+    videoUrl: "https://www.youtube-nocookie.com/embed/1PeIeMgjyQc?autoplay=1",
+    youtubeUrl: "https://youtu.be/1PeIeMgjyQc",
+    tags: ["Social Media", "Reels", "Brand Video", "Digital Marketing", "Meta Ads"]
+  },
+  {
+    id: "projekt-social-marketing-2",
+    slot: "slot-mkt-2",
+    title: "Public Outreach & Constituency Video Campaign",
+    client: "Public Outreach & Assembly Communications",
+    categoryEn: "Constituency Outreach & Social Content",
+    filterCat: "marketing",
+    descEn:
+      "Rapid-turnaround digital video highlights, candidate speech cuts, and voter-focused short clips produced daily to maintain continuous public outreach across digital platforms.",
+    poster: "/medien/youtube-thumbs/KLfO_N4a6V8.jpg",
+    videoUrl: "https://www.youtube-nocookie.com/embed/KLfO_N4a6V8?autoplay=1",
+    youtubeUrl: "https://youtu.be/KLfO_N4a6V8",
+    tags: ["Digital Outreach", "Social Campaign", "Constituency Highlights", "Shorts"]
   }
 ];
 
@@ -570,24 +598,32 @@ export const PROCESS_STEPS = [
 
 export const FAQ_DATA = [
   {
-    qEn: "What services does RFP Digital Productions offer?",
-    aEn: "RFP Digital Productions is a full-service media production and election management company based in New Delhi. We specialize in corporate films, documentary films, social media management, digital marketing, election campaign management (LED vans, prachar songs, nukkad nataks), and professional photography."
+    qEn: "What is your typical production timeline from concept to final delivery?",
+    aEn: "Corporate and institutional films typically take 2 to 3 weeks from brief and script approval to final color-graded master delivery. For election campaigns, rally coverage, and urgent social media reels, our rapid-turnaround editing units deliver broadcast-ready cuts within 24 to 48 hours."
   },
   {
-    qEn: "Who leads the team at RFP Digital Productions?",
-    aEn: "Our production house is managed by seasoned media professionals and alumni from the prestigious AJK Mass Communication & Research Center (AJK MCRC), Jamia Millia Islamia, New Delhi, bringing over 17 years of industry experience."
+    qEn: "How are quotations and project estimates prepared?",
+    aEn: "We prepare clear, transparent line-item estimates based on shoot duration, crew size, camera and lighting tier, travel logistics, voiceover licensing, and motion graphics requirements. You receive an itemized proposal within 24 to 48 hours of your initial brief."
   },
   {
-    qEn: "Can RFP Digital handle nationwide shoots across India?",
-    aEn: "Yes, absolutely. We have covered over 1,200+ events and productions across India, including Delhi NCR, Uttar Pradesh, Bihar, Haryana, Rajasthan, and nationwide locations with agile mobile camera crews."
+    qEn: "How many revision rounds are included in a video production project?",
+    aEn: "Every project includes two structured rounds of review: Round 1 focuses on offline narrative flow, story pacing, and dialogue selection; Round 2 refines final color grading, sound design, subtitles, and graphics. Additional revisions can be accommodated smoothly if scope changes."
   },
   {
-    qEn: "How does your Election Campaign Management service work?",
-    aEn: "We provide an integrated, turnkey election campaign engine: mobile LED screen vans, original prachar songs, street plays (Nukkad Nataks), manifesto designs, digital banners, WhatsApp outreach, and on-ground rally video coverage."
+    qEn: "Can RFP Digital handle nationwide shoots across India and outstation travel?",
+    aEn: "Yes. Over our 17+ years of operations, our self-contained production crews have filmed across 15+ Indian states—including university campuses, manufacturing plants, rural villages, and metropolitan capitals. We coordinate all transport, equipment logistics, and location permissions."
   },
   {
-    qEn: "How do we get a quote or discuss a project?",
-    aEn: "You can reach out directly via WhatsApp, call us at +91 97117 91403 or +91-11-49963157, email info@rfpdigital.com, or submit the inquiry form on this site. Our team typically responds within the same day."
+    qEn: "Do you provide multilingual voiceovers, regional adaptations, and subtitles?",
+    aEn: "Yes. We regularly produce films in Hindi, English, Urdu, Bengali, Bhojpuri, Punjabi, and other regional languages. We work with professional voiceover artists and provide accurate open or closed-caption subtitles formatted for web, television, and mobile viewing."
+  },
+  {
+    qEn: "Can we receive raw footage and project archives after completion?",
+    aEn: "Yes. In addition to delivering finished 4K master files, clients can opt for complete raw footage transfer on hard drives or secure cloud storage, along with high-resolution behind-the-scenes photography archives."
+  },
+  {
+    qEn: "How does your Election Campaign Management service operate?",
+    aEn: "We provide an integrated, turnkey election campaign engine: mobile LED screen vans, original prachar songs, street plays (Nukkad Nataks), manifesto designs, digital banners, WhatsApp outreach, and on-ground rally video coverage—strictly aligned with Election Commission Model Code guidelines."
   }
 ];
 

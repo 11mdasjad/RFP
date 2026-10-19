@@ -166,9 +166,9 @@ export default function ElectionCampaignPortalPage() {
       step: "05",
       icon: Share2,
       title: "Social Media Management",
-      desc: "High-cadence viral reels, voter-targeted digital ad campaigns, daily narrative shaping, counter-propaganda blitzes, and multi-platform presence across Meta, YouTube & X.",
+      desc: "Rapid-response campaign reels, voter-targeted digital ad campaigns, daily speech highlights, and active multi-platform presence across Meta, YouTube & X.",
       href: "/ec/social-media-management",
-      tagline: "Viral Content • High-Cadence Reels & Ads"
+      tagline: "High-Impact Video • Daily Campaign Reels & Ads"
     }
   ];
 
@@ -213,7 +213,7 @@ export default function ElectionCampaignPortalPage() {
               </h1>
 
               <p className="text-lg sm:text-2xl font-serif italic text-[#E6C665] leading-relaxed">
-                &ldquo;Ground-to-Cloud Political Architecture &amp; Strategic Constituency Mobilization.&rdquo;
+                &ldquo;Integrated On-Ground Outreach &amp; High-Impact Digital Campaign Communication.&rdquo;
               </p>
 
               <p className="text-base sm:text-lg text-white/75 font-sans leading-relaxed max-w-3xl pt-2">
@@ -225,7 +225,7 @@ export default function ElectionCampaignPortalPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mt-12 pt-8 border-t border-white/[0.08]">
               <div className="space-y-1">
                 <span className="text-2xl sm:text-3xl font-serif font-bold text-white">45+</span>
-                <p className="text-xs font-mono text-[#E6C665] uppercase tracking-wider">Constituencies</p>
+                <p className="text-xs font-mono text-[#E6C665] uppercase tracking-wider">Campaign Constituencies</p>
               </div>
               <div className="space-y-1">
                 <span className="text-2xl sm:text-3xl font-serif font-bold text-[#E6C665]">80+ Fleet</span>

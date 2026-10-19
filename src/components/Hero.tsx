@@ -2,13 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Play } from "lucide-react";
+import { ArrowUpRight, Play, FileText } from "lucide-react";
 
 interface HeroProps {
   onPlayVideo: (url: string, title: string, subtitle?: string) => void;
+  onOpenCompanyProfile?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
+export const Hero: React.FC<HeroProps> = ({ onPlayVideo, onOpenCompanyProfile }) => {
   // Link 1: Kept on the Showcase Banner with its original thumbnail
   const bannerVideo = {
     title: "Showreel",
@@ -43,10 +44,10 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
             <Link
               href="/projects"
-              className="group inline-flex items-center justify-center space-x-2 px-7 py-3.5 sm:py-4 rounded-full bg-[#f4f2f7] hover:bg-white text-[#0e0d12] text-sm sm:text-base font-semibold tracking-wide shadow-xl hover:shadow-[#7c6af2]/25 transition-all duration-200 active:scale-95 text-center"
+              className="group inline-flex items-center justify-center space-x-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-[#f4f2f7] hover:bg-white text-[#0e0d12] text-sm sm:text-base font-semibold tracking-wide shadow-xl hover:shadow-[#7c6af2]/25 transition-all duration-200 active:scale-95 text-center"
             >
               <span>Explore Projects</span>
               <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -60,11 +61,22 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
                   "RFP Digital Productions"
                 )
               }
-              className="inline-flex items-center justify-center space-x-2.5 px-7 py-3.5 sm:py-4 rounded-full border border-white/[0.22] hover:border-white/[0.45] bg-white/[0.04] hover:bg-white/[0.1] text-[#f4f2f7] text-sm sm:text-base font-medium tracking-wide transition-all duration-200 active:scale-95 text-center backdrop-blur-sm"
+              className="inline-flex items-center justify-center space-x-2.5 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-white/[0.22] hover:border-white/[0.45] bg-white/[0.04] hover:bg-white/[0.1] text-[#f4f2f7] text-sm sm:text-base font-medium tracking-wide transition-all duration-200 active:scale-95 text-center backdrop-blur-sm"
             >
               <Play className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current text-[#b4a6ff]" />
               <span>Watch Showreel</span>
             </button>
+
+            {onOpenCompanyProfile && (
+              <button
+                type="button"
+                onClick={onOpenCompanyProfile}
+                className="inline-flex items-center justify-center space-x-2 px-4 sm:px-5 py-3.5 sm:py-4 rounded-full border border-[#D4AF37]/35 hover:border-[#D4AF37]/80 bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 text-[#f4d47c] text-xs sm:text-sm font-medium tracking-wide transition-all duration-200 active:scale-95 text-center"
+              >
+                <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>Company Profile</span>
+              </button>
+            )}
           </div>
         </div>
 

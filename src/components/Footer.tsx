@@ -154,7 +154,7 @@ export const Footer: React.FC = () => {
             <div className="pt-1 text-xs text-white/60 space-y-1.5 font-sans">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#E6C665] shrink-0 mt-0.5" />
-                <span>156, First Floor, Sarai Julena (NFC), New Delhi – 110025, India</span>
+                <span>156D, First Floor, Sarai Julena (NFC), New Delhi – 110025, India</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#a89bfa] shrink-0" />
@@ -306,7 +306,7 @@ export const Footer: React.FC = () => {
               </div>
 
               <div className="pt-2 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono text-white/40">
-                <span>ECI Guidelines Ready</span>
+                <span>Compliant with ECI Model Code</span>
                 <ShieldCheck className="w-3.5 h-3.5 text-[#E6C665]" />
               </div>
             </div>
@@ -319,7 +319,7 @@ export const Footer: React.FC = () => {
           <div className="text-white/40 flex items-center gap-2 text-center sm:text-left">
             <span>© {new Date().getFullYear()} RFP Digital Productions. All rights reserved.</span>
             <span className="hidden md:inline text-white/20">•</span>
-            <span className="hidden md:inline text-white/40">Crafting Cinema &amp; Political Architecture</span>
+            <span className="hidden md:inline text-white/40">Crafting Cinema &amp; Strategic Media Campaigns</span>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
@@ -335,9 +335,6 @@ export const Footer: React.FC = () => {
             >
               Privacy Policy
             </button>
-            <Link href="/admin" className="text-white/40 hover:text-[#a89bfa] transition-colors">
-              Admin
-            </Link>
             <button
               onClick={scrollToTop}
               className="px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] text-[#E6C665] hover:text-white border border-white/10 transition-all flex items-center gap-1 active:scale-95"
@@ -367,7 +364,7 @@ export const Footer: React.FC = () => {
                 <div className="text-xs sm:text-sm text-white/80 space-y-3 leading-relaxed font-sans">
                   <p>
                     <strong className="text-white">RFP Digital Productions</strong><br />
-                    156, First Floor, Sarai Julena (NFC), New Delhi - 110025<br />
+                    156D, First Floor, Sarai Julena (NFC), New Delhi – 110025<br />
                     Delhi NCR, India
                   </p>
                   <p>
@@ -376,9 +373,9 @@ export const Footer: React.FC = () => {
                   </p>
                   <p>
                     <strong className="text-white">Contact &amp; Telephony:</strong><br />
-                    Mobile / WhatsApp: +91 99999 63157 / +91 97117 91403<br />
+                    Primary Mobile / WhatsApp: +91 97117 91403 | Production Desk: +91 95990 99320<br />
                     Office Landline: +91-11-49963157<br />
-                    Email: info@rfpdigital.com / rfpdigitalmedia@gmail.com<br />
+                    Email: info@rfpdigital.com<br />
                     Website: https://www.rfpdigital.com
                   </p>
                 </div>
@@ -395,7 +392,7 @@ export const Footer: React.FC = () => {
                   </p>
                   <p>
                     <strong className="text-white">Inquiries:</strong><br />
-                    RFP Digital Productions, 156, First Floor, Sarai Julena (NFC), New Delhi - 110025<br />
+                    RFP Digital Productions, 156D, First Floor, Sarai Julena (NFC), New Delhi - 110025<br />
                     Email: info@rfpdigital.com
                   </p>
                 </div>

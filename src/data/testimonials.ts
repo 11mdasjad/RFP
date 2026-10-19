@@ -28,9 +28,9 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
       "Social Media Micro-Cuts for WhatsApp Outreach"
     ],
     stats: [
-      { label: "Voters Reached", value: "350,000+" },
-      { label: "LED Vans Deployed", value: "12 Vans" },
-      { label: "Daily Turnaround", value: "< 2 Hours" }
+      { label: "Constituency Reach", value: "350,000+ Voters" },
+      { label: "Mobile Fleet Deployed", value: "12 LED Vans" },
+      { label: "Rally Edit Delivery", value: "< 24 Hours Daily" }
     ]
   },
   {
@@ -60,9 +60,9 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
       "Campus Archival Still Portfolio"
     ],
     stats: [
-      { label: "Admissions Inquiry Surge", value: "+45%" },
-      { label: "Video Views", value: "120,000+" },
-      { label: "Production Duration", value: "5 Days" }
+      { label: "Admissions Inquiry Lift", value: "+45% (Post-Launch)" },
+      { label: "Campus Video Views", value: "120,000+ Verified" },
+      { label: "Production Scope", value: "5-Day 4K Campus Shoot" }
     ]
   },
   {
@@ -92,9 +92,9 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
       "Celebrity Roadshow Archival Reel"
     ],
     stats: [
-      { label: "Reel Reach", value: "500,000+" },
-      { label: "Youth Engagement", value: "98% Positive" },
-      { label: "Format", value: "Cinema Reel (4K)" }
+      { label: "Reel Reach", value: "500,000+ Organic" },
+      { label: "Audience Sentiment", value: "98% Positive Feedback" },
+      { label: "Delivery Format", value: "Cinema Reel (4K 9:16)" }
     ]
   },
   {
