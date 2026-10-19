@@ -110,8 +110,8 @@ export const CLIENT_LOGOS = [
   { name: "National Archives of India", src: "/medien/logos/national-archives.jpg" },
   { name: "DD Kisan", src: "/medien/logos/dd-kisan.png" },
   { name: "Samsung", src: "/medien/logos/samsung.png" },
-  { name: "Modern Delhi Public School (MDPS)", src: "/medien/logos/modern-delhi-school.png" },
   { name: "Atal Bihari Vajpayee Hindi Vishwavidyalaya", src: "/medien/logos/atal-bihari-univ.png" },
+  { name: "Zila Panchayat Bulandshahr, Uttar Pradesh", src: "/medien/logos/bulandshahr-zila-panchayat.png" },
   { name: "Bharat Construction", src: "/medien/logos/bharat-construction.jpg" },
   { name: "Jamia Co-operative Bank", src: "/medien/logos/jamia-coop-bank.jpg" },
   { name: "Brave Soul Foundation", src: "/medien/logos/brave-soul-foundation.jpg" }
