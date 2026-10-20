@@ -411,7 +411,7 @@ const ProjectCardItem: React.FC<{
           alt={displayTitle}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700"
+          className={`w-full h-full object-center transition-all duration-700 ${project.posterFit === "contain" ? "object-contain" : "object-cover group-hover:scale-105"}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#17161d] via-black/25 to-transparent pointer-events-none" />
 

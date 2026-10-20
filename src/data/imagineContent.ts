@@ -28,6 +28,7 @@ export interface ProjectCard {
   filterCat: "film" | "campaign" | "documentary" | "marketing" | "ai";
   descEn: string;
   poster: string;
+  posterFit?: "cover" | "contain";
   videoUrl?: string;
   youtubeUrl?: string;
   videos?: VideoItem[];
@@ -504,6 +505,21 @@ export const PROJECTS_DATA: ProjectCard[] = [
     videoUrl: "https://www.youtube-nocookie.com/embed/TAv-50-CHjc?autoplay=1",
     youtubeUrl: "https://youtu.be/TAv-50-CHjc",
     tags: ["IIT Roorkee", "Engineering Research", "Institutional Master"]
+  },
+  {
+    id: "projekt-iit-delhi",
+    slot: "slot-iit-delhi",
+    title: "IIT Delhi Corporate FILM",
+    client: "Indian Institute of Technology Delhi",
+    categoryEn: "Institutional & Engineering Film",
+    filterCat: "film",
+    descEn:
+      "An institutional corporate film by RFP Digital Productions, presenting IIT Delhi through the lens of civil engineering. A visual introduction to the institute’s technical expertise, with engineering practice and laboratory work at the heart of its identity.",
+    poster: "/medien/youtube-thumbs/Ij4FMa-r6Ds.jpg",
+    posterFit: "contain",
+    videoUrl: "https://www.youtube.com/watch?v=Ij4FMa-r6Ds",
+    youtubeUrl: "https://youtu.be/Ij4FMa-r6Ds",
+    tags: ["IIT Delhi", "Corporate Film", "Civil Engineering", "Institutional Film"]
   },
   {
     id: "projekt-doc-mewat",
