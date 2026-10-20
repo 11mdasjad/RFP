@@ -20,7 +20,7 @@ export const HomeTeamSection: React.FC = () => {
   const btsPhotos = INITIAL_GALLERY_ITEMS.filter((photo) => BTS_GALLERY_IDS.includes(photo.id));
 
   return (
-    <section className="home-container home-section border-t border-white/[0.08]">
+    <section className="site-container home-section border-t border-white/[0.08]">
       {/* Header */}
       <div className="home-section-header">
         <div>

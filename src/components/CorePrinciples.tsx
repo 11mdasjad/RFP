@@ -38,7 +38,7 @@ export const CorePrinciples: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#131F1C] text-[#FAF8F5] py-24 sm:py-32 px-4 sm:px-6 lg:px-12 rounded-[32px] sm:rounded-[44px] my-12 max-w-7xl mx-auto overflow-hidden relative border border-[#243631]">
+    <section className="site-container bg-[#131F1C] text-[#FAF8F5] py-24 sm:py-32 rounded-[32px] sm:rounded-[44px] my-12 overflow-hidden relative border border-[#243631]">
       {/* Decorative background ambient light */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#5A7865]/10 rounded-full blur-3xl pointer-events-none" />
 

@@ -66,7 +66,7 @@ export const Zusammenarbeit: React.FC = () => {
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#7c6af2]/10 blur-[150px] pointer-events-none rounded-full" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#D4AF37]/08 blur-[160px] pointer-events-none rounded-full" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="site-container relative z-10">
         {/* 1. Header & Brand Identity - Centered & Expansive */}
         <div className="text-center max-w-5xl mx-auto mb-16 lg:mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 text-[#E6C665] text-xs font-mono uppercase tracking-widest mb-5">

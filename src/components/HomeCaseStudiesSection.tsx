@@ -85,9 +85,9 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
   const TabIcon = currentCase.icon;
 
   return (
-    <section className="home-container home-section border-t border-white/[0.08]">
+    <section className="site-container home-section border-t border-white/[0.08]">
       {/* Section Header */}
-      <div className="max-w-3xl mb-10 sm:mb-12">
+      <div className="max-w-3xl mx-auto mb-10 sm:mb-12 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
           <Award className="w-3.5 h-3.5 text-[#E6C665]" />
           <span>Documented Evidence</span>
@@ -253,7 +253,7 @@ export const HomeCaseStudiesSection: React.FC<HomeCaseStudiesSectionProps> = ({ 
 
       {/* Verified Client Testimonials Strip */}
       <div className="border-t border-white/[0.08] pt-12">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div className="flex flex-col items-center text-center gap-4 mb-8">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-[#E6C665] block mb-1">
               Client Feedback

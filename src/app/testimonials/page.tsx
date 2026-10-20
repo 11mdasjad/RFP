@@ -57,7 +57,7 @@ export default function TestimonialsPage() {
           <div className="absolute top-0 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#6b54ee]/15 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 translate-y-1/2 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[120px] pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="site-container relative z-10">
             {/* Breadcrumbs */}
             <div className="flex items-center space-x-2 text-xs font-mono text-white/50 mb-6">
               <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
@@ -107,7 +107,7 @@ export default function TestimonialsPage() {
 
         {/* Featured Video Testimonials Section (Drive Videos with Official Thumbnails) */}
         {featuredVideoTestimonials.length > 0 && (
-          <section className="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]">
+          <section className="site-container py-14 border-b border-white/[0.08]">
             <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4">
               <div>
                 <div className="text-xs font-mono text-[#a89bfa] uppercase tracking-widest mb-1.5 flex items-center gap-1.5">

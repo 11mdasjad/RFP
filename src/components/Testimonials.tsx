@@ -39,7 +39,7 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#E2DDD2]">
+    <section id="testimonials" className="site-container py-20 sm:py-28 border-t border-[#E2DDD2]">
       {/* Top Section Tag */}
       <div className="flex items-center justify-between mb-12">
         <div className="flex items-center space-x-2.5">

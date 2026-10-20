@@ -65,7 +65,7 @@ export const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#E2DDD2]"
+      className="site-container py-20 sm:py-28 border-t border-[#E2DDD2]"
     >
       {/* Section Tag */}
       <div className="flex items-center space-x-2.5 mb-10">

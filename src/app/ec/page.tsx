@@ -184,7 +184,7 @@ export default function ElectionCampaignPortalPage() {
           <div className="absolute top-0 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#D4AF37]/20 rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 translate-y-1/2 w-96 h-96 bg-[#6b54ee]/15 rounded-full blur-[140px] pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="site-container relative z-10">
             {/* Breadcrumb Navigation */}
             <div className="flex items-center gap-2 text-xs font-mono text-white/50 mb-8">
               <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
@@ -244,7 +244,7 @@ export default function ElectionCampaignPortalPage() {
         </section>
 
         {/* Grand Visual Banner Poster */}
-        <section className="py-10 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]">
+        <section className="site-container py-10 sm:py-16 border-b border-white/[0.08]">
           <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-black border border-[#D4AF37]/35 shadow-2xl">
             <div className="relative w-full aspect-video bg-black flex items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -258,7 +258,7 @@ export default function ElectionCampaignPortalPage() {
         </section>
 
         {/* Our RFP’s Political Documentary FILMS Section */}
-        <section className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]" id="documentary-films">
+        <section className="site-container py-14 sm:py-20 border-b border-white/[0.08]" id="documentary-films">
           {/* Clickable Section Header Box */}
           <div
             onClick={() => setIsFilmsOpen((prev) => !prev)}
@@ -380,7 +380,7 @@ export default function ElectionCampaignPortalPage() {
         </section>
 
         {/* Core Pillars of [EC] Operations */}
-        <section className="py-16 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="site-container py-16 pb-24">
           <div className="mb-12">
             <div className="text-xs font-mono text-[#E6C665] uppercase tracking-widest mb-2 flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#E6C665]" />

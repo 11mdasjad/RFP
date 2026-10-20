@@ -67,7 +67,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
   };
 
   return (
-    <section id="kontakt" className="home-container home-section">
+    <section id="kontakt" className="site-container home-section">
       {/* Signature Radiant Contact Card */}
       <div className="relative rounded-3xl p-5 sm:p-8 lg:p-10 bg-[#17161d] border border-white/[0.12] overflow-hidden shadow-2xl">
         {/* Violet radiant background aura */}

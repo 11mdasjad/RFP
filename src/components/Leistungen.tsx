@@ -14,7 +14,7 @@ export const Leistungen: React.FC<LeistungenProps> = ({ onOpenContact }) => {
   const [expandedService, setExpandedService] = useState<string | null>(null);
 
   return (
-    <section id="leistungen" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.08]">
+    <section id="leistungen" className="site-container py-20 lg:py-28 border-t border-white/[0.08]">
       {/* Section Header */}
       <div className="max-w-3xl mb-16 lg:mb-20">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#f4f2f7] mb-6">

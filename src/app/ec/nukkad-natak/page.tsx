@@ -101,7 +101,7 @@ export default function NukkadNatakPage() {
 
       <main className="pt-28 pb-20">
         {/* Breadcrumb Navigation */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <section className="site-container mb-8">
           <div className="flex items-center gap-2 text-xs font-mono text-white/50">
             <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" />
@@ -121,7 +121,7 @@ export default function NukkadNatakPage() {
           <div className="absolute top-0 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#D4AF37]/20 rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 translate-y-1/2 w-96 h-96 bg-[#6b54ee]/15 rounded-full blur-[140px] pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="site-container relative z-10">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/35 text-xs font-mono text-[#F3E5AB] mb-6">
               <span className="px-2 py-0.5 rounded-md bg-[#D4AF37]/25 text-[#E6C665] font-bold">
                 PILLAR 03
@@ -194,7 +194,7 @@ export default function NukkadNatakPage() {
         </section>
 
         {/* Street Play Impact Cards */}
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]">
+        <section className="site-container py-16 border-b border-white/[0.08]">
           <div className="mb-10">
             <span className="text-xs font-mono text-[#E6C665] uppercase tracking-widest block mb-2">
               Grassroots Methodology
@@ -225,7 +225,7 @@ export default function NukkadNatakPage() {
         </section>
 
         {/* Gallery Grid */}
-        <section id="gallery" className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="gallery" className="site-container py-16">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div>
               <span className="text-xs font-mono text-[#E6C665] uppercase tracking-widest block mb-2">
@@ -274,7 +274,7 @@ export default function NukkadNatakPage() {
         </section>
 
         {/* Navigation Bar */}
-        <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/[0.08]">
+        <section className="site-container py-12 border-t border-white/[0.08]">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <Link
               href="/ec/prachar-songs"

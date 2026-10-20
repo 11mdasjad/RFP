@@ -26,7 +26,7 @@ export const Skalierung: React.FC = () => {
 
   return (
     <section className="bg-[#efece7] text-[#17161b] py-24 lg:py-32 transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Dynamic 3-Card Making-of Gallery */}
           <div className="lg:col-span-7 relative">

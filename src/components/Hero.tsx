@@ -20,12 +20,12 @@ export const Hero: React.FC<HeroProps> = ({ onPlayVideo }) => {
   const showreelButtonUrl = "https://www.youtube.com/watch?v=X_U98b96fk0";
 
   return (
-    <section className="home-masthead relative pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 overflow-hidden">
+    <section className="relative pt-28 sm:pt-32 lg:pt-36 pb-8 lg:pb-12 overflow-hidden">
       {/* Background ambient radial glows */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] sm:w-[700px] h-[350px] sm:h-[500px] bg-[#7c6af2]/12 blur-[120px] sm:blur-[160px] pointer-events-none rounded-full" />
       <div className="absolute top-1/2 right-1/4 translate-x-1/4 -translate-y-1/2 w-[400px] sm:w-[600px] h-[300px] sm:h-[450px] bg-[#6b54ee]/10 blur-[130px] sm:blur-[170px] pointer-events-none rounded-full" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
+      <div className="site-container relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
         {/* Left Column: Typography & CTAs (6-span for balanced symmetry) */}
         <div className="lg:col-span-6 min-w-0 flex flex-col justify-center z-10">
 

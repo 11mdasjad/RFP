@@ -153,7 +153,7 @@ export default function ProjectsPage() {
           <div className="absolute top-0 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#6b54ee]/20 rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 translate-y-1/2 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-[140px] pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="site-container relative z-10">
             {/* Breadcrumb */}
             <div className="flex items-center space-x-2 text-xs font-mono text-white/50 mb-6">
               <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
@@ -227,7 +227,7 @@ export default function ProjectsPage() {
 
         {/* Filter, Search & Controls Section */}
         <section className="sticky top-[73px] z-30 bg-[#0e0d12]/95 backdrop-blur-xl border-b border-white/[0.08] py-4 transition-all">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="site-container">
             <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
               {/* Category Pills Bar */}
               <div className="flex items-center overflow-x-auto pb-1 lg:pb-0 scrollbar-none gap-2">
@@ -266,7 +266,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* Content Showcase Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <section className="site-container py-12 lg:py-16">
           {/* Active Category Description Header */}
           {activeFilter !== "all" && (
             <div className="mb-8 p-5 sm:p-6 rounded-2xl bg-[#17161d] border border-white/[0.1] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -330,7 +330,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* Bottom Conversion Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <section className="site-container pt-8">
           <div className="relative rounded-3xl p-8 sm:p-12 bg-gradient-to-tr from-[#17161d] via-[#1c1a24] to-[#17161d] border border-white/[0.12] overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-xl text-center md:text-left">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block">

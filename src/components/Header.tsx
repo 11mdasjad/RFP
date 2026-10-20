@@ -50,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           : "bg-[#0a090e]/75 backdrop-blur-md border-b border-white/[0.06] py-4 sm:py-5"
       }`}
     >
-      <div className={`${isHome ? "home-masthead" : "max-w-[1600px] 2xl:max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12"} flex items-center justify-between gap-4`}>
+      <div className={`site-container flex items-center justify-between gap-4`}>
         {/* Official Brand Logo */}
         <Link
           href="/"

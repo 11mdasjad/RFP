@@ -91,7 +91,7 @@ export default function ServicesPage() {
           <div className="absolute top-0 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#6b54ee]/15 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 translate-y-1/2 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[120px] pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="site-container relative z-10">
             {/* Breadcrumb */}
             <div className="flex items-center space-x-2 text-xs font-mono text-white/50 mb-6">
               <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
@@ -144,7 +144,7 @@ export default function ServicesPage() {
 
         {/* Search & Sticky Bar */}
         <section className="py-6 bg-[#111016] border-b border-white/[0.06] sticky top-16 z-30 backdrop-blur-xl">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="site-container flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-xs font-mono uppercase tracking-widest text-white/60">
               Showing <span className="text-[#a89bfa] font-bold">{filteredServices.length}</span> Capabilities
             </div>
@@ -172,7 +172,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="site-container py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service) => (
               <Link
@@ -292,7 +292,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Global CTA Banner */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <section className="site-container mt-12">
           <div className="relative rounded-3xl p-8 sm:p-12 overflow-hidden bg-gradient-to-br from-[#1b1928] via-[#121118] to-[#1e1733] border border-[#a89bfa]/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-xl text-center md:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6b54ee]/20 text-[#a89bfa] text-xs font-mono border border-[#6b54ee]/40">

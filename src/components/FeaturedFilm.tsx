@@ -43,7 +43,7 @@ export const FeaturedFilm: React.FC<FeaturedFilmProps> = ({ onPlayFilm }) => {
   ];
 
   return (
-    <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#E2DDD2]">
+    <section className="site-container py-20 sm:py-28 border-t border-[#E2DDD2]">
       <div className="space-y-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">

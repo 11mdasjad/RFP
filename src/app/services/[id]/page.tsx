@@ -86,7 +86,7 @@ export default function ServiceDetailPage({
           <div className="absolute top-0 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#6b54ee]/20 rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 translate-y-1/2 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-[140px] pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="site-container relative z-10">
             {/* Breadcrumb Navigation */}
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-white/50 mb-8">
               <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
@@ -145,7 +145,7 @@ export default function ServiceDetailPage({
         </section>
 
         {/* Production Showcase & Visual Craft Spotlight */}
-        <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]">
+        <section className="site-container py-12 sm:py-16 border-b border-white/[0.08]">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4">
             <div>
               <div className="text-xs font-mono text-[#a89bfa] uppercase tracking-widest mb-1.5 flex items-center gap-2">
@@ -215,7 +215,7 @@ export default function ServiceDetailPage({
         </section>
 
         {/* Deep-Dive Overview & Deliverables Section */}
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]">
+        <section className="site-container py-16 border-b border-white/[0.08]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Left 7 cols: Philosophy & Capabilities */}
             <div className="lg:col-span-7 space-y-10">
@@ -328,7 +328,7 @@ export default function ServiceDetailPage({
 
         {/* 4-Stage Execution Workflow */}
         {service.workflow && (
-          <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/[0.08]">
+          <section className="site-container py-16 border-b border-white/[0.08]">
             <div className="max-w-2xl mb-12">
               <div className="text-xs font-mono text-[#a89bfa] uppercase tracking-widest mb-2">
                 Turnkey Process
@@ -364,7 +364,7 @@ export default function ServiceDetailPage({
         )}
 
         {/* Explore Other Services Grid */}
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="site-container py-16">
           <div className="flex items-center justify-between mb-8">
             <div>
               <div className="text-xs font-mono text-[#a89bfa] uppercase tracking-widest mb-1.5">

@@ -24,7 +24,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject, onPlayVideo
   const otherProjects = filteredProjects.filter((p) => p.id !== featuredProject?.id);
 
   return (
-    <section id="projekte" className="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="projekte" className="site-container py-16 sm:py-20 lg:py-28">
       {/* Section Header - Centered */}
       <div className="flex flex-col items-center text-center mb-10 sm:mb-12 lg:mb-16 gap-6">
         <div className="max-w-4xl mx-auto">

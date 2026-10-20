@@ -214,7 +214,7 @@ export default function PracharSongsPage() {
 
       <main className="pt-28 pb-20">
         {/* Breadcrumb Navigation */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <section className="site-container mb-8">
           <div className="flex items-center gap-2 text-xs font-mono text-white/50">
             <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" />
@@ -234,7 +234,7 @@ export default function PracharSongsPage() {
           <div className="absolute top-0 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#D4AF37]/20 rounded-full blur-[140px] pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 translate-y-1/2 w-96 h-96 bg-[#6b54ee]/15 rounded-full blur-[140px] pointer-events-none" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="site-container relative z-10">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/35 text-xs font-mono text-[#F3E5AB] mb-6">
               <span className="px-2 py-0.5 rounded-md bg-[#D4AF37]/25 text-[#E6C665] font-bold">
                 PILLAR 02
@@ -260,7 +260,7 @@ export default function PracharSongsPage() {
         </section>
 
         {/* Live Audio Player Section */}
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="site-container py-16">
           <div className="mb-8 flex items-center justify-between">
             <div>
               <span className="text-xs font-mono text-[#E6C665] uppercase tracking-widest block mb-1">
@@ -297,7 +297,8 @@ export default function PracharSongsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
               {/* Album Art with Vinyl / Video Effect */}
               <div className="lg:col-span-4 flex flex-col items-center">
-                <div
+                <button
+                  type="button"
                   onClick={() => {
                     if (activeTrack.videoUrl) {
                       openVideo(
@@ -309,27 +310,29 @@ export default function PracharSongsPage() {
                       togglePlay();
                     }
                   }}
-                  className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl group bg-black/80 cursor-pointer"
+                  className={`relative ${activeTrack.videoUrl ? "w-full max-w-sm" : "w-56 h-56 sm:w-64 sm:h-64"} rounded-2xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl group bg-black/80 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E6C665]`}
                   title={activeTrack.videoUrl ? "Click to play official video" : "Click to play/pause"}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={activeTrack.coverImage}
                     alt={activeTrack.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className={activeTrack.videoUrl ? "block w-full aspect-video object-contain" : "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  {!activeTrack.videoUrl && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  )}
 
                   {/* Video Play Badge overlay */}
                   {activeTrack.videoUrl ? (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/35 group-hover:bg-black/20 transition-all">
-                      <div className="w-16 h-16 rounded-full bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center shadow-2xl shadow-red-600/50 transform group-hover:scale-110 transition-transform">
-                        <Play className="w-7 h-7 fill-white ml-1" />
-                      </div>
-                      <span className="mt-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-[11px] font-mono text-[#F3E5AB]">
+                    <span className="flex items-center justify-center gap-3 p-3 bg-black/80 group-hover:bg-white/5 transition-colors">
+                      <span className="w-9 h-9 shrink-0 rounded-full bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center transition-colors">
+                        <Play className="w-4 h-4 fill-white ml-0.5" />
+                      </span>
+                      <span className="text-[11px] font-mono text-[#F3E5AB]">
                         Watch Official Video
                       </span>
-                    </div>
+                    </span>
                   ) : isPlaying ? (
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-black/70 backdrop-blur-md border border-white/10">
                       {[1, 2, 3, 4, 5, 6, 7].map((bar) => (
@@ -350,7 +353,7 @@ export default function PracharSongsPage() {
                       </div>
                     </div>
                   )}
-                </div>
+                </button>
 
                 <div className="mt-4 text-center">
                   <span className="px-3 py-1 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-xs font-mono text-[#E6C665]">
@@ -600,7 +603,7 @@ export default function PracharSongsPage() {
         </section>
 
         {/* Studio Production Features */}
-        <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/[0.08]">
+        <section className="site-container py-16 border-t border-white/[0.08]">
           <div className="mb-10">
             <span className="text-xs font-mono text-[#E6C665] uppercase tracking-widest block mb-2">
               Why RFP Campaign Anthems Win Elections
@@ -631,7 +634,7 @@ export default function PracharSongsPage() {
         </section>
 
         {/* Navigation Bar */}
-        <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/[0.08]">
+        <section className="site-container py-12 border-t border-white/[0.08]">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <Link
               href="/ec/mobile-led-fleet"

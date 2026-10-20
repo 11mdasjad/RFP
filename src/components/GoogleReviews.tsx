@@ -14,7 +14,7 @@ const reviews = [
 
 export function GoogleReviews() {
   return (
-    <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-labelledby="google-reviews-heading">
+    <section className="site-container py-16" aria-labelledby="google-reviews-heading">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8">
         <div>
           <p className="text-xs uppercase tracking-widest text-[#a89bfa] mb-3">Customer feedback</p>

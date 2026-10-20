@@ -99,22 +99,22 @@ export const HomeServicesSection: React.FC<HomeServicesSectionProps> = ({ onOpen
   ];
 
   return (
-    <section id="services" className="home-container home-section border-t border-white/[0.08]">
+    <section id="services" className="site-container home-section border-t border-white/[0.08]">
       {/* Header */}
-      <div className="home-section-header">
+      <div className="mx-auto max-w-5xl mb-10 sm:mb-12 text-center">
         <div>
           <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block mb-3">
             Core Disciplines
           </span>
           <h2 className="home-heading text-white leading-tight">
-            What You Receive: <br />
-            <span className="bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-white bg-clip-text text-transparent font-serif italic">
+            What You Receive:
+            <span className="block mt-2 sm:mt-3 bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-white bg-clip-text text-transparent font-serif italic">
               Deliverables, Timelines &amp; Proven Craft
             </span>
           </h2>
         </div>
 
-        <p className="text-sm sm:text-base text-white/70 max-w-md font-sans">
+        <p className="mx-auto mt-5 sm:mt-6 max-w-2xl text-sm sm:text-base leading-relaxed text-white/70 font-sans text-balance">
           Clear scope, predictable production schedules, and broadcast-quality execution. We handle every step under one roof.
         </p>
       </div>

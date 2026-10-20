@@ -86,7 +86,7 @@ export default function GalleryPage() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-[#7c6af2]/20 via-[#a89bfa]/10 to-transparent blur-[140px] pointer-events-none rounded-full" />
         <div className="absolute -top-10 right-10 w-96 h-96 bg-[#D4AF37]/10 blur-[130px] pointer-events-none rounded-full" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="site-container relative z-10 text-center">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
             <ImageIcon className="w-3.5 h-3.5 text-[#E6C665]" />
@@ -106,7 +106,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Pure Image Grid */}
-      <section className="py-8 sm:py-12 max-w-[1600px] mx-auto px-3 sm:px-6 lg:px-8">
+      <section className="py-8 sm:py-12 site-container">
         {total === 0 ? (
           <div className="py-24 text-center border border-dashed border-white/[0.1] rounded-3xl bg-white/[0.01]">
             <ImageIcon className="w-12 h-12 text-white/30 mx-auto mb-4" />

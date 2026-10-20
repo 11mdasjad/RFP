@@ -10,7 +10,7 @@ interface ProzessProps {
 
 export const Prozess: React.FC<ProzessProps> = ({ onPlayVideo }) => {
   return (
-    <section className="home-container home-section border-t border-white/[0.08]">
+    <section className="site-container home-section border-t border-white/[0.08]">
       {/* Top Section Intro */}
       <div className="home-section-header">
         <div className="min-w-0">

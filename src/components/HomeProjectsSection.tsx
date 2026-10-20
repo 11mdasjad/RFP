@@ -20,7 +20,7 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
   const featuredProjects = PROJECTS_DATA.slice(0, 6);
 
   return (
-    <section id="work" className="home-container home-section">
+    <section id="work" className="site-container home-section">
       {/* Section Header */}
       <div className="home-section-header">
         <div>

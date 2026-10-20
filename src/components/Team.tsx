@@ -14,7 +14,7 @@ export const Team: React.FC = () => {
       : TEAM_DATA.filter((m) => m.department === selectedDept);
 
   return (
-    <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto border-t border-[#E2DDD2]">
+    <section className="site-container py-20 sm:py-28 border-t border-[#E2DDD2]">
       {/* Section Tag */}
       <div className="flex items-center space-x-2.5 mb-10">
         <span className="text-sm text-[#5A7865]">☵</span>

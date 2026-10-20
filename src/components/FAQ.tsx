@@ -14,9 +14,9 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="home-container home-section border-t border-white/[0.08]">
+    <section id="faq" className="site-container home-section border-t border-white/[0.08]">
       {/* Header */}
-      <div className="mb-10 sm:mb-12">
+      <div className="mb-10 sm:mb-12 text-center">
         <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] block mb-3">
           Frequently Asked Questions
         </span>

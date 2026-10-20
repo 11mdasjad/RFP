@@ -36,7 +36,7 @@ export const KiWorkflows: React.FC = () => {
   ];
 
   return (
-    <section id="ki-workflows" className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/[0.08]">
+    <section id="ki-workflows" className="site-container py-20 lg:py-28 border-t border-white/[0.08]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* Left Column: Heading & Mission */}
         <div className="lg:col-span-5">

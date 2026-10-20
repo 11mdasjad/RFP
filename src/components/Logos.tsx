@@ -17,14 +17,15 @@ export const Logos: React.FC<LogosProps> = ({
   // Two identical groups keep the halfway animation reset seamless.
 
   return (
-    <section className="py-12 sm:py-16 border-b border-white/[0.08] overflow-hidden bg-[#0a090e]/80 relative">
-      <div className="home-container mb-6 sm:mb-8 text-center">
+    <section className="py-8 sm:py-10 border-b border-white/[0.08] overflow-hidden bg-[#0a090e]/80 relative">
+      <div className="site-container mb-6 sm:mb-8 text-center">
         <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] font-medium">
           {titleEn}
         </h2>
       </div>
 
       {/* Marquee Wrapper with Edge Fade Gradients */}
+      <div className="site-container">
       <div className="relative w-full overflow-hidden">
         {/* Left Gradient Fade Mask */}
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#0a090e] via-[#0a090e]/80 to-transparent z-10" />
@@ -57,6 +58,7 @@ export const Logos: React.FC<LogosProps> = ({
           </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );
