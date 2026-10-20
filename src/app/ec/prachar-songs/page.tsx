@@ -62,7 +62,7 @@ const PLAYLIST: SongTrack[] = [
     partyBadge: "Electoral Victory CD Master",
     duration: "04:12",
     audioSrc: "/medien/ec-assets/audio-prachar-song/bjp-k-om-kumar-2nd-dynamiccd.m4a",
-    coverImage: "/medien/landing/neutral-election-campaign-banner.jpg",
+    coverImage: "/medien/ec-assets/audio-prachar-song/om-kumar-prachar-song.jpg",
     description: "Studio mastered high-dynamic stereo campaign song crafted for loud public rally loudspeakers, vehicle megaphones, and viral street DJ mixes.",
     genre: "Rally Loudspeaker CD Master",
     lyricsSnippet: "“Karmasheel neta, vikas ki pehchan... Om Kumar ji ke sang pura aawam...”"
@@ -310,18 +310,15 @@ export default function PracharSongsPage() {
                       togglePlay();
                     }
                   }}
-                  className={`relative ${activeTrack.videoUrl ? "w-full max-w-sm" : "w-56 h-56 sm:w-64 sm:h-64"} rounded-2xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl group bg-black/80 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E6C665]`}
+                  className="relative w-full max-w-sm rounded-2xl overflow-hidden border-2 border-[#D4AF37]/40 shadow-2xl group bg-black/80 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E6C665]"
                   title={activeTrack.videoUrl ? "Click to play official video" : "Click to play/pause"}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={activeTrack.coverImage}
                     alt={activeTrack.title}
-                    className={activeTrack.videoUrl ? "block w-full aspect-video object-contain" : "w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"}
+                    className="block w-full aspect-video object-contain"
                   />
-                  {!activeTrack.videoUrl && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  )}
 
                   {/* Video Play Badge overlay */}
                   {activeTrack.videoUrl ? (

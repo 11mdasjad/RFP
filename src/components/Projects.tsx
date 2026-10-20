@@ -45,7 +45,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject, onPlayVideo
               { id: "film", labelEn: "Corporate Films" },
               { id: "campaign", labelEn: "Election Campaigns" },
               { id: "documentary", labelEn: "Documentaries" },
-              { id: "marketing", labelEn: "Social & Marketing" },
+              { id: "marketing", labelEn: "Social Media & Marketing" },
             ].map((tab) => (
               <button
                 key={tab.id}

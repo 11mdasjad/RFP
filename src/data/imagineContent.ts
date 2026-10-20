@@ -480,7 +480,7 @@ export const PROJECTS_DATA: ProjectCard[] = [
   {
     id: "projekt-school",
     slot: "slot-d",
-    title: "Modern Delhi Public School (MDPS) Showcase",
+    title: "Modern Delhi International School (MDIS)",
     client: "Modern Delhi Public School, Faridabad",
     categoryEn: "Campus & Academic Film",
     filterCat: "film",
@@ -494,7 +494,7 @@ export const PROJECTS_DATA: ProjectCard[] = [
   {
     id: "projekt-iit",
     slot: "slot-e",
-    title: "IIT Roorkee & IIT Delhi Corporate Films",
+    title: "IIT Roorkee Corporate FILM",
     client: "Indian Institute of Technology (IIT)",
     categoryEn: "Premier Institutional Corporate Film",
     filterCat: "film",
@@ -503,7 +503,7 @@ export const PROJECTS_DATA: ProjectCard[] = [
     poster: "/medien/youtube-thumbs/TAv-50-CHjc.jpg",
     videoUrl: "https://www.youtube-nocookie.com/embed/TAv-50-CHjc?autoplay=1",
     youtubeUrl: "https://youtu.be/TAv-50-CHjc",
-    tags: ["IIT Roorkee", "IIT Delhi", "Engineering Research", "Institutional Master"]
+    tags: ["IIT Roorkee", "Engineering Research", "Institutional Master"]
   },
   {
     id: "projekt-doc-mewat",

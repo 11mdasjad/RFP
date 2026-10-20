@@ -70,7 +70,7 @@ const CATEGORIES: CategoryMeta[] = [
   },
   {
     id: "marketing",
-    label: "Social & Marketing",
+    label: "Social Media & Marketing",
     icon: Share2,
     description: "Episodic vertical cinema, viral short-form narratives, and digital performance creative.",
     badgeColor: "bg-pink-500/20 text-pink-300 border-pink-500/40",
