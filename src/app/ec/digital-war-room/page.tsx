@@ -13,7 +13,6 @@ import {
   Volume2,
   VolumeX,
   Maximize,
-  Sparkles,
   PhoneCall,
   Share2,
   Radio,
@@ -200,7 +199,6 @@ export default function DigitalWarRoomPage() {
               <span className="px-2 py-0.5 rounded-md bg-[#D4AF37]/25 text-[#E6C665] font-bold">
                 PILLAR 04
               </span>
-              <span className="text-[#E6C665]">✦</span>
               <span className="uppercase tracking-widest font-semibold text-[#E6C665]">
                 Digital War Room &amp; Narrative Command
               </span>

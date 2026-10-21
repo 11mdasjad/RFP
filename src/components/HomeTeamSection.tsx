@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Users, Camera, ArrowUpRight, Sparkles, Award } from "lucide-react";
+import { Camera, ArrowUpRight, Award } from "lucide-react";
 import { TEAM_DATA } from "@/data/team";
 import { INITIAL_GALLERY_ITEMS } from "@/data/galleryData";
 
@@ -25,7 +25,6 @@ export const HomeTeamSection: React.FC = () => {
       <div className="home-section-header">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
-            <Users className="w-3.5 h-3.5 text-[#E6C665]" />
             <span>The Team Behind the Frame</span>
           </div>
           <h2 className="home-heading text-white leading-tight">

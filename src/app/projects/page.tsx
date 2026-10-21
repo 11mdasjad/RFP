@@ -13,7 +13,7 @@ import {
   ArrowUpRight,
   ArrowLeft,
   X,
-  Sparkles,
+  Clapperboard,
   Film,
   Megaphone,
   Video,
@@ -43,7 +43,7 @@ const CATEGORIES: CategoryMeta[] = [
   {
     id: "ai",
     label: "AI Video Production",
-    icon: Sparkles,
+    icon: Clapperboard,
     description: "Next-gen generative AI filmmaking, photorealistic 3D CGI, and high-velocity vertical cinema.",
     badgeColor: "bg-[#6b54ee]/20 text-[#a89bfa] border-[#6b54ee]/40",
   },
@@ -166,7 +166,6 @@ export default function ProjectsPage() {
 
             {/* Header Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-[#E6C665]" />
               <span>Selected Work · Curated Production Showcase</span>
             </div>
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Film, Video, Sparkles, Megaphone, Share2, Globe, Clock, CheckCircle2, ArrowUpRight, ChevronDown } from "lucide-react";
+import { Film, Video, Clapperboard, Megaphone, Share2, Globe, Clock, CheckCircle2, ArrowUpRight, ChevronDown } from "lucide-react";
 
 interface HomeServicesSectionProps {
   onOpenContactWithTopic?: (topic: string) => void;
@@ -56,7 +56,7 @@ export const HomeServicesSection: React.FC<HomeServicesSectionProps> = ({ onOpen
     },
     {
       num: "04",
-      icon: Sparkles,
+      icon: Clapperboard,
       title: "AI Video & Virtual Production",
       tagline: "Next-gen generative AI filmmaking, photorealistic 3D CGI, and digital motion.",
       deliverables: [

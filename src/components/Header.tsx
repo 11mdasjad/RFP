@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight, Sparkles, ChevronDown, Users, HelpCircle, MessageSquare, Download } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown, HelpCircle, MessageSquare, Download } from "lucide-react";
 
 interface HeaderProps {
   onOpenContact?: () => void;
@@ -156,7 +156,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                     isTeam ? "text-[#a89bfa] bg-white/[0.06] font-semibold" : "text-white/85 hover:text-white hover:bg-white/[0.06]"
                   }`}
                 >
-                  <Users className="w-4 h-4 text-[#a89bfa]" />
                   <span>Team &amp; Leadership</span>
                 </Link>
 
@@ -167,7 +166,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                     isGallery ? "text-[#a89bfa] bg-white/[0.06] font-semibold" : "text-white/85 hover:text-white hover:bg-white/[0.06]"
                   }`}
                 >
-                  <Sparkles className="w-4 h-4 text-[#E6C665]" />
                   <span>Production Gallery</span>
                 </Link>
 
@@ -282,7 +280,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 className="text-base font-semibold text-[#a89bfa] hover:text-white py-2 px-3 rounded-xl hover:bg-white/[0.04] flex items-center justify-between transition-all"
               >
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#a89bfa]" />
                   <span>Gallery</span>
                 </div>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#7c6af2]/20 text-[#a89bfa] border border-[#7c6af2]/30">
@@ -297,7 +294,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 className="text-base font-semibold text-white/90 hover:text-white py-2 px-3 rounded-xl hover:bg-white/[0.04] flex items-center justify-between transition-all"
               >
                 <span>Services</span>
-                <span className="text-xs text-[#a89bfa]">✦</span>
               </Link>
 
               {/* 5. Team */}
@@ -307,7 +303,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 className="text-base font-semibold text-white/90 hover:text-white py-2 px-3 rounded-xl hover:bg-white/[0.04] flex items-center justify-between transition-all"
               >
                 <span>Team</span>
-                <span className="text-xs text-[#a89bfa]">✦</span>
               </Link>
 
               {/* 6. Testimonials */}
@@ -317,7 +312,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 className="text-base font-semibold text-white/90 hover:text-white py-2 px-3 rounded-xl hover:bg-white/[0.04] flex items-center justify-between transition-all"
               >
                 <span>Testimonials</span>
-                <span className="text-xs text-[#a89bfa]">★</span>
               </Link>
 
               {/* 7. FAQ */}
@@ -364,7 +358,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                   <span className="font-semibold tracking-wide">Election Campaign</span>
                   <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-white/10 text-white/70">Hub</span>
                 </div>
-                <span className="text-xs text-white/70">✦</span>
               </Link>
 
               <div className="pt-3 border-t border-white/[0.08]">

@@ -8,7 +8,6 @@ import { TEAM_DATA } from "@/data/team";
 import { TeamMemberItem } from "@/types";
 import { 
   Users, 
-  Sparkles, 
   ArrowLeft, 
   X, 
   Mail, 

@@ -13,7 +13,6 @@ import {
   Music,
   Users,
   MessageSquare,
-  Sparkles,
   ShieldCheck,
   CheckCircle2,
   Play,
@@ -201,7 +200,6 @@ export default function ElectionCampaignPortalPage() {
                 <span className="px-2 py-0.5 rounded-md bg-[#D4AF37]/25 text-[#E6C665] font-bold">
                   EC
                 </span>
-                <span className="text-[#E6C665]">✦</span>
                 <span className="uppercase tracking-widest font-semibold text-[#E6C665]">
                   Election Campaign &amp; Management Portal
                 </span>
@@ -383,7 +381,6 @@ export default function ElectionCampaignPortalPage() {
         <section className="site-container py-16 pb-24">
           <div className="mb-12">
             <div className="text-xs font-mono text-[#E6C665] uppercase tracking-widest mb-2 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#E6C665]" />
               <span>Core Operational Pillars</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif text-white font-medium">

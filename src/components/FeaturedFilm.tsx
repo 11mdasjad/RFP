@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Play, Sparkles, Film, Clock, Eye, Layers } from "lucide-react";
+import { Play, Film, Clock, Eye, Layers } from "lucide-react";
 
 interface FeaturedFilmProps {
   onPlayFilm: (videoUrl: string, title: string) => void;
@@ -49,7 +49,6 @@ export const FeaturedFilm: React.FC<FeaturedFilmProps> = ({ onPlayFilm }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <div className="flex items-center space-x-2 text-[11px] font-mono tracking-[0.25em] text-[#5A7865] uppercase mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
               <span>THEATRICAL CINEMA & SPATIAL FILMS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#161D1A] leading-tight tracking-tight">

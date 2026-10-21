@@ -8,7 +8,6 @@ import {
   ArrowLeft,
   ArrowRight,
   Users,
-  Sparkles,
   Maximize2,
   X,
   MapPin,
@@ -126,7 +125,6 @@ export default function NukkadNatakPage() {
               <span className="px-2 py-0.5 rounded-md bg-[#D4AF37]/25 text-[#E6C665] font-bold">
                 PILLAR 03
               </span>
-              <span className="text-[#E6C665]">✦</span>
               <span className="uppercase tracking-widest font-semibold text-[#E6C665]">
                 Grassroots Theatrical Outreach
               </span>

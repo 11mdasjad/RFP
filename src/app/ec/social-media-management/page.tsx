@@ -8,7 +8,6 @@ import {
   ArrowLeft,
   ArrowRight,
   Share2,
-  Sparkles,
   PhoneCall,
   MessageSquare,
   Video,
@@ -137,7 +136,6 @@ export default function SocialMediaManagementPage() {
               <span className="px-2 py-0.5 rounded-md bg-[#D4AF37]/25 text-[#E6C665] font-bold">
                 PILLAR 05
               </span>
-              <span className="text-[#E6C665]">✦</span>
               <span className="uppercase tracking-widest font-semibold text-[#E6C665]">
                 Digital Narrative &amp; Virality Engine
               </span>
@@ -202,7 +200,6 @@ export default function SocialMediaManagementPage() {
         <section id="master-poster" className="site-container py-12 sm:py-16 border-b border-white/[0.08]">
           <div className="mb-8">
             <div className="text-xs font-mono text-[#E6C665] uppercase tracking-widest mb-1.5 flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-[#E6C665]" />
               <span>Official Media Architecture</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-serif text-white font-medium">
@@ -229,7 +226,6 @@ export default function SocialMediaManagementPage() {
         <section className="site-container py-16 border-b border-white/[0.08]">
           <div className="mb-12">
             <div className="text-xs font-mono text-[#E6C665] uppercase tracking-widest mb-2 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#E6C665]" />
               <span>Full-Stack Capabilities</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif text-white font-medium">
@@ -276,7 +272,6 @@ export default function SocialMediaManagementPage() {
         <section className="site-container py-16 border-b border-white/[0.08]">
           <div className="mb-12">
             <div className="text-xs font-mono text-[#E6C665] uppercase tracking-widest mb-2 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#E6C665]" />
               <span>Operational Playbook</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif text-white font-medium">

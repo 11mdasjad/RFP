@@ -6,7 +6,6 @@ import {
   Film,
   Megaphone,
   CheckCircle2,
-  Sparkles,
   ArrowUpRight,
   Target,
   Compass,
@@ -70,7 +69,6 @@ export const Zusammenarbeit: React.FC = () => {
         {/* 1. Header & Brand Identity - Centered & Expansive */}
         <div className="text-center max-w-5xl mx-auto mb-16 lg:mb-24">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 text-[#E6C665] text-xs font-mono uppercase tracking-widest mb-5">
-            <Sparkles className="w-3.5 h-3.5 text-[#E6C665]" />
             <span>About RFP Digital Productions</span>
           </div>
 

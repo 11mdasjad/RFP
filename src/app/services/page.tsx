@@ -20,7 +20,6 @@ import {
   ArrowUpRight,
   Search,
   X,
-  Sparkles,
   Layers,
   ShieldCheck,
   ChevronRight,
@@ -104,7 +103,6 @@ export default function ServicesPage() {
 
             <div className="max-w-3xl space-y-5">
               <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono text-[#a89bfa]">
-                <Sparkles className="w-3.5 h-3.5 text-[#a89bfa]" />
                 <span className="tracking-wider uppercase">End-to-End Media &amp; Digital Platform Capabilities</span>
               </div>
 
@@ -440,7 +438,6 @@ export default function ServicesPage() {
                 {selectedService.features && (
                   <div className="space-y-3 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
                     <h4 className="text-xs font-mono uppercase tracking-wider text-white font-semibold flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-[#E6C665]" />
                       <span>Production Capabilities</span>
                     </h4>
                     <ul className="space-y-2">

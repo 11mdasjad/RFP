@@ -4,15 +4,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   X,
-  Sparkles,
   Phone,
   Mail,
   MapPin,
   ArrowUpRight,
-  ArrowUp,
-  MessageSquare,
-  ShieldCheck,
-  ChevronRight
+  MessageSquare
 } from "lucide-react";
 
 export const Footer: React.FC = () => {
@@ -25,8 +21,6 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#08070b] border-t border-white/[0.08] pt-16 sm:pt-20 pb-12 text-[#f4f2f780] font-sans antialiased relative overflow-hidden">
       {/* Subtle ambient lighting */}
-      <div className="absolute top-0 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 translate-y-1/2 w-96 h-96 bg-[#6b54ee]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="site-container relative z-10">
         {/* Main 4-Column Balanced Grid */}
@@ -42,18 +36,18 @@ export const Footer: React.FC = () => {
               <img
                 src="/medien/logo/rfp-emblem.png"
                 alt="RFP Emblem"
-                className="h-16 sm:h-18 w-auto object-contain filter drop-shadow-[0_2px_18px_rgba(212,175,55,0.55)] transition-transform duration-300 group-hover:scale-105"
+                className="h-16 sm:h-18 w-auto object-contain transition-transform duration-300 "
               />
               <div className="flex flex-col justify-center">
                 <div className="flex items-center gap-2 leading-none">
-                  <span className="font-extrabold text-2xl sm:text-3xl tracking-[0.16em] text-white font-mono">
+                  <span className="font-extrabold text-2xl sm:text-3xl tracking-[0.16em] text-white font-sans">
                     RFP
                   </span>
-                  <span className="text-[10px] sm:text-[11px] font-sans font-bold px-2.5 py-0.5 rounded-full bg-[#D4AF37]/20 text-[#F3E5AB] border border-[#D4AF37]/45 tracking-wider uppercase shadow-sm">
+                  <span className="text-[10px] sm:text-[11px] font-sans font-bold px-2.5 py-0.5 rounded-full bg-[#D4AF37]/20 text-[#F3E5AB] border border-[#D4AF37]/45 shadow-sm">
                     MEDIA &amp; FILMS
                   </span>
                 </div>
-                <span className="text-[11px] sm:text-[12px] tracking-[0.28em] text-[#D4AF37] font-mono uppercase font-bold mt-1.5">
+                <span className="text-[11px] sm:text-[12px] tracking-[0.28em] text-[#D4AF37] font-sans font-bold mt-1.5">
                   Digital Productions
                 </span>
               </div>
@@ -70,8 +64,8 @@ export const Footer: React.FC = () => {
 
             {/* Social Media Links */}
             <div className="space-y-2">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#E6C665] block font-semibold">
-                Official Channels
+              <span className="text-[11px] font-sans text-[#E6C665] block font-semibold">
+                Follow Us
               </span>
               <div className="flex items-center space-x-2.5" aria-label="Social Media Channels">
                 {/* Instagram */}
@@ -81,7 +75,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="Instagram"
                   title="Follow RFP on Instagram"
-                  className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-[0_0_15px_rgba(225,48,108,0.55)] p-0.5 overflow-hidden group"
+                  className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 shadow-md p-0.5 overflow-hidden group"
                   style={{
                     background:
                       "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
@@ -101,7 +95,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="Facebook"
                   title="Connect with RFP on Facebook"
-                  className="w-9 h-9 rounded-xl bg-[#1877F2] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-[0_0_15px_rgba(24,119,242,0.55)] text-white"
+                  className="w-9 h-9 rounded-xl bg-[#1877F2] flex items-center justify-center transition-all duration-300 shadow-md text-white"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -115,7 +109,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="YouTube"
                   title="Watch RFP on YouTube"
-                  className="w-9 h-9 rounded-xl bg-[#FF0000] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-[0_0_15px_rgba(255,0,0,0.55)] text-white"
+                  className="w-9 h-9 rounded-xl bg-[#FF0000] flex items-center justify-center transition-all duration-300 shadow-md text-white"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -129,7 +123,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   title="Connect with RFP on LinkedIn"
-                  className="w-9 h-9 rounded-xl bg-[#0A66C2] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-[0_0_15px_rgba(10,102,194,0.55)] text-white"
+                  className="w-9 h-9 rounded-xl bg-[#0A66C2] flex items-center justify-center transition-all duration-300 shadow-md text-white"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.225 0z" />
@@ -143,7 +137,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
                   title="Message RFP on WhatsApp"
-                  className="w-9 h-9 rounded-xl bg-[#25D366] flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md hover:shadow-[0_0_15px_rgba(37,211,102,0.55)] text-white"
+                  className="w-9 h-9 rounded-xl bg-[#25D366] flex items-center justify-center transition-all duration-300 shadow-md text-white"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
                 </a>
@@ -165,14 +159,14 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2 (3 cols): Core Disciplines / Services */}
+          {/* Column 2 (3 cols): Services / Services */}
           <div className="lg:col-span-3 space-y-4">
             <div className="flex items-center justify-between border-b border-white/[0.08] pb-2.5">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] font-semibold">
-                Core Disciplines
+              <span className="text-xs font-sans text-[#a89bfa] font-semibold">
+                Services
               </span>
-              <Link href="/services" className="text-[10px] font-mono text-[#E6C665] hover:underline flex items-center gap-1">
-                <span>View All 6</span>
+              <Link href="/services" className="text-[10px] font-sans text-[#E6C665] hover:underline flex items-center gap-1">
+                <span>View all</span>
                 <ArrowUpRight className="w-3 h-3" />
               </Link>
             </div>
@@ -180,34 +174,33 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link href="/services/corporate-films" className="hover:text-white transition-colors block py-0.5 group">
-                  <span className="group-hover:translate-x-1 transition-transform inline-block">Corporate Films</span>
+                  <span className="transition-transform inline-block">Corporate Films</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services/documentary-films" className="hover:text-white transition-colors block py-0.5 group">
-                  <span className="group-hover:translate-x-1 transition-transform inline-block">Documentary Films</span>
+                  <span className="transition-transform inline-block">Documentary Films</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services/social-media-digital-marketing" className="hover:text-white transition-colors block py-0.5 group">
-                  <span className="group-hover:translate-x-1 transition-transform inline-block">Social Media &amp; Digital Marketing</span>
+                  <span className="transition-transform inline-block">Social Media &amp; Digital Marketing</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services/election-campaign-services" className="hover:text-[#E6C665] transition-colors block py-0.5 group text-white/95 font-medium">
-                  <span className="group-hover:translate-x-1 transition-transform inline-block">Election Campaign Services</span>
+                  <span className="transition-transform inline-block">Election Campaign Services</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services/photography-events" className="hover:text-white transition-colors block py-0.5 group">
-                  <span className="group-hover:translate-x-1 transition-transform inline-block">Photography &amp; Event Coverage</span>
+                  <span className="transition-transform inline-block">Photography &amp; Event Coverage</span>
                 </Link>
               </li>
               <li>
                 <Link href="/services/website-development" className="text-[#a89bfa] hover:text-white transition-colors block py-0.5 group font-medium">
-                  <span className="group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">
+                  <span className="transition-transform inline-flex items-center gap-1.5">
                     <span>Website Development</span>
-                    <span className="text-[10px] text-[#E6C665]">✦</span>
                   </span>
                 </Link>
               </li>
@@ -217,36 +210,33 @@ export const Footer: React.FC = () => {
           {/* Column 3 (2.5 cols): Hubs & Company Stories */}
           <div className="lg:col-span-2 space-y-4">
             <div className="border-b border-white/[0.08] pb-2.5">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] font-semibold">
-                Hubs &amp; Stories
+              <span className="text-xs font-sans text-[#a89bfa] font-semibold">
+                Explore
               </span>
             </div>
 
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link href="/ec" className="text-[#E6C665] hover:text-[#F3E5AB] transition-colors flex items-center gap-1.5 py-1 font-semibold group">
-                  <span className="font-mono text-xs px-1.5 py-0.5 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#E6C665]">
+                  <span className="font-sans text-xs px-1.5 py-0.5 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#E6C665]">
                     EC
                   </span>
-                  <span className="group-hover:translate-x-1 transition-transform">Election Campaign</span>
+                  <span className="transition-transform">Election Campaign</span>
                 </Link>
               </li>
               <li>
                 <Link href="/gallery" className="hover:text-[#a89bfa] transition-colors flex items-center gap-1.5 py-1 text-white/90 group">
-                  <Sparkles className="w-3.5 h-3.5 text-[#a89bfa]" />
-                  <span className="group-hover:translate-x-1 transition-transform">Visual Gallery</span>
+                  <span className="transition-transform">Gallery</span>
                 </Link>
               </li>
               <li>
                 <Link href="/team" className="hover:text-[#a89bfa] transition-colors flex items-center gap-1.5 py-1 text-white/90 group">
-                  <span className="text-[#a89bfa]">✦</span>
-                  <span className="group-hover:translate-x-1 transition-transform">Our Creative Team</span>
+                  <span className="transition-transform">Our Team</span>
                 </Link>
               </li>
               <li>
                 <Link href="/testimonials" className="hover:text-[#a89bfa] transition-colors flex items-center gap-1.5 py-1 text-white/90 group">
-                  <span className="text-[#E6C665]">★</span>
-                  <span className="group-hover:translate-x-1 transition-transform">Client Testimonials</span>
+                  <span className="transition-transform">Client Testimonials</span>
                 </Link>
               </li>
               <li>
@@ -255,13 +245,13 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/#zusammenarbeit" className="hover:text-white transition-colors block py-1">
-                  About &amp; Collaboration
+                <Link href="/#about" className="hover:text-white transition-colors block py-1">
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link href="/#kontakt" className="hover:text-white transition-colors block py-1">
-                  Contact &amp; Inquiry
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -271,17 +261,13 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-3 space-y-4">
             <div className="p-5 sm:p-6 rounded-2xl bg-[#131218] border border-white/[0.1] shadow-xl space-y-4 relative overflow-hidden group hover:border-[#D4AF37]/50 transition-colors">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#E6C665] font-bold">
-                  War Room &amp; Desk
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-[#25D366] px-2 py-0.5 rounded-full bg-[#25D366]/10 border border-[#25D366]/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
-                  <span>Available</span>
+                <span className="text-xs font-sans text-[#E6C665] font-bold">
+                  Let’s Talk
                 </span>
               </div>
 
               <p className="text-xs text-white/75 font-sans leading-relaxed">
-                Planning an assembly campaign, corporate documentary, or high-traffic web platform? Direct consultation is open.
+                Have a film, campaign or digital project in mind? Tell us what you’re planning.
               </p>
 
               <div className="space-y-2 pt-1">
@@ -289,33 +275,32 @@ export const Footer: React.FC = () => {
                   href="https://wa.me/919711791403?text=Hello%20RFP%20Digital%20Productions%2C%20I%20would%20like%20to%20discuss%20a%20project%20%2F%20campaign%20consultation.%20Please%20connect%20with%20me."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20b858] text-black font-semibold text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-98"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20b858] text-black font-semibold text-xs font-sans flex items-center justify-center gap-2 transition-all shadow-md active:scale-98"
                 >
                   <MessageSquare className="w-3.5 h-3.5 fill-current" />
-                  <span>Direct WhatsApp</span>
+                  <span>Message us on WhatsApp</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
 
                 <a
                   href="tel:+919711791403"
-                  className="w-full py-2.5 px-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-white font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-white/10 active:scale-98"
+                  className="w-full py-2.5 px-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-white font-sans text-xs flex items-center justify-center gap-2 transition-all border border-white/10 active:scale-98"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#E6C665]" />
                   <span>+91 97117 91403</span>
                 </a>
               </div>
 
-              <div className="pt-2 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono text-white/40">
-                <span>Compliant with ECI Model Code</span>
-                <ShieldCheck className="w-3.5 h-3.5 text-[#E6C665]" />
+              <div className="pt-2 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-sans text-white/40">
+                <span>For election campaign enquiries, get in touch.</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar with Symmetry & Back to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+        {/* Bottom Bar with Symmetry & Back to top */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans">
           <div className="text-white/40 flex items-center gap-2 text-center sm:text-left">
             <span>© {new Date().getFullYear()} RFP Digital Productions. All rights reserved.</span>
             <span className="hidden md:inline text-white/20">•</span>
@@ -337,11 +322,10 @@ export const Footer: React.FC = () => {
             </button>
             <button
               onClick={scrollToTop}
-              className="px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] text-[#E6C665] hover:text-white border border-white/10 transition-all flex items-center gap-1 active:scale-95"
+              className="py-2 text-white/60 hover:text-white underline underline-offset-4 transition-colors"
               aria-label="Scroll to top of page"
             >
-              <span>Back to Top</span>
-              <ArrowUp className="w-3 h-3" />
+              <span>Back to top</span>
             </button>
           </div>
         </div>

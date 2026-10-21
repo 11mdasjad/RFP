@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Film, Megaphone, Play, ArrowUpRight, Sparkles, Eye, CheckCircle2 } from "lucide-react";
+import { Film, Megaphone, Play, ArrowUpRight, Eye, CheckCircle2 } from "lucide-react";
 import { ProjectCard, PROJECTS_DATA } from "@/data/imagineContent";
 
 interface HomeProjectsSectionProps {
@@ -25,7 +25,6 @@ export const HomeProjectsSection: React.FC<HomeProjectsSectionProps> = ({
       <div className="home-section-header">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.1] text-xs font-mono uppercase tracking-[0.2em] text-[#a89bfa] mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#E6C665]" />
             <span>Curated Portfolio</span>
           </div>
           <h2 className="home-heading text-white leading-[1.15]">

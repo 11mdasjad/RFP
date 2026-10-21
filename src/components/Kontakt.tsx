@@ -159,14 +159,14 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
           <div className="min-w-0 bg-[#0e0d12]/70 rounded-2xl p-6 sm:p-8 border border-white/[0.08] backdrop-blur-md">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
               <h3 className="text-lg font-bold text-white">
-                Submit Project Brief
+                Tell us about your project
               </h3>
-              <span className="text-[11px] font-mono text-[#a89bfa] px-2.5 py-1 rounded-full bg-[#a89bfa]/10 border border-[#a89bfa]/20">
-                24h Response SLA
+              <span className="text-xs text-white/60">
+                We aim to reply within a day
               </span>
             </div>
             <p className="text-xs text-[#f4f2f780] mb-6">
-              Share your project scope, location, and timeline. Our directors review every brief and return a tailored proposal within 24 hours.
+              Tell us what you need, where the project will take place, and when you’d like to get started. We’ll get back to you to discuss the details.
             </p>
 
             {submitted ? (
@@ -329,7 +329,7 @@ export const Kontakt: React.FC<KontaktProps> = ({ prefilledTopic }) => {
                     </>
                   ) : (
                     <>
-                      <span>Submit Project Brief</span>
+                      <span>Tell us about your project</span>
                       <Send className="w-3.5 h-3.5 ml-1" />
                     </>
                   )}

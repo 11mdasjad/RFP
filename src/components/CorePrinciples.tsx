@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ShieldCheck, Sparkles, Users, Leaf, ArrowRight } from "lucide-react";
+import { ShieldCheck, Clapperboard, Users, Leaf, ArrowRight } from "lucide-react";
 
 export const CorePrinciples: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -16,7 +16,7 @@ export const CorePrinciples: React.FC = () => {
     },
     {
       title: "Innovation",
-      icon: Sparkles,
+      icon: Clapperboard,
       description:
         "We embrace creative solutions and cutting-edge cinema technology—from large-format anamorphic sensors to real-time virtual production—to deliver exceptional, timeless value.",
       metric: "Cutting-Edge Cinema Tools",

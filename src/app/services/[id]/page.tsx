@@ -12,7 +12,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
-  Sparkles,
   Layers,
   ShieldCheck,
   Film,
@@ -107,7 +106,6 @@ export default function ServiceDetailPage({
                 <span className="px-2 py-0.5 rounded-md bg-[#6b54ee]/30 text-white font-bold">
                   {service.number}
                 </span>
-                <span className="text-[#E6C665]">✦</span>
                 <span className="uppercase tracking-widest font-semibold">
                   {service.id === "website-development" ? "Digital Engineering" : "Media Discipline"}
                 </span>
@@ -149,7 +147,6 @@ export default function ServiceDetailPage({
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4">
             <div>
               <div className="text-xs font-mono text-[#a89bfa] uppercase tracking-widest mb-1.5 flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-[#E6C665]" />
                 <span>RFP Production Showcase</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-serif text-white font-medium">
@@ -221,7 +218,6 @@ export default function ServiceDetailPage({
             <div className="lg:col-span-7 space-y-10">
               <div className="space-y-4">
                 <div className="text-xs font-mono text-[#a89bfa] uppercase tracking-widest flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#a89bfa]" />
                   <span>Strategic Approach &amp; Capabilities</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-serif text-white font-medium">
